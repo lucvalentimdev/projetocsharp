@@ -37,9 +37,11 @@
             ajudaToolStripMenuItem = new ToolStripMenuItem();
             fecharToolStripMenuItem = new ToolStripMenuItem();
             panel_Menu = new Panel();
-            panel_Rodape = new Panel();
             BtnClientes = new Button();
             imageListIcons = new ImageList(components);
+            panel_Rodape = new Panel();
+            BtnSair = new Button();
+            BtnPagamentos = new Button();
             menuStrip1.SuspendLayout();
             panel_Menu.SuspendLayout();
             SuspendLayout();
@@ -63,7 +65,7 @@
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(180, 22);
+            sairToolStripMenuItem.Size = new Size(93, 22);
             sairToolStripMenuItem.Text = "Sair";
             // 
             // atualizaçõesToolStripMenuItem
@@ -87,19 +89,13 @@
             // panel_Menu
             // 
             panel_Menu.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel_Menu.Controls.Add(BtnPagamentos);
+            panel_Menu.Controls.Add(BtnSair);
             panel_Menu.Controls.Add(BtnClientes);
             panel_Menu.Location = new Point(0, 27);
             panel_Menu.Name = "panel_Menu";
             panel_Menu.Size = new Size(1255, 70);
             panel_Menu.TabIndex = 1;
-            // 
-            // panel_Rodape
-            // 
-            panel_Rodape.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel_Rodape.Location = new Point(0, 712);
-            panel_Rodape.Name = "panel_Rodape";
-            panel_Rodape.Size = new Size(1255, 26);
-            panel_Rodape.TabIndex = 2;
             // 
             // BtnClientes
             // 
@@ -142,6 +138,35 @@
             imageListIcons.Images.SetKeyName(22, "termo_2.png");
             imageListIcons.Images.SetKeyName(23, "zoom.png");
             // 
+            // panel_Rodape
+            // 
+            panel_Rodape.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel_Rodape.Location = new Point(0, 712);
+            panel_Rodape.Name = "panel_Rodape";
+            panel_Rodape.Size = new Size(1255, 26);
+            panel_Rodape.TabIndex = 2;
+            // 
+            // BtnSair
+            // 
+            BtnSair.ImageIndex = 2;
+            BtnSair.ImageList = imageListIcons;
+            BtnSair.Location = new Point(188, 10);
+            BtnSair.Name = "BtnSair";
+            BtnSair.Size = new Size(80, 50);
+            BtnSair.TabIndex = 1;
+            BtnSair.UseVisualStyleBackColor = true;
+            BtnSair.Click += BtnSair_Click;
+            // 
+            // BtnPagamentos
+            // 
+            BtnPagamentos.ImageIndex = 16;
+            BtnPagamentos.ImageList = imageListIcons;
+            BtnPagamentos.Location = new Point(102, 10);
+            BtnPagamentos.Name = "BtnPagamentos";
+            BtnPagamentos.Size = new Size(80, 50);
+            BtnPagamentos.TabIndex = 2;
+            BtnPagamentos.UseVisualStyleBackColor = true;
+            // 
             // F_Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -172,5 +197,7 @@
         private Panel panel_Rodape;
         private Button BtnClientes;
         private ImageList imageListIcons;
+        private Button BtnPagamentos;
+        private Button BtnSair;
     }
 }

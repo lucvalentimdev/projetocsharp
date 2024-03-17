@@ -6,5 +6,10 @@ namespace ProjCSharp
         {
             InitializeComponent();
         }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
