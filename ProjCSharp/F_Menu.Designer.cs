@@ -37,13 +37,15 @@
             ajudaToolStripMenuItem = new ToolStripMenuItem();
             fecharToolStripMenuItem = new ToolStripMenuItem();
             panel_Menu = new Panel();
-            BtnClientes = new Button();
-            imageListIcons = new ImageList(components);
-            panel_Rodape = new Panel();
-            BtnSair = new Button();
             BtnPagamentos = new Button();
+            imageListIcons = new ImageList(components);
+            BtnSair = new Button();
+            BtnClientes = new Button();
+            panel_Rodape = new Panel();
+            pictureBackground = new PictureBox();
             menuStrip1.SuspendLayout();
             panel_Menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBackground).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -51,7 +53,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { sistemaToolStripMenuItem, atualizaçõesToolStripMenuItem, ajudaToolStripMenuItem, fecharToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1255, 24);
+            menuStrip1.Size = new Size(1264, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -94,19 +96,18 @@
             panel_Menu.Controls.Add(BtnClientes);
             panel_Menu.Location = new Point(0, 27);
             panel_Menu.Name = "panel_Menu";
-            panel_Menu.Size = new Size(1255, 70);
+            panel_Menu.Size = new Size(1264, 70);
             panel_Menu.TabIndex = 1;
             // 
-            // BtnClientes
+            // BtnPagamentos
             // 
-            BtnClientes.Cursor = Cursors.Hand;
-            BtnClientes.ImageIndex = 5;
-            BtnClientes.ImageList = imageListIcons;
-            BtnClientes.Location = new Point(16, 10);
-            BtnClientes.Name = "BtnClientes";
-            BtnClientes.Size = new Size(80, 50);
-            BtnClientes.TabIndex = 0;
-            BtnClientes.UseVisualStyleBackColor = true;
+            BtnPagamentos.ImageIndex = 16;
+            BtnPagamentos.ImageList = imageListIcons;
+            BtnPagamentos.Location = new Point(102, 10);
+            BtnPagamentos.Name = "BtnPagamentos";
+            BtnPagamentos.Size = new Size(80, 50);
+            BtnPagamentos.TabIndex = 2;
+            BtnPagamentos.UseVisualStyleBackColor = true;
             // 
             // imageListIcons
             // 
@@ -138,14 +139,6 @@
             imageListIcons.Images.SetKeyName(22, "termo_2.png");
             imageListIcons.Images.SetKeyName(23, "zoom.png");
             // 
-            // panel_Rodape
-            // 
-            panel_Rodape.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel_Rodape.Location = new Point(0, 712);
-            panel_Rodape.Name = "panel_Rodape";
-            panel_Rodape.Size = new Size(1255, 26);
-            panel_Rodape.TabIndex = 2;
-            // 
             // BtnSair
             // 
             BtnSair.ImageIndex = 2;
@@ -157,30 +150,52 @@
             BtnSair.UseVisualStyleBackColor = true;
             BtnSair.Click += BtnSair_Click;
             // 
-            // BtnPagamentos
+            // BtnClientes
             // 
-            BtnPagamentos.ImageIndex = 16;
-            BtnPagamentos.ImageList = imageListIcons;
-            BtnPagamentos.Location = new Point(102, 10);
-            BtnPagamentos.Name = "BtnPagamentos";
-            BtnPagamentos.Size = new Size(80, 50);
-            BtnPagamentos.TabIndex = 2;
-            BtnPagamentos.UseVisualStyleBackColor = true;
+            BtnClientes.Cursor = Cursors.Hand;
+            BtnClientes.ImageIndex = 5;
+            BtnClientes.ImageList = imageListIcons;
+            BtnClientes.Location = new Point(16, 10);
+            BtnClientes.Name = "BtnClientes";
+            BtnClientes.Size = new Size(80, 50);
+            BtnClientes.TabIndex = 0;
+            BtnClientes.UseVisualStyleBackColor = true;
+            // 
+            // panel_Rodape
+            // 
+            panel_Rodape.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel_Rodape.Location = new Point(0, 657);
+            panel_Rodape.Name = "panel_Rodape";
+            panel_Rodape.Size = new Size(1264, 26);
+            panel_Rodape.TabIndex = 2;
+            // 
+            // pictureBackground
+            // 
+            pictureBackground.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBackground.Image = Properties.Resources.backgroudjpg;
+            pictureBackground.Location = new Point(0, 93);
+            pictureBackground.Name = "pictureBackground";
+            pictureBackground.Size = new Size(1280, 580);
+            pictureBackground.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBackground.TabIndex = 3;
+            pictureBackground.TabStop = false;
             // 
             // F_Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1255, 736);
+            ClientSize = new Size(1264, 681);
             Controls.Add(panel_Rodape);
             Controls.Add(panel_Menu);
             Controls.Add(menuStrip1);
+            Controls.Add(pictureBackground);
             MainMenuStrip = menuStrip1;
             Name = "F_Menu";
             Text = "Menu [Sistema em CSharp]";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel_Menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBackground).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -199,5 +214,6 @@
         private ImageList imageListIcons;
         private Button BtnPagamentos;
         private Button BtnSair;
+        private PictureBox pictureBackground;
     }
 }
