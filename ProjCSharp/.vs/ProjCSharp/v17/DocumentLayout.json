@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\projetocsharp\\ProjCSharp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|ProjCSharp.csproj|c:\\projetocsharp\\projcsharp\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|ProjCSharp.csproj|solutionrelative:f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|ProjCSharp.csproj|c:\\projetocsharp\\projcsharp\\views\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|ProjCSharp.csproj|solutionrelative:views\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|ProjCSharp.csproj|C:\\projetocsharp\\ProjCSharp\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|ProjCSharp.csproj|solutionrelative:f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|ProjCSharp.csproj|c:\\projetocsharp\\projcsharp\\views\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|ProjCSharp.csproj|solutionrelative:views\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|ProjCSharp.csproj|c:\\projetocsharp\\projcsharp\\controllers\\controller_conect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|ProjCSharp.csproj|solutionrelative:controllers\\controller_conect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,12 +30,25 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Controller_Conect.cs",
+              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Controllers\\Controller_Conect.cs",
+              "RelativeDocumentMoniker": "Controllers\\Controller_Conect.cs",
+              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Controllers\\Controller_Conect.cs",
+              "RelativeToolTip": "Controllers\\Controller_Conect.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T23:10:22.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "F_Menu.cs",
-              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\F_Menu.cs",
-              "RelativeDocumentMoniker": "F_Menu.cs",
-              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\F_Menu.cs",
-              "RelativeToolTip": "F_Menu.cs",
+              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Views\\F_Menu.cs",
+              "RelativeDocumentMoniker": "Views\\F_Menu.cs",
+              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Views\\F_Menu.cs",
+              "RelativeToolTip": "Views\\F_Menu.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-17T20:07:30.727Z",
@@ -41,10 +58,10 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "F_Menu.cs [Projeto]",
-              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\F_Menu.cs",
-              "RelativeDocumentMoniker": "F_Menu.cs",
-              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\F_Menu.cs [Projeto]",
-              "RelativeToolTip": "F_Menu.cs [Projeto]",
+              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Views\\F_Menu.cs",
+              "RelativeDocumentMoniker": "Views\\F_Menu.cs",
+              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Views\\F_Menu.cs [Projeto]",
+              "RelativeToolTip": "Views\\F_Menu.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-17T19:43:39.691Z",
               "EditorCaption": " [Projeto]"
