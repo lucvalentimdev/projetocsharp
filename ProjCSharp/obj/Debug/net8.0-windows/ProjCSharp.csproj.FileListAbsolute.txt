@@ -31,3 +31,12 @@ C:\projetocsharp\ProjCSharp\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb
 C:\projetocsharp\ProjCSharp\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
 C:\projetocsharp\ProjCSharp\obj\Debug\net8.0-windows\ProjCSharp.csproj.AssemblyReference.cache
 C:\projetocsharp\ProjCSharp\obj\Debug\net8.0-windows\ProjCSharp.csproj.Up2Date
+C:\projetocsharp\ProjCSharp\obj\Debug\net8.0-windows\ProjCSharp.Views.F_Login.resources
+C:\projetocsharp\ProjCSharp\bin\Debug\net8.0-windows\DevExpress.Data.v13.1.dll
+C:\projetocsharp\ProjCSharp\bin\Debug\net8.0-windows\DevExpress.Office.v13.1.Core.dll
+C:\projetocsharp\ProjCSharp\bin\Debug\net8.0-windows\DevExpress.Spreadsheet.v13.1.Core.dll
+C:\projetocsharp\ProjCSharp\bin\Debug\net8.0-windows\DevExpress.Utils.v13.1.dll
+C:\projetocsharp\ProjCSharp\bin\Debug\net8.0-windows\DevExpress.XtraBars.v13.1.dll
+C:\projetocsharp\ProjCSharp\bin\Debug\net8.0-windows\DevExpress.XtraEditors.v13.1.dll
+C:\projetocsharp\ProjCSharp\bin\Debug\net8.0-windows\DevExpress.XtraLayout.v13.1.dll
+C:\projetocsharp\ProjCSharp\bin\Debug\net8.0-windows\DevExpress.XtraSpreadsheet.v13.1.dll

@@ -1792,9 +1792,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projetocsharp\\ProjCSharp\\ProjCSharp.csproj",
-      "projectName": "ProjCSharp",
-      "projectPath": "C:\\projetocsharp\\ProjCSharp\\ProjCSharp.csproj",
+      "projectUniqueName": "C:\\projetocsharp\\ProjCSharp\\SalSystem.csproj",
+      "projectName": "SalSystem",
+      "projectPath": "C:\\projetocsharp\\ProjCSharp\\SalSystem.csproj",
       "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
       "outputPath": "C:\\projetocsharp\\ProjCSharp\\obj\\",
       "projectStyle": "PackageReference",

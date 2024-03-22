@@ -1,4 +1,4 @@
-﻿namespace ProjCSharp
+﻿namespace SalSystem
 {
     partial class F_Menu
     {
@@ -35,26 +35,26 @@
             sairToolStripMenuItem = new ToolStripMenuItem();
             atualizaçõesToolStripMenuItem = new ToolStripMenuItem();
             ajudaToolStripMenuItem = new ToolStripMenuItem();
-            fecharToolStripMenuItem = new ToolStripMenuItem();
-            panel_Menu = new Panel();
-            BtnPagamentos = new Button();
+            FecharToolStripMenuItem = new ToolStripMenuItem();
             imageListIcons = new ImageList(components);
-            BtnSair = new Button();
-            BtnClientes = new Button();
             panel_Rodape = new Panel();
             labelVersao = new Label();
             pictureBackground = new PictureBox();
+            BtnSair = new Button();
+            BtnPagamentos = new Button();
+            BtnClientes = new Button();
+            transparentPanel1 = new Views.Utils.TransparentPanel();
             menuStrip1.SuspendLayout();
-            panel_Menu.SuspendLayout();
             panel_Rodape.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBackground).BeginInit();
+            transparentPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.LightGray;
             menuStrip1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { sistemaToolStripMenuItem, atualizaçõesToolStripMenuItem, ajudaToolStripMenuItem, fecharToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { sistemaToolStripMenuItem, atualizaçõesToolStripMenuItem, ajudaToolStripMenuItem, FecharToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1264, 24);
@@ -86,32 +86,12 @@
             ajudaToolStripMenuItem.Size = new Size(50, 20);
             ajudaToolStripMenuItem.Text = "Ajuda";
             // 
-            // fecharToolStripMenuItem
+            // FecharToolStripMenuItem
             // 
-            fecharToolStripMenuItem.Name = "fecharToolStripMenuItem";
-            fecharToolStripMenuItem.Size = new Size(56, 20);
-            fecharToolStripMenuItem.Text = "Fechar";
-            // 
-            // panel_Menu
-            // 
-            panel_Menu.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel_Menu.Controls.Add(BtnPagamentos);
-            panel_Menu.Controls.Add(BtnSair);
-            panel_Menu.Controls.Add(BtnClientes);
-            panel_Menu.Location = new Point(0, 27);
-            panel_Menu.Name = "panel_Menu";
-            panel_Menu.Size = new Size(1264, 70);
-            panel_Menu.TabIndex = 1;
-            // 
-            // BtnPagamentos
-            // 
-            BtnPagamentos.ImageIndex = 16;
-            BtnPagamentos.ImageList = imageListIcons;
-            BtnPagamentos.Location = new Point(102, 10);
-            BtnPagamentos.Name = "BtnPagamentos";
-            BtnPagamentos.Size = new Size(80, 50);
-            BtnPagamentos.TabIndex = 2;
-            BtnPagamentos.UseVisualStyleBackColor = true;
+            FecharToolStripMenuItem.Name = "FecharToolStripMenuItem";
+            FecharToolStripMenuItem.Size = new Size(56, 20);
+            FecharToolStripMenuItem.Text = "Fechar";
+            FecharToolStripMenuItem.Click += FecharToolStripMenuItem_Click;
             // 
             // imageListIcons
             // 
@@ -143,35 +123,13 @@
             imageListIcons.Images.SetKeyName(22, "termo_2.png");
             imageListIcons.Images.SetKeyName(23, "zoom.png");
             // 
-            // BtnSair
-            // 
-            BtnSair.ImageIndex = 2;
-            BtnSair.ImageList = imageListIcons;
-            BtnSair.Location = new Point(188, 10);
-            BtnSair.Name = "BtnSair";
-            BtnSair.Size = new Size(80, 50);
-            BtnSair.TabIndex = 1;
-            BtnSair.UseVisualStyleBackColor = true;
-            BtnSair.Click += BtnSair_Click;
-            // 
-            // BtnClientes
-            // 
-            BtnClientes.Cursor = Cursors.Hand;
-            BtnClientes.ImageIndex = 5;
-            BtnClientes.ImageList = imageListIcons;
-            BtnClientes.Location = new Point(16, 10);
-            BtnClientes.Name = "BtnClientes";
-            BtnClientes.Size = new Size(80, 50);
-            BtnClientes.TabIndex = 0;
-            BtnClientes.UseVisualStyleBackColor = true;
-            // 
             // panel_Rodape
             // 
             panel_Rodape.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel_Rodape.Controls.Add(labelVersao);
             panel_Rodape.Location = new Point(0, 648);
             panel_Rodape.Name = "panel_Rodape";
-            panel_Rodape.Size = new Size(1264, 35);
+            panel_Rodape.Size = new Size(113, 35);
             panel_Rodape.TabIndex = 2;
             // 
             // labelVersao
@@ -188,32 +146,84 @@
             // 
             pictureBackground.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBackground.Image = Properties.Resources.backgroudjpg;
-            pictureBackground.Location = new Point(0, 93);
+            pictureBackground.Location = new Point(0, 23);
             pictureBackground.Name = "pictureBackground";
-            pictureBackground.Size = new Size(1280, 580);
+            pictureBackground.Size = new Size(1280, 660);
             pictureBackground.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBackground.TabIndex = 3;
             pictureBackground.TabStop = false;
+            // 
+            // BtnSair
+            // 
+            BtnSair.FlatStyle = FlatStyle.Flat;
+            BtnSair.ForeColor = Color.Transparent;
+            BtnSair.ImageIndex = 2;
+            BtnSair.ImageList = imageListIcons;
+            BtnSair.Location = new Point(12, 136);
+            BtnSair.Name = "BtnSair";
+            BtnSair.Size = new Size(80, 50);
+            BtnSair.TabIndex = 4;
+            BtnSair.UseVisualStyleBackColor = true;
+            BtnSair.Click += BtnSair_Click;
+            // 
+            // BtnPagamentos
+            // 
+            BtnPagamentos.FlatStyle = FlatStyle.Flat;
+            BtnPagamentos.ForeColor = Color.Transparent;
+            BtnPagamentos.ImageIndex = 16;
+            BtnPagamentos.ImageList = imageListIcons;
+            BtnPagamentos.Location = new Point(12, 80);
+            BtnPagamentos.Name = "BtnPagamentos";
+            BtnPagamentos.Size = new Size(80, 50);
+            BtnPagamentos.TabIndex = 5;
+            BtnPagamentos.UseVisualStyleBackColor = true;
+            BtnPagamentos.Click += BtnPagamentos_Click;
+            // 
+            // BtnClientes
+            // 
+            BtnClientes.Cursor = Cursors.Hand;
+            BtnClientes.FlatStyle = FlatStyle.Flat;
+            BtnClientes.ForeColor = Color.Transparent;
+            BtnClientes.ImageIndex = 5;
+            BtnClientes.ImageList = imageListIcons;
+            BtnClientes.Location = new Point(12, 24);
+            BtnClientes.Name = "BtnClientes";
+            BtnClientes.Size = new Size(80, 50);
+            BtnClientes.TabIndex = 6;
+            BtnClientes.UseVisualStyleBackColor = true;
+            // 
+            // transparentPanel1
+            // 
+            transparentPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            transparentPanel1.BackColor = Color.Transparent;
+            transparentPanel1.Controls.Add(BtnClientes);
+            transparentPanel1.Controls.Add(BtnSair);
+            transparentPanel1.Controls.Add(BtnPagamentos);
+            transparentPanel1.Location = new Point(-2, 24);
+            transparentPanel1.Name = "transparentPanel1";
+            transparentPanel1.Size = new Size(115, 628);
+            transparentPanel1.TabIndex = 7;
             // 
             // F_Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
+            Controls.Add(transparentPanel1);
             Controls.Add(panel_Rodape);
-            Controls.Add(panel_Menu);
             Controls.Add(menuStrip1);
             Controls.Add(pictureBackground);
             MainMenuStrip = menuStrip1;
             Name = "F_Menu";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu [Sistema de Vendas]";
             Load += F_Menu_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            panel_Menu.ResumeLayout(false);
             panel_Rodape.ResumeLayout(false);
             panel_Rodape.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBackground).EndInit();
+            transparentPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -225,14 +235,14 @@
         private ToolStripMenuItem sairToolStripMenuItem;
         private ToolStripMenuItem atualizaçõesToolStripMenuItem;
         private ToolStripMenuItem ajudaToolStripMenuItem;
-        private ToolStripMenuItem fecharToolStripMenuItem;
-        private Panel panel_Menu;
+        private ToolStripMenuItem FecharToolStripMenuItem;
         private Panel panel_Rodape;
-        private Button BtnClientes;
         private ImageList imageListIcons;
-        private Button BtnPagamentos;
-        private Button BtnSair;
         private PictureBox pictureBackground;
         private Label labelVersao;
+        private Button BtnSair;
+        private Button BtnPagamentos;
+        private Button BtnClientes;
+        private Views.Utils.TransparentPanel transparentPanel1;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 
-namespace ProjCSharp.Models
+namespace SalSystem.Models
 {
     internal class Connect
     {
@@ -15,26 +15,16 @@ namespace ProjCSharp.Models
         {
             MySqlConnection conn = new (ConnectionString);
 
-            if (conn == null)
+            try
             {
-                conn.Open();
-                return true;
+               conn.Open();
+               return true;
             }
-            else
+            catch (Exception E)
             {
+                MessageBox.Show(E.Message);
                 return false;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
     }
 }

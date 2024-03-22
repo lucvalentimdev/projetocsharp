@@ -1,4 +1,4 @@
-namespace ProjCSharp
+namespace SalSystem
 {
     internal static class Program
     {

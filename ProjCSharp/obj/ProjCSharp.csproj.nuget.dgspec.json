@@ -50,6 +50,10 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "DevExpress_Winform_Controls_13.1.12": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.3.0, )"
