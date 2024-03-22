@@ -1,20 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace SalSystem.Views
+﻿namespace SalSystem.Views
 {
     public partial class F_Login : Form
     {
+        private bool fechaLogin = false;
+
         public F_Login()
         {
             InitializeComponent();
+        }
+
+        private void F_Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!fechaLogin)
+                Application.Exit();
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            fechaLogin = true;
+            Close();
         }
     }
 }

@@ -77,6 +77,7 @@
             BtnLogin.TabIndex = 3;
             BtnLogin.TextAlign = ContentAlignment.MiddleLeft;
             BtnLogin.UseVisualStyleBackColor = false;
+            BtnLogin.Click += BtnLogin_Click;
             // 
             // F_Login
             // 
@@ -87,9 +88,10 @@
             Controls.Add(txtSenha);
             Controls.Add(txtUsuario);
             Controls.Add(pictureBox1);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "F_Login";
             Text = "Form1";
+            FormClosing += F_Login_FormClosing;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
