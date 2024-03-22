@@ -207,6 +207,7 @@
             MainMenuStrip = menuStrip1;
             Name = "F_Menu";
             Text = "Menu [Sistema de Vendas]";
+            Load += F_Menu_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel_Menu.ResumeLayout(false);
