@@ -39,14 +39,12 @@
             imageListIcons = new ImageList(components);
             panel_Rodape = new Panel();
             labelVersao = new Label();
-            pictureBackground = new PictureBox();
             BtnSair = new Button();
             BtnPagamentos = new Button();
             BtnClientes = new Button();
             transparentPanel1 = new Views.Utils.TransparentPanel();
             menuStrip1.SuspendLayout();
             panel_Rodape.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBackground).BeginInit();
             transparentPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,7 +55,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { sistemaToolStripMenuItem, atualizaçõesToolStripMenuItem, ajudaToolStripMenuItem, FecharToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1264, 24);
+            menuStrip1.Size = new Size(1064, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -127,9 +125,9 @@
             // 
             panel_Rodape.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel_Rodape.Controls.Add(labelVersao);
-            panel_Rodape.Location = new Point(0, 648);
+            panel_Rodape.Location = new Point(0, 734);
             panel_Rodape.Name = "panel_Rodape";
-            panel_Rodape.Size = new Size(113, 35);
+            panel_Rodape.Size = new Size(1076, 29);
             panel_Rodape.TabIndex = 2;
             // 
             // labelVersao
@@ -141,17 +139,6 @@
             labelVersao.Size = new Size(67, 15);
             labelVersao.TabIndex = 0;
             labelVersao.Text = "Versão: 1.0";
-            // 
-            // pictureBackground
-            // 
-            pictureBackground.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBackground.Image = Properties.Resources.backgroudjpg;
-            pictureBackground.Location = new Point(0, 23);
-            pictureBackground.Name = "pictureBackground";
-            pictureBackground.Size = new Size(1280, 660);
-            pictureBackground.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBackground.TabIndex = 3;
-            pictureBackground.TabStop = false;
             // 
             // BtnSair
             // 
@@ -201,18 +188,20 @@
             transparentPanel1.Controls.Add(BtnPagamentos);
             transparentPanel1.Location = new Point(-2, 24);
             transparentPanel1.Name = "transparentPanel1";
-            transparentPanel1.Size = new Size(115, 628);
+            transparentPanel1.Size = new Size(115, 634);
             transparentPanel1.TabIndex = 7;
             // 
             // F_Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1264, 681);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1064, 761);
             Controls.Add(transparentPanel1);
             Controls.Add(panel_Rodape);
             Controls.Add(menuStrip1);
-            Controls.Add(pictureBackground);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "F_Menu";
             StartPosition = FormStartPosition.CenterScreen;
@@ -222,7 +211,6 @@
             menuStrip1.PerformLayout();
             panel_Rodape.ResumeLayout(false);
             panel_Rodape.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBackground).EndInit();
             transparentPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -238,7 +226,6 @@
         private ToolStripMenuItem FecharToolStripMenuItem;
         private Panel panel_Rodape;
         private ImageList imageListIcons;
-        private PictureBox pictureBackground;
         private Label labelVersao;
         private Button BtnSair;
         private Button BtnPagamentos;

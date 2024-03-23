@@ -28,38 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Login));
             txtUsuario = new TextBox();
             txtSenha = new TextBox();
             BtnLogin = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            checkBox1 = new CheckBox();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = Properties.Resources.background_login;
-            pictureBox1.Location = new Point(-1, -2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(673, 684);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // txtUsuario
             // 
+            txtUsuario.BackColor = SystemColors.HighlightText;
             txtUsuario.BorderStyle = BorderStyle.None;
-            txtUsuario.Location = new Point(229, 316);
+            txtUsuario.Font = new Font("Segoe UI", 14F);
+            txtUsuario.Location = new Point(231, 313);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(244, 16);
+            txtUsuario.Size = new Size(238, 25);
             txtUsuario.TabIndex = 1;
             // 
             // txtSenha
             // 
+            txtSenha.BackColor = SystemColors.HighlightText;
             txtSenha.BorderStyle = BorderStyle.None;
-            txtSenha.Location = new Point(229, 376);
+            txtSenha.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            txtSenha.Location = new Point(231, 371);
+            txtSenha.MaxLength = 8;
             txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(244, 16);
+            txtSenha.PasswordChar = '*';
+            txtSenha.Size = new Size(238, 25);
             txtSenha.TabIndex = 2;
             // 
             // BtnLogin
@@ -71,7 +66,7 @@
             BtnLogin.FlatStyle = FlatStyle.Flat;
             BtnLogin.ForeColor = Color.Transparent;
             BtnLogin.Image = Properties.Resources.login;
-            BtnLogin.Location = new Point(187, 453);
+            BtnLogin.Location = new Point(189, 449);
             BtnLogin.Name = "BtnLogin";
             BtnLogin.Size = new Size(288, 50);
             BtnLogin.TabIndex = 3;
@@ -79,29 +74,43 @@
             BtnLogin.UseVisualStyleBackColor = false;
             BtnLogin.Click += BtnLogin_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.BackColor = Color.Transparent;
+            checkBox1.ForeColor = SystemColors.ControlDark;
+            checkBox1.Location = new Point(189, 421);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(88, 19);
+            checkBox1.TabIndex = 4;
+            checkBox1.Text = "Lembre-me";
+            checkBox1.UseVisualStyleBackColor = false;
+            // 
             // F_Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(671, 678);
+            Controls.Add(checkBox1);
             Controls.Add(BtnLogin);
             Controls.Add(txtSenha);
             Controls.Add(txtUsuario);
-            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "F_Login";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login";
             FormClosing += F_Login_FormClosing;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private TextBox txtUsuario;
         private TextBox txtSenha;
         private Button BtnLogin;
+        private CheckBox checkBox1;
     }
 }
