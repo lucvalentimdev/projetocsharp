@@ -33,6 +33,7 @@
             txtSenha = new TextBox();
             BtnLogin = new Button();
             checkBox1 = new CheckBox();
+            lbStatusConn = new Label();
             SuspendLayout();
             // 
             // txtUsuario
@@ -86,6 +87,18 @@
             checkBox1.Text = "Lembre-me";
             checkBox1.UseVisualStyleBackColor = false;
             // 
+            // lbStatusConn
+            // 
+            lbStatusConn.AutoSize = true;
+            lbStatusConn.BackColor = Color.Transparent;
+            lbStatusConn.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbStatusConn.ForeColor = SystemColors.ButtonHighlight;
+            lbStatusConn.Location = new Point(29, 646);
+            lbStatusConn.Name = "lbStatusConn";
+            lbStatusConn.Size = new Size(43, 15);
+            lbStatusConn.TabIndex = 5;
+            lbStatusConn.Text = "Status:";
+            // 
             // F_Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -93,6 +106,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(671, 678);
+            Controls.Add(lbStatusConn);
             Controls.Add(checkBox1);
             Controls.Add(BtnLogin);
             Controls.Add(txtSenha);
@@ -101,8 +115,9 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "F_Login";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
+            Text = "login";
             FormClosing += F_Login_FormClosing;
+            Load += F_Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -112,5 +127,6 @@
         private TextBox txtSenha;
         private Button BtnLogin;
         private CheckBox checkBox1;
+        private Label lbStatusConn;
     }
 }
