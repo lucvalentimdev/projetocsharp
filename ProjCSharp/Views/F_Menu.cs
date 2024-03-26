@@ -5,7 +5,7 @@ namespace SalSystem
 {
     public partial class F_Menu : Form
     {
-        readonly Connect Connect = new("server=localhost;user=root;pwd=;database=test;Connect Timeout=28800;Command Timeout=2880");
+        readonly Login Connect = new("server=localhost;user=root;pwd=;database=test;Connect Timeout=28800;Command Timeout=2880");
 
         public F_Menu()
         {
