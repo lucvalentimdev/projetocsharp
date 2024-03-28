@@ -43,6 +43,7 @@
             BtnPagamentos = new Button();
             BtnClientes = new Button();
             transparentPanel1 = new Views.Utils.TransparentPanel();
+            button1 = new Button();
             menuStrip1.SuspendLayout();
             panel_Rodape.SuspendLayout();
             transparentPanel1.SuspendLayout();
@@ -55,7 +56,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { sistemaToolStripMenuItem, atualizaçõesToolStripMenuItem, ajudaToolStripMenuItem, FecharToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1064, 24);
+            menuStrip1.Size = new Size(1152, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -96,45 +97,27 @@
             imageListIcons.ColorDepth = ColorDepth.Depth32Bit;
             imageListIcons.ImageStream = (ImageListStreamer)resources.GetObject("imageListIcons.ImageStream");
             imageListIcons.TransparentColor = Color.Transparent;
-            imageListIcons.Images.SetKeyName(0, "add_circle_FILL0_wght400_GRAD0_opsz48.png");
-            imageListIcons.Images.SetKeyName(1, "close.png");
-            imageListIcons.Images.SetKeyName(2, "logout.png");
-            imageListIcons.Images.SetKeyName(3, "money.png");
-            imageListIcons.Images.SetKeyName(4, "outline_admin_panel_settings_black_24dp.png");
-            imageListIcons.Images.SetKeyName(5, "outline_assignment_ind_black_24dp.png");
-            imageListIcons.Images.SetKeyName(6, "outline_check_circle_black_24dp.png");
-            imageListIcons.Images.SetKeyName(7, "outline_delete_outline_black_24dp.png");
-            imageListIcons.Images.SetKeyName(8, "outline_edit_off_black_24dp.png");
-            imageListIcons.Images.SetKeyName(9, "outline_fingerprint_black_24dp.png");
-            imageListIcons.Images.SetKeyName(10, "outline_highlight_off_black_24dp.png");
-            imageListIcons.Images.SetKeyName(11, "outline_lock_open_black_24dp.png");
-            imageListIcons.Images.SetKeyName(12, "outline_note_add_black_24dp.png");
-            imageListIcons.Images.SetKeyName(13, "outline_print_black_24dp.png");
-            imageListIcons.Images.SetKeyName(14, "outline_search_black_24dp.png");
-            imageListIcons.Images.SetKeyName(15, "outline_view_timeline_black_24dp.png");
-            imageListIcons.Images.SetKeyName(16, "payment.png");
-            imageListIcons.Images.SetKeyName(17, "payments.png");
-            imageListIcons.Images.SetKeyName(18, "profile.png");
-            imageListIcons.Images.SetKeyName(19, "refresh.png");
-            imageListIcons.Images.SetKeyName(20, "room_preferences.png");
-            imageListIcons.Images.SetKeyName(21, "Termo.png");
-            imageListIcons.Images.SetKeyName(22, "termo_2.png");
-            imageListIcons.Images.SetKeyName(23, "zoom.png");
+            imageListIcons.Images.SetKeyName(0, "client.png");
+            imageListIcons.Images.SetKeyName(1, "cadastrar.png");
+            imageListIcons.Images.SetKeyName(2, "vendas.png");
+            imageListIcons.Images.SetKeyName(3, "sair.png");
             // 
             // panel_Rodape
             // 
             panel_Rodape.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel_Rodape.BackColor = Color.Gainsboro;
             panel_Rodape.Controls.Add(labelVersao);
-            panel_Rodape.Location = new Point(0, 734);
+            panel_Rodape.Location = new Point(0, 743);
             panel_Rodape.Name = "panel_Rodape";
-            panel_Rodape.Size = new Size(1076, 29);
+            panel_Rodape.Size = new Size(1164, 20);
             panel_Rodape.TabIndex = 2;
             // 
             // labelVersao
             // 
             labelVersao.AutoSize = true;
             labelVersao.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelVersao.Location = new Point(16, 10);
+            labelVersao.ForeColor = Color.IndianRed;
+            labelVersao.Location = new Point(16, 4);
             labelVersao.Name = "labelVersao";
             labelVersao.Size = new Size(67, 15);
             labelVersao.TabIndex = 0;
@@ -142,27 +125,36 @@
             // 
             // BtnSair
             // 
+            BtnSair.Cursor = Cursors.Hand;
             BtnSair.FlatStyle = FlatStyle.Flat;
-            BtnSair.ForeColor = Color.Transparent;
-            BtnSair.ImageIndex = 2;
+            BtnSair.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnSair.ForeColor = Color.IndianRed;
+            BtnSair.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnSair.ImageIndex = 3;
             BtnSair.ImageList = imageListIcons;
-            BtnSair.Location = new Point(12, 136);
+            BtnSair.Location = new Point(8, 183);
             BtnSair.Name = "BtnSair";
-            BtnSair.Size = new Size(80, 50);
-            BtnSair.TabIndex = 4;
+            BtnSair.Size = new Size(110, 50);
+            BtnSair.TabIndex = 3;
+            BtnSair.Text = "Sair";
             BtnSair.UseVisualStyleBackColor = true;
             BtnSair.Click += BtnSair_Click;
             // 
             // BtnPagamentos
             // 
+            BtnPagamentos.Cursor = Cursors.Hand;
             BtnPagamentos.FlatStyle = FlatStyle.Flat;
-            BtnPagamentos.ForeColor = Color.Transparent;
-            BtnPagamentos.ImageIndex = 16;
+            BtnPagamentos.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnPagamentos.ForeColor = Color.IndianRed;
+            BtnPagamentos.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnPagamentos.ImageIndex = 2;
             BtnPagamentos.ImageList = imageListIcons;
-            BtnPagamentos.Location = new Point(12, 80);
+            BtnPagamentos.Location = new Point(8, 127);
             BtnPagamentos.Name = "BtnPagamentos";
-            BtnPagamentos.Size = new Size(80, 50);
-            BtnPagamentos.TabIndex = 5;
+            BtnPagamentos.Size = new Size(110, 50);
+            BtnPagamentos.TabIndex = 2;
+            BtnPagamentos.Text = "Vender";
+            BtnPagamentos.TextAlign = ContentAlignment.MiddleRight;
             BtnPagamentos.UseVisualStyleBackColor = true;
             BtnPagamentos.Click += BtnPagamentos_Click;
             // 
@@ -170,26 +162,48 @@
             // 
             BtnClientes.Cursor = Cursors.Hand;
             BtnClientes.FlatStyle = FlatStyle.Flat;
-            BtnClientes.ForeColor = Color.Transparent;
-            BtnClientes.ImageIndex = 5;
+            BtnClientes.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnClientes.ForeColor = Color.IndianRed;
+            BtnClientes.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnClientes.ImageIndex = 0;
             BtnClientes.ImageList = imageListIcons;
-            BtnClientes.Location = new Point(12, 24);
+            BtnClientes.Location = new Point(8, 15);
             BtnClientes.Name = "BtnClientes";
-            BtnClientes.Size = new Size(80, 50);
-            BtnClientes.TabIndex = 6;
+            BtnClientes.Size = new Size(110, 50);
+            BtnClientes.TabIndex = 0;
+            BtnClientes.Text = "Clientes";
+            BtnClientes.TextAlign = ContentAlignment.MiddleRight;
             BtnClientes.UseVisualStyleBackColor = true;
             // 
             // transparentPanel1
             // 
             transparentPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             transparentPanel1.BackColor = Color.Transparent;
+            transparentPanel1.Controls.Add(button1);
             transparentPanel1.Controls.Add(BtnClientes);
             transparentPanel1.Controls.Add(BtnSair);
             transparentPanel1.Controls.Add(BtnPagamentos);
             transparentPanel1.Location = new Point(-2, 24);
             transparentPanel1.Name = "transparentPanel1";
-            transparentPanel1.Size = new Size(115, 634);
+            transparentPanel1.Size = new Size(129, 704);
             transparentPanel1.TabIndex = 7;
+            // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.IndianRed;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.ImageIndex = 1;
+            button1.ImageList = imageListIcons;
+            button1.Location = new Point(8, 71);
+            button1.Name = "button1";
+            button1.Size = new Size(110, 50);
+            button1.TabIndex = 1;
+            button1.Text = "Cád.Prods";
+            button1.TextAlign = ContentAlignment.MiddleRight;
+            button1.UseVisualStyleBackColor = true;
             // 
             // F_Menu
             // 
@@ -197,7 +211,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1064, 761);
+            ClientSize = new Size(1152, 761);
             Controls.Add(transparentPanel1);
             Controls.Add(panel_Rodape);
             Controls.Add(menuStrip1);
@@ -231,5 +245,6 @@
         private Button BtnPagamentos;
         private Button BtnClientes;
         private Views.Utils.TransparentPanel transparentPanel1;
+        private Button button1;
     }
 }
