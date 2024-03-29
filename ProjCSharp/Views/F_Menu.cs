@@ -18,7 +18,7 @@ namespace SalSystem
 
         private void F_Menu_Load(object sender, EventArgs e)
         {
-            try      
+            try
             {
                 F_Login login = new();              // Inicia-se a tela de login antes do form principal//
                 login.ShowDialog();
@@ -31,12 +31,18 @@ namespace SalSystem
 
         private void BtnPagamentos_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void FecharToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BtnSair_Click(sender, e);
+        }
+
+        private void BtnClientes_Click(object sender, EventArgs e)
+        {
+            F_CadClientes f_CadClientes = new();
+            f_CadClientes.ShowDialog();
         }
     }
 }

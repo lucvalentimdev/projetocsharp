@@ -56,7 +56,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { sistemaToolStripMenuItem, atualizaçõesToolStripMenuItem, ajudaToolStripMenuItem, FecharToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1152, 24);
+            menuStrip1.Size = new Size(1264, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -104,12 +104,12 @@
             // 
             // panel_Rodape
             // 
-            panel_Rodape.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel_Rodape.BackColor = Color.Gainsboro;
             panel_Rodape.Controls.Add(labelVersao);
-            panel_Rodape.Location = new Point(0, 743);
+            panel_Rodape.Dock = DockStyle.Bottom;
+            panel_Rodape.Location = new Point(0, 741);
             panel_Rodape.Name = "panel_Rodape";
-            panel_Rodape.Size = new Size(1164, 20);
+            panel_Rodape.Size = new Size(1264, 20);
             panel_Rodape.TabIndex = 2;
             // 
             // labelVersao
@@ -125,6 +125,7 @@
             // 
             // BtnSair
             // 
+            BtnSair.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             BtnSair.Cursor = Cursors.Hand;
             BtnSair.FlatStyle = FlatStyle.Flat;
             BtnSair.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -132,7 +133,7 @@
             BtnSair.ImageAlign = ContentAlignment.MiddleLeft;
             BtnSair.ImageIndex = 3;
             BtnSair.ImageList = imageListIcons;
-            BtnSair.Location = new Point(8, 183);
+            BtnSair.Location = new Point(8, 652);
             BtnSair.Name = "BtnSair";
             BtnSair.Size = new Size(110, 50);
             BtnSair.TabIndex = 3;
@@ -153,6 +154,7 @@
             BtnPagamentos.Name = "BtnPagamentos";
             BtnPagamentos.Size = new Size(110, 50);
             BtnPagamentos.TabIndex = 2;
+            BtnPagamentos.TabStop = false;
             BtnPagamentos.Text = "Vender";
             BtnPagamentos.TextAlign = ContentAlignment.MiddleRight;
             BtnPagamentos.UseVisualStyleBackColor = true;
@@ -171,21 +173,23 @@
             BtnClientes.Name = "BtnClientes";
             BtnClientes.Size = new Size(110, 50);
             BtnClientes.TabIndex = 0;
+            BtnClientes.TabStop = false;
             BtnClientes.Text = "Clientes";
             BtnClientes.TextAlign = ContentAlignment.MiddleRight;
             BtnClientes.UseVisualStyleBackColor = true;
+            BtnClientes.Click += BtnClientes_Click;
             // 
             // transparentPanel1
             // 
-            transparentPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             transparentPanel1.BackColor = Color.Transparent;
             transparentPanel1.Controls.Add(button1);
             transparentPanel1.Controls.Add(BtnClientes);
             transparentPanel1.Controls.Add(BtnSair);
             transparentPanel1.Controls.Add(BtnPagamentos);
-            transparentPanel1.Location = new Point(-2, 24);
+            transparentPanel1.Dock = DockStyle.Left;
+            transparentPanel1.Location = new Point(0, 24);
             transparentPanel1.Name = "transparentPanel1";
-            transparentPanel1.Size = new Size(129, 704);
+            transparentPanel1.Size = new Size(129, 717);
             transparentPanel1.TabIndex = 7;
             // 
             // button1
@@ -201,6 +205,7 @@
             button1.Name = "button1";
             button1.Size = new Size(110, 50);
             button1.TabIndex = 1;
+            button1.TabStop = false;
             button1.Text = "Cád.Prods";
             button1.TextAlign = ContentAlignment.MiddleRight;
             button1.UseVisualStyleBackColor = true;
@@ -211,10 +216,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1152, 761);
+            ClientSize = new Size(1264, 761);
             Controls.Add(transparentPanel1);
             Controls.Add(panel_Rodape);
             Controls.Add(menuStrip1);
+            DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "F_Menu";
