@@ -52,11 +52,11 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = Color.LightGray;
-            menuStrip1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            menuStrip1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             menuStrip1.Items.AddRange(new ToolStripItem[] { sistemaToolStripMenuItem, atualizaçõesToolStripMenuItem, ajudaToolStripMenuItem, FecharToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1264, 24);
+            menuStrip1.Size = new Size(1264, 27);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -64,31 +64,31 @@
             // 
             sistemaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sairToolStripMenuItem });
             sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
-            sistemaToolStripMenuItem.Size = new Size(63, 20);
+            sistemaToolStripMenuItem.Size = new Size(70, 23);
             sistemaToolStripMenuItem.Text = "Sistema";
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(95, 22);
+            sairToolStripMenuItem.Size = new Size(102, 24);
             sairToolStripMenuItem.Text = "Sair";
             // 
             // atualizaçõesToolStripMenuItem
             // 
             atualizaçõesToolStripMenuItem.Name = "atualizaçõesToolStripMenuItem";
-            atualizaçõesToolStripMenuItem.Size = new Size(88, 20);
+            atualizaçõesToolStripMenuItem.Size = new Size(100, 23);
             atualizaçõesToolStripMenuItem.Text = "Atualizações";
             // 
             // ajudaToolStripMenuItem
             // 
             ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
-            ajudaToolStripMenuItem.Size = new Size(50, 20);
+            ajudaToolStripMenuItem.Size = new Size(57, 23);
             ajudaToolStripMenuItem.Text = "Ajuda";
             // 
             // FecharToolStripMenuItem
             // 
             FecharToolStripMenuItem.Name = "FecharToolStripMenuItem";
-            FecharToolStripMenuItem.Size = new Size(56, 20);
+            FecharToolStripMenuItem.Size = new Size(62, 23);
             FecharToolStripMenuItem.Text = "Fechar";
             FecharToolStripMenuItem.Click += FecharToolStripMenuItem_Click;
             // 
@@ -127,15 +127,16 @@
             // 
             BtnSair.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             BtnSair.Cursor = Cursors.Hand;
+            BtnSair.FlatAppearance.BorderSize = 3;
             BtnSair.FlatStyle = FlatStyle.Flat;
             BtnSair.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnSair.ForeColor = Color.IndianRed;
             BtnSair.ImageAlign = ContentAlignment.MiddleLeft;
             BtnSair.ImageIndex = 3;
             BtnSair.ImageList = imageListIcons;
-            BtnSair.Location = new Point(8, 652);
+            BtnSair.Location = new Point(8, 649);
             BtnSair.Name = "BtnSair";
-            BtnSair.Size = new Size(110, 50);
+            BtnSair.Size = new Size(115, 50);
             BtnSair.TabIndex = 3;
             BtnSair.Text = "Sair";
             BtnSair.UseVisualStyleBackColor = true;
@@ -144,6 +145,7 @@
             // BtnPagamentos
             // 
             BtnPagamentos.Cursor = Cursors.Hand;
+            BtnPagamentos.FlatAppearance.BorderSize = 3;
             BtnPagamentos.FlatStyle = FlatStyle.Flat;
             BtnPagamentos.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnPagamentos.ForeColor = Color.IndianRed;
@@ -152,7 +154,7 @@
             BtnPagamentos.ImageList = imageListIcons;
             BtnPagamentos.Location = new Point(8, 127);
             BtnPagamentos.Name = "BtnPagamentos";
-            BtnPagamentos.Size = new Size(110, 50);
+            BtnPagamentos.Size = new Size(115, 50);
             BtnPagamentos.TabIndex = 2;
             BtnPagamentos.TabStop = false;
             BtnPagamentos.Text = "Vender";
@@ -163,6 +165,7 @@
             // BtnClientes
             // 
             BtnClientes.Cursor = Cursors.Hand;
+            BtnClientes.FlatAppearance.BorderSize = 3;
             BtnClientes.FlatStyle = FlatStyle.Flat;
             BtnClientes.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnClientes.ForeColor = Color.IndianRed;
@@ -171,7 +174,7 @@
             BtnClientes.ImageList = imageListIcons;
             BtnClientes.Location = new Point(8, 15);
             BtnClientes.Name = "BtnClientes";
-            BtnClientes.Size = new Size(110, 50);
+            BtnClientes.Size = new Size(115, 50);
             BtnClientes.TabIndex = 0;
             BtnClientes.TabStop = false;
             BtnClientes.Text = "Clientes";
@@ -187,14 +190,15 @@
             transparentPanel1.Controls.Add(BtnSair);
             transparentPanel1.Controls.Add(BtnPagamentos);
             transparentPanel1.Dock = DockStyle.Left;
-            transparentPanel1.Location = new Point(0, 24);
+            transparentPanel1.Location = new Point(0, 27);
             transparentPanel1.Name = "transparentPanel1";
-            transparentPanel1.Size = new Size(129, 717);
+            transparentPanel1.Size = new Size(129, 714);
             transparentPanel1.TabIndex = 7;
             // 
             // button1
             // 
             button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 3;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.IndianRed;
@@ -203,10 +207,10 @@
             button1.ImageList = imageListIcons;
             button1.Location = new Point(8, 71);
             button1.Name = "button1";
-            button1.Size = new Size(110, 50);
+            button1.Size = new Size(115, 50);
             button1.TabIndex = 1;
             button1.TabStop = false;
-            button1.Text = "Cád.Prods";
+            button1.Text = " Cád.Prods";
             button1.TextAlign = ContentAlignment.MiddleRight;
             button1.UseVisualStyleBackColor = true;
             // 
