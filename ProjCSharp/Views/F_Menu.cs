@@ -44,5 +44,11 @@ namespace SalSystem
             F_CadClientes f_CadClientes = new();
             f_CadClientes.ShowDialog();
         }
+
+        private void F_Menu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Application.Exit();            
+        }
     }
 }

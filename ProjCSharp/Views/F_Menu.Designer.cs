@@ -226,11 +226,13 @@
             Controls.Add(menuStrip1);
             DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             MainMenuStrip = menuStrip1;
             Name = "F_Menu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu [Sistema de Vendas]";
             Load += F_Menu_Load;
+            KeyDown += F_Menu_KeyDown;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel_Rodape.ResumeLayout(false);

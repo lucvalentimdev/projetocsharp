@@ -20,12 +20,7 @@ namespace SalSystem.Views
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            ProcessaLogin login = new(_stringConnect);
-            if (login.ValidaLogin(txtUsuario.Text, txtSenha.Text))
-            {
-                fechaLogin = true;
-                Close();
-            }
+            ExecutaLogin();
         }
 
         private void F_Login_Load(object sender, EventArgs e)
@@ -36,6 +31,28 @@ namespace SalSystem.Views
                 lbStatusConn.Text = "Status: Conectado!";
             else
                 lbStatusConn.Text = "Status: Desconectado! [Erro]";
+        }
+
+        private void F_Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                ExecutaLogin();
+        }
+
+        private void ExecutaLogin()         // Procedure para tratar o login //
+        {
+            ProcessaLogin login = new(_stringConnect);
+            if (login.ValidaLogin(txtUsuario.Text, txtSenha.Text))
+            {
+                fechaLogin = true;
+                Close();
+            }
+
+        }
+
+        private void F_Login_Resize(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
         }
     }
 }

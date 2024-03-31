@@ -113,11 +113,14 @@
             Controls.Add(txtUsuario);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             Name = "F_Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "login";
             FormClosing += F_Login_FormClosing;
             Load += F_Login_Load;
+            KeyDown += F_Login_KeyDown;
+            Resize += F_Login_Resize;
             ResumeLayout(false);
             PerformLayout();
         }
