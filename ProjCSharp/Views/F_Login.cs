@@ -39,7 +39,7 @@ namespace SalSystem.Views
                 ExecutaLogin();
         }
 
-        private void ExecutaLogin()         // Procedure para tratar o login //
+        private void ExecutaLogin()         // Procedure para tratar o login do usuário //
         {
             ProcessaLogin login = new(_stringConnect);
             if (login.ValidaLogin(txtUsuario.Text, txtSenha.Text))
@@ -47,7 +47,13 @@ namespace SalSystem.Views
                 fechaLogin = true;
                 Close();
             }
-
+            else
+            {
+                MessageBox.Show("Usuário não encontrado ou senha incorreta!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSenha.Text = string.Empty;
+                txtUsuario.Text = string.Empty;
+                txtUsuario.Focus();
+            }
         }
 
         private void F_Login_Resize(object sender, EventArgs e)

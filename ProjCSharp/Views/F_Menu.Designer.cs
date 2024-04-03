@@ -230,7 +230,7 @@
             MainMenuStrip = menuStrip1;
             Name = "F_Menu";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Menu [Sistema de Vendas]";
+            Text = "Menu SalSystem [Mini-PDV]";
             Load += F_Menu_Load;
             KeyDown += F_Menu_KeyDown;
             menuStrip1.ResumeLayout(false);

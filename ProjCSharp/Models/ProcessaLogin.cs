@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System.Windows.Forms.Design;
 
 namespace SalSystem.Models
 {
@@ -28,9 +29,8 @@ namespace SalSystem.Models
                 if (_rd.Read())
                     _valido = true;
             }
-            catch (MySqlException E)
+            catch (MySqlException)
             {
-                Console.WriteLine("Erro ao validar login: " + E.Message);
                 throw;
             }
            
