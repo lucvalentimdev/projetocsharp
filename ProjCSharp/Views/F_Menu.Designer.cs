@@ -63,33 +63,37 @@
             // sistemaToolStripMenuItem
             // 
             sistemaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sairToolStripMenuItem });
+            sistemaToolStripMenuItem.Image = (Image)resources.GetObject("sistemaToolStripMenuItem.Image");
             sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
-            sistemaToolStripMenuItem.Size = new Size(70, 23);
+            sistemaToolStripMenuItem.Size = new Size(86, 23);
             sistemaToolStripMenuItem.Text = "Sistema";
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(102, 24);
+            sairToolStripMenuItem.Size = new Size(180, 24);
             sairToolStripMenuItem.Text = "Sair";
             // 
             // atualizaçõesToolStripMenuItem
             // 
+            atualizaçõesToolStripMenuItem.Image = (Image)resources.GetObject("atualizaçõesToolStripMenuItem.Image");
             atualizaçõesToolStripMenuItem.Name = "atualizaçõesToolStripMenuItem";
-            atualizaçõesToolStripMenuItem.Size = new Size(100, 23);
+            atualizaçõesToolStripMenuItem.Size = new Size(116, 23);
             atualizaçõesToolStripMenuItem.Text = "Atualizações";
             // 
             // ajudaToolStripMenuItem
             // 
+            ajudaToolStripMenuItem.Image = (Image)resources.GetObject("ajudaToolStripMenuItem.Image");
             ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
-            ajudaToolStripMenuItem.Size = new Size(57, 23);
+            ajudaToolStripMenuItem.Size = new Size(73, 23);
             ajudaToolStripMenuItem.Text = "Ajuda";
             // 
             // FecharToolStripMenuItem
             // 
+            FecharToolStripMenuItem.Image = (Image)resources.GetObject("FecharToolStripMenuItem.Image");
             FecharToolStripMenuItem.Name = "FecharToolStripMenuItem";
-            FecharToolStripMenuItem.Size = new Size(62, 23);
-            FecharToolStripMenuItem.Text = "Fechar";
+            FecharToolStripMenuItem.Size = new Size(88, 23);
+            FecharToolStripMenuItem.Text = "Encerrar";
             FecharToolStripMenuItem.Click += FecharToolStripMenuItem_Click;
             // 
             // imageListIcons
