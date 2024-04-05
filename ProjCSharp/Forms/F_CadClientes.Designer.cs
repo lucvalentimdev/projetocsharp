@@ -74,12 +74,12 @@
             // BtnAdicionar
             // 
             BtnAdicionar.Cursor = Cursors.Hand;
-            BtnAdicionar.FlatAppearance.BorderSize = 2;
+            BtnAdicionar.FlatAppearance.BorderSize = 0;
             BtnAdicionar.FlatStyle = FlatStyle.Flat;
             BtnAdicionar.ForeColor = Color.LimeGreen;
             BtnAdicionar.ImageIndex = 4;
             BtnAdicionar.ImageList = imageListIcons;
-            BtnAdicionar.Location = new Point(262, 8);
+            BtnAdicionar.Location = new Point(288, 8);
             BtnAdicionar.Name = "BtnAdicionar";
             BtnAdicionar.Size = new Size(70, 40);
             BtnAdicionar.TabIndex = 5;
@@ -101,12 +101,13 @@
             // BtnConfirmar
             // 
             BtnConfirmar.Cursor = Cursors.Hand;
-            BtnConfirmar.FlatAppearance.BorderSize = 2;
+            BtnConfirmar.Enabled = false;
+            BtnConfirmar.FlatAppearance.BorderSize = 0;
             BtnConfirmar.FlatStyle = FlatStyle.Flat;
             BtnConfirmar.ForeColor = Color.LimeGreen;
             BtnConfirmar.ImageIndex = 3;
             BtnConfirmar.ImageList = imageListIcons;
-            BtnConfirmar.Location = new Point(338, 8);
+            BtnConfirmar.Location = new Point(364, 8);
             BtnConfirmar.Name = "BtnConfirmar";
             BtnConfirmar.Size = new Size(70, 40);
             BtnConfirmar.TabIndex = 4;
@@ -115,12 +116,12 @@
             // BtnConsultar
             // 
             BtnConsultar.Cursor = Cursors.Hand;
-            BtnConsultar.FlatAppearance.BorderSize = 2;
+            BtnConsultar.FlatAppearance.BorderSize = 0;
             BtnConsultar.FlatStyle = FlatStyle.Flat;
             BtnConsultar.ForeColor = Color.DodgerBlue;
             BtnConsultar.ImageIndex = 1;
             BtnConsultar.ImageList = imageListIcons;
-            BtnConsultar.Location = new Point(414, 8);
+            BtnConsultar.Location = new Point(440, 8);
             BtnConsultar.Name = "BtnConsultar";
             BtnConsultar.Size = new Size(70, 40);
             BtnConsultar.TabIndex = 3;
@@ -130,12 +131,13 @@
             // 
             BtnCancelar.BackColor = Color.Transparent;
             BtnCancelar.Cursor = Cursors.Hand;
-            BtnCancelar.FlatAppearance.BorderSize = 2;
+            BtnCancelar.Enabled = false;
+            BtnCancelar.FlatAppearance.BorderSize = 0;
             BtnCancelar.FlatStyle = FlatStyle.Flat;
             BtnCancelar.ForeColor = Color.DarkRed;
             BtnCancelar.ImageIndex = 0;
             BtnCancelar.ImageList = imageListIcons;
-            BtnCancelar.Location = new Point(490, 8);
+            BtnCancelar.Location = new Point(516, 8);
             BtnCancelar.Name = "BtnCancelar";
             BtnCancelar.Size = new Size(70, 40);
             BtnCancelar.TabIndex = 2;
@@ -146,12 +148,12 @@
             BtnFechar.BackColor = Color.Transparent;
             BtnFechar.BackgroundImageLayout = ImageLayout.Center;
             BtnFechar.Cursor = Cursors.Hand;
-            BtnFechar.FlatAppearance.BorderSize = 2;
+            BtnFechar.FlatAppearance.BorderSize = 0;
             BtnFechar.FlatStyle = FlatStyle.Flat;
             BtnFechar.ForeColor = Color.DarkRed;
             BtnFechar.ImageIndex = 5;
             BtnFechar.ImageList = imageListIcons;
-            BtnFechar.Location = new Point(566, 8);
+            BtnFechar.Location = new Point(592, 8);
             BtnFechar.Name = "BtnFechar";
             BtnFechar.RightToLeft = RightToLeft.No;
             BtnFechar.Size = new Size(70, 40);

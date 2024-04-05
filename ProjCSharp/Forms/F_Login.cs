@@ -1,4 +1,4 @@
-﻿using SalSystem.Models;
+﻿using SalSystem.Controllers;
 
 namespace SalSystem.Views
 {

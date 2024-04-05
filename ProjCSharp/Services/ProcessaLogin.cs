@@ -1,9 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Windows.Forms.Design;
 
-namespace SalSystem.Models
+namespace SalSystem.Controllers
 {
-    internal class ProcessaLogin (string ConnectionString)
+    internal class ProcessaLogin(string ConnectionString)
     {
         public bool ValidaLogin(string username, string password)
         {
@@ -33,7 +33,7 @@ namespace SalSystem.Models
             {
                 throw;
             }
-           
+
             return _valido;
         }
     }
