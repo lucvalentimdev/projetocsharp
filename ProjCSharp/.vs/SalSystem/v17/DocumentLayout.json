@@ -3,40 +3,36 @@
   "WorkspaceRootPath": "C:\\projetocsharp\\ProjCSharp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\services\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:services\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\forms\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\models\\buscadorcep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:models\\buscadorcep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\services\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:services\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_cadclientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_cadclientes.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,52 +50,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DataController.cs",
-              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Services\\DataController.cs",
-              "RelativeDocumentMoniker": "Services\\DataController.cs",
-              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Services\\DataController.cs",
-              "RelativeToolTip": "Services\\DataController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "DocumentIndex": 2,
+              "Title": "BuscadorCEP.cs",
+              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Models\\BuscadorCEP.cs",
+              "RelativeDocumentMoniker": "Models\\BuscadorCEP.cs",
+              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Models\\BuscadorCEP.cs",
+              "RelativeToolTip": "Models\\BuscadorCEP.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T00:08:47.2Z",
+              "WhenOpened": "2024-04-06T00:04:33.046Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Clientes.cs",
-              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Models\\Clientes.cs",
-              "RelativeDocumentMoniker": "Models\\Clientes.cs",
-              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Models\\Clientes.cs",
-              "RelativeToolTip": "Models\\Clientes.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T00:06:35.466Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "F_CadClientes.cs [Projeto]",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_CadClientes.cs",
               "RelativeDocumentMoniker": "Forms\\F_CadClientes.cs",
               "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_CadClientes.cs [Projeto]",
               "RelativeToolTip": "Forms\\F_CadClientes.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T21:40:38.602Z"
+              "WhenOpened": "2024-04-05T23:28:25.83Z",
+              "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
+              "Title": "DataController.cs",
+              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Services\\DataController.cs",
+              "RelativeDocumentMoniker": "Services\\DataController.cs",
+              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Services\\DataController.cs",
+              "RelativeToolTip": "Services\\DataController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-05T00:08:47.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "F_CadClientes.cs",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_CadClientes.cs",
               "RelativeDocumentMoniker": "Forms\\F_CadClientes.cs",
               "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_CadClientes.cs",
               "RelativeToolTip": "Forms\\F_CadClientes.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAApwBcAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T21:38:57.244Z"
+              "WhenOpened": "2024-03-29T21:38:57.244Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -116,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "F_Menu.cs [Projeto]",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Menu.cs",
               "RelativeDocumentMoniker": "Forms\\F_Menu.cs",
@@ -128,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "F_Login.cs",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Login.cs",
               "RelativeDocumentMoniker": "Forms\\F_Login.cs",
@@ -136,7 +134,8 @@
               "RelativeToolTip": "Forms\\F_Login.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T23:24:26.987Z"
+              "WhenOpened": "2024-03-22T23:24:26.987Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -147,19 +146,8 @@
               "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Login.cs [Projeto]",
               "RelativeToolTip": "Forms\\F_Login.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T23:21:56.472Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "F_CadClientes.Designer.cs",
-              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_CadClientes.Designer.cs",
-              "RelativeDocumentMoniker": "Forms\\F_CadClientes.Designer.cs",
-              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_CadClientes.Designer.cs",
-              "RelativeToolTip": "Forms\\F_CadClientes.Designer.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAIwFsAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T22:11:48.558Z"
+              "WhenOpened": "2024-03-22T23:21:56.472Z",
+              "EditorCaption": " [Projeto]"
             }
           ]
         }
