@@ -1,6 +1,6 @@
 ﻿namespace SalSystem.Models
 {
-    internal class Clientes
+    internal class Cliente
     {
 
 
