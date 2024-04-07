@@ -1,14 +1,16 @@
-﻿public class CepService
+﻿public class CepService : IDisposable
 {
     private readonly HttpClient _httpClient;
 
     public CepService()
     {
-        _httpClient = new HttpClient();
-        _httpClient.BaseAddress = new Uri("https://viacep.com.br/");
+        _httpClient = new HttpClient
+        {
+            BaseAddress = new Uri("https://viacep.com.br/")
+        };
     }
 
-    public async Task<string> GetCityByCepAsync(string cep)
+    public async Task<(string City, string State)> GetCityAndStateByCepAsync(string cep)
     {
         try
         {
@@ -17,28 +19,35 @@
 
             string responseBody = await response.Content.ReadAsStringAsync();
 
-            // Desserializar o JSON para extrair o nome da cidade (localidade)
+            // Desserializar o JSON para extrair o nome da cidade (localidade) e estado (UF) //
             dynamic addressData = Newtonsoft.Json.JsonConvert.DeserializeObject(responseBody);
             string cityName = addressData.localidade;
+            string state = addressData.uf;
 
             if (!string.IsNullOrEmpty(cityName))
             {
-                return $"Município: {cityName}";
+                return (cityName, state);
             }
             else
             {
-                return "Município não encontrado para o CEP fornecido.";
+                return ("Município não encontrado para o CEP fornecido.", "");
             }
         }
-        catch (HttpRequestException ex)
+        catch (HttpRequestException e)
         {
-            return $"Erro na requisição HTTP: {ex.Message}";
+            return ($"Erro na requisição HTTP: {e.Message}", "");
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
-            return $"Erro ao processar resposta: {ex.Message}";
+            return ($"Erro ao processar resposta: {e.Message}", "");
         }
     }
+
+    public void Dispose()
+    {
+        _httpClient.Dispose();
+    }
 }
+
 
 //=================================================================================================================================================//

@@ -55,6 +55,7 @@
             textBox7 = new TextBox();
             rtfObservacao = new RichTextBox();
             BtnEdtEndereco = new Button();
+            cboUF = new ComboBox();
             transparentPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -186,17 +187,20 @@
             // TxtCEP
             // 
             TxtCEP.Location = new Point(30, 172);
+            TxtCEP.MaxLength = 8;
             TxtCEP.Name = "TxtCEP";
-            TxtCEP.Size = new Size(143, 23);
+            TxtCEP.Size = new Size(101, 23);
             TxtCEP.TabIndex = 5;
+            TxtCEP.KeyPress += TxtCEP_KeyPress;
             TxtCEP.Leave += TxtCEP_Leave;
             // 
             // txtCidade
             // 
-            txtCidade.Enabled = false;
-            txtCidade.Location = new Point(179, 172);
+            txtCidade.BackColor = Color.LightGray;
+            txtCidade.Location = new Point(137, 172);
             txtCidade.Name = "txtCidade";
-            txtCidade.Size = new Size(293, 23);
+            txtCidade.ReadOnly = true;
+            txtCidade.Size = new Size(335, 23);
             txtCidade.TabIndex = 6;
             // 
             // txtLogradouro
@@ -255,7 +259,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(179, 152);
+            label5.Location = new Point(137, 152);
             label5.Name = "label5";
             label5.Size = new Size(52, 17);
             label5.TabIndex = 12;
@@ -329,11 +333,23 @@
             BtnEdtEndereco.ForeColor = Color.Transparent;
             BtnEdtEndereco.ImageIndex = 2;
             BtnEdtEndereco.ImageList = imageListIcons;
-            BtnEdtEndereco.Location = new Point(476, 162);
+            BtnEdtEndereco.Location = new Point(571, 164);
             BtnEdtEndereco.Name = "BtnEdtEndereco";
             BtnEdtEndereco.Size = new Size(36, 36);
             BtnEdtEndereco.TabIndex = 19;
             BtnEdtEndereco.UseVisualStyleBackColor = false;
+            // 
+            // cboUF
+            // 
+            cboUF.BackColor = Color.LightGray;
+            cboUF.Cursor = Cursors.Hand;
+            cboUF.Enabled = false;
+            cboUF.FormattingEnabled = true;
+            cboUF.Items.AddRange(new object[] { "", "AL ", "AP ", "AM ", "BA ", "CE ", "DF ", "ES ", "GO ", "MA ", "MT ", "MS ", "MG ", "PA ", "PB ", "PR ", "PE ", "PI ", "RJ ", "RN ", "RS ", "RO ", "RR ", "SC ", "SP ", "SE ", "TO " });
+            cboUF.Location = new Point(478, 172);
+            cboUF.Name = "cboUF";
+            cboUF.Size = new Size(87, 23);
+            cboUF.TabIndex = 20;
             // 
             // F_CadClientes
             // 
@@ -342,6 +358,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(770, 543);
+            Controls.Add(cboUF);
             Controls.Add(BtnEdtEndereco);
             Controls.Add(rtfObservacao);
             Controls.Add(textBox7);
@@ -399,5 +416,6 @@
         private TextBox textBox7;
         private RichTextBox rtfObservacao;
         private Button BtnEdtEndereco;
+        private ComboBox cboUF;
     }
 }
