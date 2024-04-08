@@ -52,7 +52,7 @@
             label7 = new Label();
             label8 = new Label();
             chkNaoInfoCPF = new CheckBox();
-            textBox7 = new TextBox();
+            txtNumeroResid = new TextBox();
             rtfObservacao = new RichTextBox();
             BtnEdtEndereco = new Button();
             cboUF = new ComboBox();
@@ -77,6 +77,8 @@
             // 
             BtnAdicionar.Cursor = Cursors.Hand;
             BtnAdicionar.FlatAppearance.BorderSize = 0;
+            BtnAdicionar.FlatAppearance.MouseDownBackColor = Color.LightGray;
+            BtnAdicionar.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             BtnAdicionar.FlatStyle = FlatStyle.Flat;
             BtnAdicionar.ForeColor = Color.LimeGreen;
             BtnAdicionar.ImageIndex = 4;
@@ -105,6 +107,8 @@
             BtnConfirmar.Cursor = Cursors.Hand;
             BtnConfirmar.Enabled = false;
             BtnConfirmar.FlatAppearance.BorderSize = 0;
+            BtnConfirmar.FlatAppearance.MouseDownBackColor = Color.LightGray;
+            BtnConfirmar.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             BtnConfirmar.FlatStyle = FlatStyle.Flat;
             BtnConfirmar.ForeColor = Color.LimeGreen;
             BtnConfirmar.ImageIndex = 3;
@@ -119,6 +123,8 @@
             // 
             BtnConsultar.Cursor = Cursors.Hand;
             BtnConsultar.FlatAppearance.BorderSize = 0;
+            BtnConsultar.FlatAppearance.MouseDownBackColor = Color.LightGray;
+            BtnConsultar.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             BtnConsultar.FlatStyle = FlatStyle.Flat;
             BtnConsultar.ForeColor = Color.DodgerBlue;
             BtnConsultar.ImageIndex = 1;
@@ -135,6 +141,8 @@
             BtnCancelar.Cursor = Cursors.Hand;
             BtnCancelar.Enabled = false;
             BtnCancelar.FlatAppearance.BorderSize = 0;
+            BtnCancelar.FlatAppearance.MouseDownBackColor = Color.LightGray;
+            BtnCancelar.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             BtnCancelar.FlatStyle = FlatStyle.Flat;
             BtnCancelar.ForeColor = Color.DarkRed;
             BtnCancelar.ImageIndex = 0;
@@ -144,6 +152,7 @@
             BtnCancelar.Size = new Size(70, 40);
             BtnCancelar.TabIndex = 2;
             BtnCancelar.UseVisualStyleBackColor = false;
+            BtnCancelar.Click += BtnCancelar_Click;
             // 
             // BtnFechar
             // 
@@ -151,6 +160,8 @@
             BtnFechar.BackgroundImageLayout = ImageLayout.Center;
             BtnFechar.Cursor = Cursors.Hand;
             BtnFechar.FlatAppearance.BorderSize = 0;
+            BtnFechar.FlatAppearance.MouseDownBackColor = Color.LightGray;
+            BtnFechar.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             BtnFechar.FlatStyle = FlatStyle.Flat;
             BtnFechar.ForeColor = Color.DarkRed;
             BtnFechar.ImageIndex = 5;
@@ -197,6 +208,8 @@
             // txtCidade
             // 
             txtCidade.BackColor = Color.LightGray;
+            txtCidade.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            txtCidade.ForeColor = SystemColors.GrayText;
             txtCidade.Location = new Point(137, 172);
             txtCidade.Name = "txtCidade";
             txtCidade.ReadOnly = true;
@@ -310,13 +323,13 @@
             chkNaoInfoCPF.Text = "Não Informar";
             chkNaoInfoCPF.UseVisualStyleBackColor = false;
             // 
-            // textBox7
+            // txtNumeroResid
             // 
-            textBox7.Location = new Point(385, 218);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(87, 23);
-            textBox7.TabIndex = 17;
-            textBox7.KeyPress += textBox7_KeyPress;
+            txtNumeroResid.Location = new Point(385, 218);
+            txtNumeroResid.Name = "txtNumeroResid";
+            txtNumeroResid.Size = new Size(87, 23);
+            txtNumeroResid.TabIndex = 17;
+            txtNumeroResid.KeyPress += textBox7_KeyPress;
             // 
             // rtfObservacao
             // 
@@ -329,7 +342,10 @@
             // BtnEdtEndereco
             // 
             BtnEdtEndereco.BackColor = Color.Transparent;
+            BtnEdtEndereco.Cursor = Cursors.Hand;
             BtnEdtEndereco.FlatAppearance.BorderSize = 0;
+            BtnEdtEndereco.FlatAppearance.MouseDownBackColor = Color.FromArgb(195, 195, 195);
+            BtnEdtEndereco.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             BtnEdtEndereco.FlatStyle = FlatStyle.Flat;
             BtnEdtEndereco.ForeColor = Color.Transparent;
             BtnEdtEndereco.ImageIndex = 2;
@@ -339,12 +355,15 @@
             BtnEdtEndereco.Size = new Size(36, 36);
             BtnEdtEndereco.TabIndex = 19;
             BtnEdtEndereco.UseVisualStyleBackColor = false;
+            BtnEdtEndereco.Click += BtnEdtEndereco_Click;
             // 
             // cboUF
             // 
             cboUF.BackColor = Color.LightGray;
             cboUF.Cursor = Cursors.Hand;
             cboUF.Enabled = false;
+            cboUF.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            cboUF.ForeColor = SystemColors.GrayText;
             cboUF.FormattingEnabled = true;
             cboUF.Items.AddRange(new object[] { "", "AL ", "AP ", "AM ", "BA ", "CE ", "DF ", "ES ", "GO ", "MA ", "MT ", "MS ", "MG ", "PA ", "PB ", "PR ", "PE ", "PI ", "RJ ", "RN ", "RS ", "RO ", "RR ", "SC ", "SP ", "SE ", "TO " });
             cboUF.Location = new Point(478, 172);
@@ -362,7 +381,7 @@
             Controls.Add(cboUF);
             Controls.Add(BtnEdtEndereco);
             Controls.Add(rtfObservacao);
-            Controls.Add(textBox7);
+            Controls.Add(txtNumeroResid);
             Controls.Add(chkNaoInfoCPF);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -414,7 +433,7 @@
         private Label label7;
         private Label label8;
         private CheckBox chkNaoInfoCPF;
-        private TextBox textBox7;
+        private TextBox txtNumeroResid;
         private RichTextBox rtfObservacao;
         private Button BtnEdtEndereco;
         private ComboBox cboUF;
