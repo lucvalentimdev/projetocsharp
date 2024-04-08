@@ -1,9 +1,11 @@
-﻿using System.Runtime.ConstrainedExecution;
+﻿using SalSystem.Services;
 
 namespace SalSystem.Views
 {
     public partial class F_CadClientes : Form
     {
+        readonly Utilities utilities = new();
+
         public F_CadClientes()
         {
             InitializeComponent();
@@ -35,10 +37,12 @@ namespace SalSystem.Views
 
         private void TxtCEP_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;               // Ignora a tecla pressionada se não for um número //
-            }
+            utilities.NumbersOnly(e);
+        }
+
+        private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            utilities.NumbersOnly(e);
         }
     }
 }

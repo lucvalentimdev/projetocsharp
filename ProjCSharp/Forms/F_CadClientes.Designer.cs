@@ -316,6 +316,7 @@
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(87, 23);
             textBox7.TabIndex = 17;
+            textBox7.KeyPress += textBox7_KeyPress;
             // 
             // rtfObservacao
             // 

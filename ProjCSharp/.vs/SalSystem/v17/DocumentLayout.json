@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\projetocsharp\\ProjCSharp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\models\\itemvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:models\\itemvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\models\\venda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:models\\venda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\services\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:services\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_cadclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\models\\itensvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:models\\itensvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,41 +54,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Utilities.cs",
+              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Services\\Utilities.cs",
+              "RelativeDocumentMoniker": "Services\\Utilities.cs",
+              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Services\\Utilities.cs",
+              "RelativeToolTip": "Services\\Utilities.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T23:52:39.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "Models\\Cliente.cs",
+              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Models\\Cliente.cs",
+              "RelativeToolTip": "Models\\Cliente.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T23:27:32.917Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ItemVenda.cs",
-              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Models\\ItemVenda.cs",
-              "RelativeDocumentMoniker": "Models\\ItemVenda.cs",
-              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Models\\ItemVenda.cs",
-              "RelativeToolTip": "Models\\ItemVenda.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "DocumentIndex": 5,
+              "Title": "ItensVenda.cs",
+              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Models\\ItensVenda.cs",
+              "RelativeDocumentMoniker": "Models\\ItensVenda.cs",
+              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Models\\ItensVenda.cs",
+              "RelativeToolTip": "Models\\ItensVenda.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-07T17:44:14.837Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Venda.cs",
-              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Models\\Venda.cs",
-              "RelativeDocumentMoniker": "Models\\Venda.cs",
-              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Models\\Venda.cs",
-              "RelativeToolTip": "Models\\Venda.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-07T17:44:01.802Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Produto.cs",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Models\\Produto.cs",
               "RelativeDocumentMoniker": "Models\\Produto.cs",
@@ -97,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "F_CadClientes.cs [Projeto]",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_CadClientes.cs",
               "RelativeDocumentMoniker": "Forms\\F_CadClientes.cs",
@@ -109,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "DataController.cs",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Services\\DataController.cs",
               "RelativeDocumentMoniker": "Services\\DataController.cs",
@@ -121,19 +138,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "F_CadClientes.cs",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_CadClientes.cs",
               "RelativeDocumentMoniker": "Forms\\F_CadClientes.cs",
               "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_CadClientes.cs",
               "RelativeToolTip": "Forms\\F_CadClientes.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAIA9wCIAAAAAAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAIAwwCUAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T21:38:57.244Z"
+              "WhenOpened": "2024-03-29T21:38:57.244Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "F_Menu.cs",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Menu.cs",
               "RelativeDocumentMoniker": "Forms\\F_Menu.cs",
@@ -145,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "F_Menu.cs [Projeto]",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Menu.cs",
               "RelativeDocumentMoniker": "Forms\\F_Menu.cs",
@@ -156,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "F_Login.cs",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Login.cs",
               "RelativeDocumentMoniker": "Forms\\F_Login.cs",
@@ -168,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "F_Login.cs [Projeto]",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Login.cs",
               "RelativeDocumentMoniker": "Forms\\F_Login.cs",
