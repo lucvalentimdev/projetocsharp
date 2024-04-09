@@ -40,7 +40,7 @@
             txtNome = new TextBox();
             txtCPF = new TextBox();
             txtTelefone = new TextBox();
-            TxtCEP = new TextBox();
+            txtCEP = new TextBox();
             txtCidade = new TextBox();
             txtLogradouro = new TextBox();
             label1 = new Label();
@@ -56,6 +56,10 @@
             rtfObservacao = new RichTextBox();
             BtnEdtEndereco = new Button();
             cboUF = new ComboBox();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
             transparentPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,9 +72,9 @@
             transparentPanel1.Controls.Add(BtnCancelar);
             transparentPanel1.Controls.Add(BtnFechar);
             transparentPanel1.Dock = DockStyle.Bottom;
-            transparentPanel1.Location = new Point(0, 486);
+            transparentPanel1.Location = new Point(0, 504);
             transparentPanel1.Name = "transparentPanel1";
-            transparentPanel1.Size = new Size(770, 57);
+            transparentPanel1.Size = new Size(784, 57);
             transparentPanel1.TabIndex = 1;
             // 
             // BtnAdicionar
@@ -88,6 +92,7 @@
             BtnAdicionar.Size = new Size(70, 40);
             BtnAdicionar.TabIndex = 5;
             BtnAdicionar.UseVisualStyleBackColor = true;
+            BtnAdicionar.Click += BtnAdicionar_Click;
             // 
             // imageListIcons
             // 
@@ -176,6 +181,8 @@
             // 
             // txtNome
             // 
+            txtNome.BackColor = Color.LightGray;
+            txtNome.Enabled = false;
             txtNome.Location = new Point(30, 34);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(442, 23);
@@ -183,41 +190,51 @@
             // 
             // txtCPF
             // 
+            txtCPF.BackColor = Color.LightGray;
+            txtCPF.Enabled = false;
             txtCPF.Location = new Point(30, 80);
             txtCPF.Name = "txtCPF";
             txtCPF.Size = new Size(177, 23);
             txtCPF.TabIndex = 3;
+            txtCPF.KeyPress += txtCPF_KeyPress;
             // 
             // txtTelefone
             // 
+            txtTelefone.BackColor = Color.LightGray;
+            txtTelefone.Enabled = false;
             txtTelefone.Location = new Point(30, 126);
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(177, 23);
             txtTelefone.TabIndex = 4;
+            txtTelefone.KeyPress += txtTelefone_KeyPress;
             // 
-            // TxtCEP
+            // txtCEP
             // 
-            TxtCEP.Location = new Point(30, 172);
-            TxtCEP.MaxLength = 8;
-            TxtCEP.Name = "TxtCEP";
-            TxtCEP.Size = new Size(101, 23);
-            TxtCEP.TabIndex = 5;
-            TxtCEP.KeyPress += TxtCEP_KeyPress;
-            TxtCEP.Leave += TxtCEP_Leave;
+            txtCEP.BackColor = Color.LightGray;
+            txtCEP.Enabled = false;
+            txtCEP.Location = new Point(213, 126);
+            txtCEP.MaxLength = 8;
+            txtCEP.Name = "txtCEP";
+            txtCEP.Size = new Size(129, 23);
+            txtCEP.TabIndex = 5;
+            txtCEP.KeyPress += txtCEP_KeyPress;
+            txtCEP.Leave += TxtCEP_Leave;
             // 
             // txtCidade
             // 
             txtCidade.BackColor = Color.LightGray;
+            txtCidade.Enabled = false;
             txtCidade.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             txtCidade.ForeColor = SystemColors.GrayText;
-            txtCidade.Location = new Point(137, 172);
+            txtCidade.Location = new Point(30, 172);
             txtCidade.Name = "txtCidade";
-            txtCidade.ReadOnly = true;
-            txtCidade.Size = new Size(335, 23);
+            txtCidade.Size = new Size(349, 23);
             txtCidade.TabIndex = 6;
             // 
             // txtLogradouro
             // 
+            txtLogradouro.BackColor = Color.LightGray;
+            txtLogradouro.Enabled = false;
             txtLogradouro.Location = new Point(30, 218);
             txtLogradouro.Name = "txtLogradouro";
             txtLogradouro.Size = new Size(349, 23);
@@ -250,7 +267,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(388, 198);
+            label3.Location = new Point(385, 198);
             label3.Name = "label3";
             label3.Size = new Size(29, 17);
             label3.TabIndex = 10;
@@ -272,7 +289,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(137, 152);
+            label5.Location = new Point(30, 152);
             label5.Name = "label5";
             label5.Size = new Size(52, 17);
             label5.TabIndex = 12;
@@ -283,7 +300,7 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(30, 152);
+            label6.Location = new Point(213, 106);
             label6.Name = "label6";
             label6.Size = new Size(34, 17);
             label6.TabIndex = 13;
@@ -315,24 +332,28 @@
             // 
             chkNaoInfoCPF.AutoSize = true;
             chkNaoInfoCPF.BackColor = Color.Transparent;
-            chkNaoInfoCPF.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            chkNaoInfoCPF.Font = new Font("Segoe UI", 8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             chkNaoInfoCPF.Location = new Point(213, 84);
             chkNaoInfoCPF.Name = "chkNaoInfoCPF";
-            chkNaoInfoCPF.Size = new Size(96, 19);
+            chkNaoInfoCPF.Size = new Size(96, 17);
             chkNaoInfoCPF.TabIndex = 16;
             chkNaoInfoCPF.Text = "Não Informar";
             chkNaoInfoCPF.UseVisualStyleBackColor = false;
             // 
             // txtNumeroResid
             // 
+            txtNumeroResid.BackColor = Color.LightGray;
+            txtNumeroResid.Enabled = false;
             txtNumeroResid.Location = new Point(385, 218);
             txtNumeroResid.Name = "txtNumeroResid";
             txtNumeroResid.Size = new Size(87, 23);
             txtNumeroResid.TabIndex = 17;
-            txtNumeroResid.KeyPress += textBox7_KeyPress;
+            txtNumeroResid.KeyPress += txtNumeroResid_KeyPress;
             // 
             // rtfObservacao
             // 
+            rtfObservacao.BackColor = Color.LightGray;
+            rtfObservacao.Enabled = false;
             rtfObservacao.Location = new Point(30, 264);
             rtfObservacao.Name = "rtfObservacao";
             rtfObservacao.Size = new Size(577, 216);
@@ -350,7 +371,7 @@
             BtnEdtEndereco.ForeColor = Color.Transparent;
             BtnEdtEndereco.ImageIndex = 2;
             BtnEdtEndereco.ImageList = imageListIcons;
-            BtnEdtEndereco.Location = new Point(571, 164);
+            BtnEdtEndereco.Location = new Point(478, 164);
             BtnEdtEndereco.Name = "BtnEdtEndereco";
             BtnEdtEndereco.Size = new Size(36, 36);
             BtnEdtEndereco.TabIndex = 19;
@@ -366,10 +387,54 @@
             cboUF.ForeColor = SystemColors.GrayText;
             cboUF.FormattingEnabled = true;
             cboUF.Items.AddRange(new object[] { "", "AL ", "AP ", "AM ", "BA ", "CE ", "DF ", "ES ", "GO ", "MA ", "MT ", "MS ", "MG ", "PA ", "PB ", "PR ", "PE ", "PI ", "RJ ", "RN ", "RS ", "RO ", "RR ", "SC ", "SP ", "SE ", "TO " });
-            cboUF.Location = new Point(478, 172);
+            cboUF.Location = new Point(385, 172);
             cboUF.Name = "cboUF";
             cboUF.Size = new Size(87, 23);
             cboUF.TabIndex = 20;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Segoe UI", 7F, FontStyle.Italic);
+            label9.Location = new Point(70, 65);
+            label9.Name = "label9";
+            label9.Size = new Size(89, 12);
+            label9.TabIndex = 21;
+            label9.Text = "*Somente números";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Segoe UI", 7F, FontStyle.Italic);
+            label10.Location = new Point(97, 111);
+            label10.Name = "label10";
+            label10.Size = new Size(89, 12);
+            label10.TabIndex = 22;
+            label10.Text = "*Somente números";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Font = new Font("Segoe UI", 7F, FontStyle.Italic);
+            label11.Location = new Point(253, 111);
+            label11.Name = "label11";
+            label11.Size = new Size(89, 12);
+            label11.TabIndex = 23;
+            label11.Text = "*Somente números";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(385, 152);
+            label12.Name = "label12";
+            label12.Size = new Size(27, 17);
+            label12.TabIndex = 24;
+            label12.Text = "UF:";
             // 
             // F_CadClientes
             // 
@@ -377,7 +442,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(770, 543);
+            ClientSize = new Size(784, 561);
+            Controls.Add(label12);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
             Controls.Add(cboUF);
             Controls.Add(BtnEdtEndereco);
             Controls.Add(rtfObservacao);
@@ -393,7 +462,7 @@
             Controls.Add(label1);
             Controls.Add(txtLogradouro);
             Controls.Add(txtCidade);
-            Controls.Add(TxtCEP);
+            Controls.Add(txtCEP);
             Controls.Add(txtTelefone);
             Controls.Add(txtCPF);
             Controls.Add(txtNome);
@@ -421,7 +490,7 @@
         private TextBox txtNome;
         private TextBox txtCPF;
         private TextBox txtTelefone;
-        private TextBox TxtCEP;
+        private TextBox txtCEP;
         private TextBox txtCidade;
         private TextBox txtLogradouro;
         private Label label1;
@@ -437,5 +506,9 @@
         private RichTextBox rtfObservacao;
         private Button BtnEdtEndereco;
         private ComboBox cboUF;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
     }
 }

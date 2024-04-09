@@ -9,14 +9,48 @@ namespace SalSystem.Views
             InitializeComponent();
         }
 
-        private void BtnFechar_Click(object sender, EventArgs e)
+        private void ColorsController(Color _color)
         {
-            Close();
+            txtNome.BackColor = _color;
+            txtCPF.BackColor = _color;
+            txtTelefone.BackColor = _color;
+            txtLogradouro.BackColor = _color;
+            txtNumeroResid.BackColor = _color;
+            txtCEP.BackColor = _color;
+            rtfObservacao.BackColor = _color;
         }
 
-        private void TxtCEP_Leave(object sender, EventArgs e)
+        private void EnabledController(bool _b)
         {
-            _ = GetCEP(TxtCEP.Text);
+            txtNome.Enabled = _b;
+            txtCPF.Enabled = _b;
+            txtTelefone.Enabled = _b;
+            txtLogradouro.Enabled = _b;
+            txtNumeroResid.Enabled = _b;
+            rtfObservacao.Enabled = _b;
+            txtCEP.Enabled = _b;
+            BtnConfirmar.Enabled = _b;
+            BtnCancelar.Enabled = _b;
+        }
+
+        private void ClearScrem()
+        {
+            txtCidade.ReadOnly = true;                  //--- Tratamentos diferenciados ---//
+            txtCidade.BackColor = Color.LightGray;
+            cboUF.Enabled = false;
+            cboUF.BackColor = Color.LightGray;
+            chkNaoInfoCPF.Checked = false;
+
+            txtNome.Text = String.Empty;                //--- Limpeza de campos  ---//
+            txtCPF.Text = String.Empty;
+            txtTelefone.Text = String.Empty;
+            txtCidade.Text = String.Empty;
+            txtLogradouro.Text = String.Empty;
+            txtNumeroResid.Text = String.Empty;
+            cboUF.Text = String.Empty;
+            rtfObservacao.Text = String.Empty;
+
+            EnabledController(false);
         }
 
         private async Task GetCEP(string _cep)
@@ -34,12 +68,25 @@ namespace SalSystem.Views
                 MessageBox.Show("Ocorreu um erro ao consultar o CEP!", "ERRO!");
         }
 
-        private void TxtCEP_KeyPress(object sender, KeyPressEventArgs e)
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            ClearScrem();
+            EnabledController(false);
+            ColorsController(Color.LightGray);
+            BtnAdicionar.Enabled = true;
+        }
+
+        private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.NumbersOnly(e);
         }
 
-        private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtCEP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.NumbersOnly(e);
+        }
+
+        private void txtNumeroResid_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.NumbersOnly(e);
         }
@@ -52,30 +99,26 @@ namespace SalSystem.Views
             cboUF.BackColor = Color.White;
         }
 
-        private void ClearScrem()
+        private void BtnFechar_Click(object sender, EventArgs e)
         {
-            // Tratamentos diferenciados //
-            txtCidade.ReadOnly = true;
-            txtCidade.BackColor = Color.LightGray;
-            cboUF.Enabled = false;
-            cboUF.BackColor = Color.LightGray;
-            chkNaoInfoCPF.Checked = false;
-
-            // Limpeza de campos //
-            txtNome.Text = String.Empty;
-            txtCPF.Text = String.Empty; 
-            txtTelefone.Text = String.Empty;
-            txtCidade.Text = String.Empty;
-            txtLogradouro.Text = String.Empty;
-            txtNumeroResid.Text = String.Empty;
-            cboUF.Text = String.Empty;
-            rtfObservacao.Text = String.Empty;
-    
+            Close();
         }
 
-        private void BtnCancelar_Click(object sender, EventArgs e)
+        private void TxtCEP_Leave(object sender, EventArgs e)
         {
-            ClearScrem();
+            _ = GetCEP(txtCEP.Text);
+        }
+
+        private void BtnAdicionar_Click(object sender, EventArgs e)
+        {
+            EnabledController(true);
+            ColorsController(Color.White);
+            BtnAdicionar.Enabled = false;
+        }
+
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.NumbersOnly(e);
         }
     }
 }
