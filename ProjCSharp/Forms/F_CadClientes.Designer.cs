@@ -397,7 +397,7 @@
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Segoe UI", 7F, FontStyle.Italic);
-            label9.Location = new Point(70, 65);
+            label9.Location = new Point(97, 65);
             label9.Name = "label9";
             label9.Size = new Size(89, 12);
             label9.TabIndex = 21;
