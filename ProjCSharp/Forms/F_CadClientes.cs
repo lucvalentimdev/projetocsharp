@@ -104,7 +104,7 @@ namespace SalSystem.Views
             Close();
         }
 
-        private void TxtCEP_Leave(object sender, EventArgs e)
+        private void txtCEP_Leave(object sender, EventArgs e)
         {
             _ = GetCEP(txtCEP.Text);
         }

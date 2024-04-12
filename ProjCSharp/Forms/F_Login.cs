@@ -4,7 +4,7 @@ namespace SalSystem.Views
 {
     public partial class F_Login : Form
     {
-        private readonly string _stringConnect = "server=localhost;user=root;pwd=;database=test;";
+      //  private readonly string _stringConnect = ;
         private bool fechaLogin = false;
 
         public F_Login()

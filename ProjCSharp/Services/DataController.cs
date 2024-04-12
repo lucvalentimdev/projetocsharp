@@ -1,22 +1,33 @@
 ﻿using MySql.Data.MySqlClient;
-using System.Linq.Expressions;
-
 
 namespace SalSystem.Services
 {
-	internal class DataController
-	{
-        public static Boolean QueryInsert(string _stringConnection, string _sqlString)
-        {
-            MySqlConnection _conn = new(_stringConnection);
+    internal class DataController()
+    {
+        readonly MySqlConnection _conn = new("server=localhost;user=root;pwd=;database=test;");
 
+		private void Connect()
+		{
+			if (_conn == null)
+                _conn.Open();
+		}
+		
+		private void Disconnect()
+		{
+			if (_conn != null)
+				_conn.Close();
+		}
+
+//======================== QUERYS DE INSERT / SELECT / UPDATE =====================================================================================================//
+        public Boolean QueryInsert(string _sqlString)		// Query de insert através de um Insert SQL //
+        {
             try
 			{
-				_conn.Open();
-				MySqlCommand _cmd = new(_sqlString, _conn);
-				_cmd.ExecuteNonQuery();
+				Connect();
+                MySqlCommand _cmd = new(_sqlString, _conn);
+                _cmd.ExecuteNonQuery();
 
-				return true;
+                return true;
 			}
 			catch (Exception )
 			{
@@ -24,9 +35,17 @@ namespace SalSystem.Services
 			}
 			finally
 			{
-				_conn?.Close();
-			}
-        }     
+                Disconnect();
+            }
+        } 
+		
+		public static Boolean BooleanQuery(string _sqlString)  // Query apenas True ou False através de Select //
+		{
+			if (1>1)
+				return true;
+			else
+				return false;
+		}
     }
 }
 

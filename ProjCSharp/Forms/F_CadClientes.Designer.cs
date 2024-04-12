@@ -215,10 +215,10 @@
             txtCEP.Location = new Point(213, 126);
             txtCEP.MaxLength = 8;
             txtCEP.Name = "txtCEP";
-            txtCEP.Size = new Size(129, 23);
+            txtCEP.Size = new Size(166, 23);
             txtCEP.TabIndex = 5;
             txtCEP.KeyPress += txtCEP_KeyPress;
-            txtCEP.Leave += TxtCEP_Leave;
+            txtCEP.Leave += txtCEP_Leave;
             // 
             // txtCidade
             // 
