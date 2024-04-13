@@ -8,30 +8,36 @@ namespace SalSystem.Services
 
 		private void Connect()
 		{
-			if (_conn == null)
-                _conn.Open();
+			if (_conn.State != System.Data.ConnectionState.Open)
+			_conn.Open();
 		}
 		
 		private void Disconnect()
 		{
-			if (_conn != null)
+			if (_conn.State == System.Data.ConnectionState.Open)
 				_conn.Close();
 		}
 
 //======================== QUERYS DE INSERT / SELECT / UPDATE =====================================================================================================//
-        public Boolean QueryInsert(string _sqlString)		//----- Query de insert através de um Insert SQL -----//
+        public string QueryInsert(string _sqlString)		//----- Query de insert através de um Insert SQL -----//
         {
             try
 			{
-				Connect();
-                MySqlCommand _cmd = new(_sqlString, _conn);
-                _cmd.ExecuteNonQuery();
+				if (_conn != null)
+				{
+					Connect();
+					MySqlCommand _cmd = new(_sqlString, _conn);
+					_cmd.ExecuteNonQuery();
 
-                return true;
+					return "Salvo com sucesso!";
+				}
+				else
+					return "Erro no processo de conexão com banco de dados!";
+				
 			}
-			catch (Exception )
+			catch (Exception E)
 			{
-				return false;
+				return "Erro ao salvar! Log: "+ E.Message;
 			}
 			finally
 			{

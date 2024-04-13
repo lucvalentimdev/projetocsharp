@@ -34,8 +34,13 @@ namespace SalSystem.Services
             {
                 throw;
             }
+            finally
+            {
+                _conn.Close();
+            }
 
             return _valido;
+            
         }
     }
 }

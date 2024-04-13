@@ -14,27 +14,17 @@ namespace SalSystem.Models
 
         readonly DataController _DataController = new();        // <--- Instanciando o DataController ---//
 
-        public Boolean CadastrarNovoCliente()
+        public void CadastrarNovoCliente()
         {
-            try
-            {
-                _DataController.QueryInsert("INSERT INTO cliente (Nome, CPF, telefone, cidade, logradouro, numero_residencia) " +
-               "VALUES " + Nome + ", " + CPF + ", " + Telefone + ", " + Cidade + ", " + Logradouro + ", " + NumeroResidencia + " ");
+            string _log = _DataController.QueryInsert("INSERT INTO cliente (Nome, CPF, telefone, cidade, logradouro, numero_residencia) " +
+            "VALUES " + Nome + ", " + CPF + ", " + Telefone + ", " + Cidade + ", " + Logradouro + ", " + NumeroResidencia + " ");
 
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            MessageBox.Show(_log);
         }
 
-        public Boolean VerificarExistenciaCPF (int _CPF)
+        public void VerificarExistenciaCPF (int _CPF)
         {
 
-
-
-            return true;
         }
 
     }

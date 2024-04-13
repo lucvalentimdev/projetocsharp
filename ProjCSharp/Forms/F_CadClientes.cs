@@ -126,11 +126,7 @@ namespace SalSystem.Views
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
             Cliente _cliente = new(txtNome.Text, txtCPF.Text, txtTelefone.Text, txtCEP.Text, txtCidade.Text, txtLogradouro.Text, txtNumeroResid.Text);
-            if (_cliente.CadastrarNovoCliente())
-                MessageBox.Show("Salvo!");
-            else
-                MessageBox.Show("Erro ao Salvar!");
-
+            _cliente.CadastrarNovoCliente();
         }
     }
 }
