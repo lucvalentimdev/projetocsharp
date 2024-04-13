@@ -19,7 +19,7 @@ namespace SalSystem.Services
 		}
 
 //======================== QUERYS DE INSERT / SELECT / UPDATE =====================================================================================================//
-        public Boolean QueryInsert(string _sqlString)		// Query de insert através de um Insert SQL //
+        public Boolean QueryInsert(string _sqlString)		//----- Query de insert através de um Insert SQL -----//
         {
             try
 			{
@@ -39,8 +39,8 @@ namespace SalSystem.Services
             }
         } 
 		
-		public static Boolean BooleanQuery(string _sqlString)  // Query apenas True ou False através de Select //
-		{
+		public static Boolean BooleanQuery(string _sqlString)  //----- Query apenas True ou False através de Select -----//
+        {
 			if (1>1)
 				return true;
 			else

@@ -1,10 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
-using System.Windows.Forms.Design;
 
-namespace SalSystem.Controllers
+namespace SalSystem.Services
 {
-    internal class ProcessaLogin(string ConnectionString)
+    internal class ProcessaLogin()
     {
+        readonly private string ConnectionString = "server=localhost;user=root;pwd=;database=test;";
+
         public bool ValidaLogin(string username, string password)
         {
             MySqlConnection _conn = new(ConnectionString);

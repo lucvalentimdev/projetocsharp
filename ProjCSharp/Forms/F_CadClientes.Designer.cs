@@ -123,6 +123,7 @@
             BtnConfirmar.Size = new Size(70, 40);
             BtnConfirmar.TabIndex = 4;
             BtnConfirmar.UseVisualStyleBackColor = true;
+            BtnConfirmar.Click += BtnConfirmar_Click;
             // 
             // BtnConsultar
             // 
@@ -193,6 +194,7 @@
             txtCPF.BackColor = Color.LightGray;
             txtCPF.Enabled = false;
             txtCPF.Location = new Point(30, 80);
+            txtCPF.MaxLength = 11;
             txtCPF.Name = "txtCPF";
             txtCPF.Size = new Size(177, 23);
             txtCPF.TabIndex = 3;
@@ -203,6 +205,7 @@
             txtTelefone.BackColor = Color.LightGray;
             txtTelefone.Enabled = false;
             txtTelefone.Location = new Point(30, 126);
+            txtTelefone.MaxLength = 11;
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(177, 23);
             txtTelefone.TabIndex = 4;
@@ -345,6 +348,7 @@
             txtNumeroResid.BackColor = Color.LightGray;
             txtNumeroResid.Enabled = false;
             txtNumeroResid.Location = new Point(385, 218);
+            txtNumeroResid.MaxLength = 12;
             txtNumeroResid.Name = "txtNumeroResid";
             txtNumeroResid.Size = new Size(87, 23);
             txtNumeroResid.TabIndex = 17;

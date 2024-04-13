@@ -1,4 +1,4 @@
-﻿using SalSystem.Controllers;
+﻿using SalSystem.Services;
 
 namespace SalSystem.Views
 {
@@ -25,7 +25,7 @@ namespace SalSystem.Views
 
         private void F_Login_Load(object sender, EventArgs e)
         {
-            TestConnect testConnect = new(_stringConnect);
+            TestConnect testConnect = new();
 
             if (testConnect.ConnectTest())
                 lbStatusConn.Text = "Status: Conectado!";
@@ -41,7 +41,7 @@ namespace SalSystem.Views
 
         private void ExecutaLogin()         // Procedure para tratar o login do usuário //
         {
-            ProcessaLogin login = new(_stringConnect);
+            ProcessaLogin login = new();
             if (login.ValidaLogin(txtUsuario.Text, txtSenha.Text))
             {
                 fechaLogin = true;

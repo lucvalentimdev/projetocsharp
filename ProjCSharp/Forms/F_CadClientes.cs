@@ -1,4 +1,6 @@
-﻿using SalSystem.Services;
+﻿using SalSystem.Models;
+using SalSystem.Services;
+using System.Net.NetworkInformation;
 
 namespace SalSystem.Views
 {
@@ -119,6 +121,16 @@ namespace SalSystem.Views
         private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.NumbersOnly(e);
+        }
+
+        private void BtnConfirmar_Click(object sender, EventArgs e)
+        {
+            Cliente _cliente = new(txtNome.Text, txtCPF.Text, txtTelefone.Text, txtCEP.Text, txtCidade.Text, txtLogradouro.Text, txtNumeroResid.Text);
+            if (_cliente.CadastrarNovoCliente())
+                MessageBox.Show("Salvo!");
+            else
+                MessageBox.Show("Erro ao Salvar!");
+
         }
     }
 }

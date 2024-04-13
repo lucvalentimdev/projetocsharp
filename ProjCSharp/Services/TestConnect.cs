@@ -1,9 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
 
-namespace SalSystem.Controllers
+namespace SalSystem.Services
 {
-    internal class TestConnect(string StringConnectionTest)
+    internal class TestConnect()
     {
+        readonly private string StringConnectionTest = "server=localhost;user=root;pwd=;database=test;";
         public bool ConnectTest()
         {
             try
