@@ -19,15 +19,24 @@ namespace SalSystem.Services
 		}
 
 //======================== QUERYS DE INSERT / SELECT / UPDATE =====================================================================================================//
-        public string QueryInsert(string _sqlString)		//----- Query de insert através de um Insert SQL -----//
-        {
+        public string QryInsertCliente(string _nome, string _cpf, string _telefone, string _cidade, string _logradouro,  string _nuResidencia )	
+		{																									
             try
 			{
-				if (_conn != null)
+				string _sqlString = "INSERT INTO cliente (Nome, CPF, telefone, cidade, logradouro, numero_residencia) " +
+			   "VALUES (@nome, @cpf, @telefone, @cidade, @logradouro, @numResidencia)";
+
+                if (_conn != null)
 				{
 					Connect();
-					MySqlCommand _cmd = new(_sqlString, _conn);
-					_cmd.ExecuteNonQuery();
+					MySqlCommand _cmd = new(_sqlString, _conn);                                             //*** Query 01 --> Insert de Clientes ***//
+                    _cmd.Parameters.AddWithValue("@nome", _nome);
+                    _cmd.Parameters.AddWithValue("cpf", _cpf);
+                    _cmd.Parameters.AddWithValue("@telefone", _telefone);
+                    _cmd.Parameters.AddWithValue("@cidade", _cidade);
+                    _cmd.Parameters.AddWithValue("@logradouro", _logradouro);
+                    _cmd.Parameters.AddWithValue("@numResidencia", _nuResidencia);
+                    _cmd.ExecuteNonQuery();
 
 					return "Salvo com sucesso!";
 				}

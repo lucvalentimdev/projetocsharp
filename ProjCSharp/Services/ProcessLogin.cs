@@ -2,7 +2,7 @@
 
 namespace SalSystem.Services
 {
-    internal class ProcessaLogin()
+    internal class ProcessLogin()
     {
         readonly private string ConnectionString = "server=localhost;user=root;pwd=;database=test;";
 

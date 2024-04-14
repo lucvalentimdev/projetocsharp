@@ -41,7 +41,7 @@ namespace SalSystem.Views
 
         private void ExecutaLogin()         // Procedure para tratar o login do usuário //
         {
-            ProcessaLogin login = new();
+            ProcessLogin login = new();
             if (login.ValidaLogin(txtUsuario.Text, txtSenha.Text))
             {
                 fechaLogin = true;

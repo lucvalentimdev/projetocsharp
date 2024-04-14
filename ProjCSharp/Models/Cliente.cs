@@ -16,9 +16,7 @@ namespace SalSystem.Models
 
         public void CadastrarNovoCliente()
         {
-            string _log = _DataController.QueryInsert("INSERT INTO cliente (Nome, CPF, telefone, cidade, logradouro, numero_residencia) " +
-            "VALUES " + Nome + ", " + CPF + ", " + Telefone + ", " + Cidade + ", " + Logradouro + ", " + NumeroResidencia + " ");
-
+            string _log = _DataController.QryInsertCliente( Nome,  CPF, Telefone,  Cidade, Logradouro, NumeroResidencia);
             MessageBox.Show(_log);
         }
 
