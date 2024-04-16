@@ -4,37 +4,39 @@ namespace SalSystem.Services
 {
     internal class DataController()
     {
-        readonly MySqlConnection _conn = new("server=localhost;user=root;pwd=;database=test;");
+        readonly MySqlConnection conn = new("server=localhost;user=root;pwd=;database=test;");
 
 		private void Connect()
 		{
-			if (_conn.State != System.Data.ConnectionState.Open)
-			_conn.Open();
+			if (conn.State != System.Data.ConnectionState.Open)
+			conn.Open();
 		}
 		
 		private void Disconnect()
 		{
-			if (_conn.State == System.Data.ConnectionState.Open)
-				_conn.Close();
+			if (conn.State == System.Data.ConnectionState.Open)
+				conn.Close();
 		}
 
 //======================== QUERYS DE INSERT / SELECT / UPDATE =====================================================================================================//
-        public string QryInsertCliente(string _nome, string _cpf, string _telefone, string _cidade, string _logradouro,  string _nuResidencia )	
+        public string QryInsertCliente(string _nome, string _cpf, string _telefone, string _cidade, string _cep, string _uf,string _logradouro,  string _nuResidencia )	
 		{																									
             try
 			{
-				string _sqlString = "INSERT INTO cliente (Nome, CPF, telefone, cidade, logradouro, numero_residencia) " +
-			   "VALUES (@nome, @cpf, @telefone, @cidade, @logradouro, @numResidencia)";
+				string _sqlString = "INSERT INTO cliente (Nome, CPF, telefone, cidade, cep, uf, logradouro, numero_residencia) " +
+			   "VALUES (@nome, @cpf, @telefone, @cidade, @cep, @uf, @logradouro, @numResidencia)";
 
-                if (_conn != null)
+                if (conn != null)
 				{
 					Connect();
-					MySqlCommand _cmd = new(_sqlString, _conn);                                             //*** Query 01 --> Insert de Clientes ***//
+					MySqlCommand _cmd = new(_sqlString, conn);                                             //*** Query 01 --> Insert de Clientes ***//
                     _cmd.Parameters.AddWithValue("@nome", _nome);
                     _cmd.Parameters.AddWithValue("cpf", _cpf);
                     _cmd.Parameters.AddWithValue("@telefone", _telefone);
                     _cmd.Parameters.AddWithValue("@cidade", _cidade);
+                    _cmd.Parameters.AddWithValue("@cep", _cep);
                     _cmd.Parameters.AddWithValue("@logradouro", _logradouro);
+                    _cmd.Parameters.AddWithValue("@uf", _uf);
                     _cmd.Parameters.AddWithValue("@numResidencia", _nuResidencia);
                     _cmd.ExecuteNonQuery();
 

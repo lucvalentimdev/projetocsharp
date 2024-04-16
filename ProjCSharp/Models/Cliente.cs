@@ -2,22 +2,22 @@
 
 namespace SalSystem.Models
 {
-    internal class Cliente(string _nome,string _cpf,string _telefone,string _cep, string _cidade, string _logradouro, string _numeroResidencia)
+    internal class Cliente(string _nome,string _cpf,string _telefone,string _cep, string _uf, string _cidade, string _logradouro, string _numeroResidencia)
     {
         public string Nome { get; } = _nome;
         public string CPF { get; } = _cpf;
         public string Telefone { get; } = _telefone;
         public string Cep { get; } = _cep;
         public string Cidade { get; } = _cidade;
+        public string Uf {  get; } = _uf;
         public string Logradouro { get; } = _logradouro;
         public string NumeroResidencia { get; } = _numeroResidencia;
 
-        readonly DataController _DataController = new();        // <--- Instanciando o DataController ---//
+        readonly DataController dataController = new();        // <--- Instanciando o DataController ---//
 
-        public void CadastrarNovoCliente()
+        public string CadastrarNovoCliente()
         {
-            string _log = _DataController.QryInsertCliente( Nome,  CPF, Telefone,  Cidade, Logradouro, NumeroResidencia);
-            MessageBox.Show(_log);
+            return dataController.QryInsertCliente( Nome,  CPF, Telefone,  Cidade, Cep, Uf, Logradouro, NumeroResidencia);
         }
 
         public void VerificarExistenciaCPF (int _CPF)

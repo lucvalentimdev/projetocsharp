@@ -1,4 +1,5 @@
-﻿using SalSystem.Models;
+﻿using Microsoft.VisualBasic;
+using SalSystem.Models;
 using SalSystem.Services;
 using System.Net.NetworkInformation;
 
@@ -125,8 +126,18 @@ namespace SalSystem.Views
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            Cliente _cliente = new(txtNome.Text, txtCPF.Text, txtTelefone.Text, txtCEP.Text, txtCidade.Text, txtLogradouro.Text, txtNumeroResid.Text);
-            _cliente.CadastrarNovoCliente();
+            Cliente _cliente = new(txtNome.Text, txtCPF.Text, txtTelefone.Text, txtCEP.Text, cboUF.Text, txtCidade.Text, txtLogradouro.Text, txtNumeroResid.Text);
+            string _log = _cliente.CadastrarNovoCliente();
+
+            
+            if (_log == "Salvo com sucesso!")
+            {
+                Utilities.MessageInformation(_log);
+               
+                BtnCancelar_Click(sender,e);
+            }
+            else
+                Utilities.MessageError(_log);
         }
     }
 }
