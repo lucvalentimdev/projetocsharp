@@ -32,7 +32,6 @@
             txtUsuario = new TextBox();
             txtSenha = new TextBox();
             BtnLogin = new Button();
-            checkBox1 = new CheckBox();
             lbStatusConn = new Label();
             SuspendLayout();
             // 
@@ -41,7 +40,7 @@
             txtUsuario.BackColor = SystemColors.HighlightText;
             txtUsuario.BorderStyle = BorderStyle.None;
             txtUsuario.Font = new Font("Segoe UI", 14F);
-            txtUsuario.Location = new Point(231, 313);
+            txtUsuario.Location = new Point(229, 349);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(238, 25);
             txtUsuario.TabIndex = 1;
@@ -51,7 +50,7 @@
             txtSenha.BackColor = SystemColors.HighlightText;
             txtSenha.BorderStyle = BorderStyle.None;
             txtSenha.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            txtSenha.Location = new Point(231, 371);
+            txtSenha.Location = new Point(229, 409);
             txtSenha.MaxLength = 8;
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
@@ -75,18 +74,6 @@
             BtnLogin.UseVisualStyleBackColor = false;
             BtnLogin.Click += BtnLogin_Click;
             // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.Transparent;
-            checkBox1.ForeColor = SystemColors.ControlDark;
-            checkBox1.Location = new Point(189, 421);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(88, 19);
-            checkBox1.TabIndex = 4;
-            checkBox1.Text = "Lembre-me";
-            checkBox1.UseVisualStyleBackColor = false;
-            // 
             // lbStatusConn
             // 
             lbStatusConn.AutoSize = true;
@@ -107,7 +94,6 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(671, 678);
             Controls.Add(lbStatusConn);
-            Controls.Add(checkBox1);
             Controls.Add(BtnLogin);
             Controls.Add(txtSenha);
             Controls.Add(txtUsuario);
@@ -129,7 +115,6 @@
         private TextBox txtUsuario;
         private TextBox txtSenha;
         private Button BtnLogin;
-        private CheckBox checkBox1;
         private Label lbStatusConn;
     }
 }

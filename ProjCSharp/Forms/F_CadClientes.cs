@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using SalSystem.Models;
 using SalSystem.Services;
+using System.Linq.Expressions;
 using System.Net.NetworkInformation;
 
 namespace SalSystem.Views
@@ -38,15 +39,16 @@ namespace SalSystem.Views
 
         private void ClearScrem()
         {
-            txtCidade.ReadOnly = true;                  //--- Tratamentos diferenciados ---//
+            txtCidade.ReadOnly = true;                  //<--- Tratamentos para campos diferenciados ---//
             txtCidade.BackColor = Color.LightGray;
             cboUF.Enabled = false;
             cboUF.BackColor = Color.LightGray;
             chkNaoInfoCPF.Checked = false;
 
-            txtNome.Text = String.Empty;                //--- Limpeza de campos  ---//
+            txtNome.Text = String.Empty;                //<--- Limpeza de campos comuns do formulário ---//
             txtCPF.Text = String.Empty;
             txtTelefone.Text = String.Empty;
+            txtCEP.Text = String.Empty;
             txtCidade.Text = String.Empty;
             txtLogradouro.Text = String.Empty;
             txtNumeroResid.Text = String.Empty;
@@ -126,6 +128,9 @@ namespace SalSystem.Views
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
+            
+            
+            
             Cliente _cliente = new(txtNome.Text, txtCPF.Text, txtTelefone.Text, txtCEP.Text, cboUF.Text, txtCidade.Text, txtLogradouro.Text, txtNumeroResid.Text);
             string _log = _cliente.CadastrarNovoCliente();
 

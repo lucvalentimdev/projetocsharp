@@ -60,6 +60,7 @@
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
+            label13 = new Label();
             transparentPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -248,6 +249,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Firebrick;
             label1.Location = new Point(30, 9);
             label1.Name = "label1";
             label1.Size = new Size(48, 17);
@@ -270,7 +272,8 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(385, 198);
+            label3.ForeColor = Color.Firebrick;
+            label3.Location = new Point(387, 198);
             label3.Name = "label3";
             label3.Size = new Size(29, 17);
             label3.TabIndex = 10;
@@ -281,6 +284,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Firebrick;
             label4.Location = new Point(30, 198);
             label4.Name = "label4";
             label4.Size = new Size(82, 17);
@@ -303,7 +307,8 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(213, 106);
+            label6.ForeColor = Color.Firebrick;
+            label6.Location = new Point(216, 106);
             label6.Name = "label6";
             label6.Size = new Size(34, 17);
             label6.TabIndex = 13;
@@ -325,6 +330,7 @@
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Firebrick;
             label8.Location = new Point(30, 60);
             label8.Name = "label8";
             label8.Size = new Size(34, 17);
@@ -342,12 +348,13 @@
             chkNaoInfoCPF.TabIndex = 16;
             chkNaoInfoCPF.Text = "Não Informar";
             chkNaoInfoCPF.UseVisualStyleBackColor = false;
+            chkNaoInfoCPF.Visible = false;
             // 
             // txtNumeroResid
             // 
             txtNumeroResid.BackColor = Color.LightGray;
             txtNumeroResid.Enabled = false;
-            txtNumeroResid.Location = new Point(385, 218);
+            txtNumeroResid.Location = new Point(387, 218);
             txtNumeroResid.MaxLength = 12;
             txtNumeroResid.Name = "txtNumeroResid";
             txtNumeroResid.Size = new Size(87, 23);
@@ -434,11 +441,23 @@
             label12.AutoSize = true;
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(385, 152);
+            label12.Location = new Point(387, 152);
             label12.Name = "label12";
             label12.Size = new Size(27, 17);
             label12.TabIndex = 24;
             label12.Text = "UF:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.Transparent;
+            label13.Font = new Font("Segoe UI", 8F, FontStyle.Italic);
+            label13.ForeColor = Color.Firebrick;
+            label13.Location = new Point(496, 248);
+            label13.Name = "label13";
+            label13.Size = new Size(111, 13);
+            label13.TabIndex = 25;
+            label13.Text = "*Campos obrigatórios";
             // 
             // F_CadClientes
             // 
@@ -447,6 +466,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(784, 561);
+            Controls.Add(label13);
             Controls.Add(label12);
             Controls.Add(label11);
             Controls.Add(label10);
@@ -514,5 +534,6 @@
         private Label label10;
         private Label label11;
         private Label label12;
+        private Label label13;
     }
 }
