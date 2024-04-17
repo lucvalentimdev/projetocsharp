@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic;
+﻿using Google.Protobuf.WellKnownTypes;
+using Microsoft.VisualBasic;
 using SalSystem.Models;
 using SalSystem.Services;
 using System.Linq.Expressions;
@@ -57,6 +58,18 @@ namespace SalSystem.Views
 
             EnabledController(false);
         }
+
+        private bool ValidaCampos()
+        {
+            if (string.IsNullOrWhiteSpace(txtNome.Text) || string.IsNullOrWhiteSpace(txtCPF.Text) || string.IsNullOrWhiteSpace(txtCEP.Text) ||
+                string.IsNullOrWhiteSpace(txtLogradouro.Text) || string.IsNullOrWhiteSpace(txtNumeroResid.Text))
+              
+                return false;               // <--- Se pelo menos um campo está vazio ou contém apenas espaços em branco //
+            else
+                return true;                // <--- Todos os campos estão preenchidos corretamente //
+
+        }
+
 
         private async Task GetCEP(string _cep)
         {
@@ -128,21 +141,23 @@ namespace SalSystem.Views
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            
-            
-            
-            Cliente _cliente = new(txtNome.Text, txtCPF.Text, txtTelefone.Text, txtCEP.Text, cboUF.Text, txtCidade.Text, txtLogradouro.Text, txtNumeroResid.Text);
-            string _log = _cliente.CadastrarNovoCliente();
-
-            
-            if (_log == "Salvo com sucesso!")
+            if (ValidaCampos())
             {
-                Utilities.MessageInformation(_log);
-               
-                BtnCancelar_Click(sender,e);
+                Cliente _cliente = new(txtNome.Text, txtCPF.Text, txtTelefone.Text, txtCEP.Text, cboUF.Text, txtCidade.Text, txtLogradouro.Text, txtNumeroResid.Text);
+                string _log = _cliente.CadastrarNovoCliente();
+
+
+                if (_log == "Salvo com sucesso!")
+                {
+                    Utilities.MessageInformation(_log);
+
+                    BtnCancelar_Click(sender, e);
+                }
+                else
+                    Utilities.MessageError(_log);
             }
             else
-                Utilities.MessageError(_log);
+                Utilities.MessageCaution("Existem campos obrigatórios não preenchidos!");
         }
     }
 }

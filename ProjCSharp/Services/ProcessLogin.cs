@@ -20,7 +20,8 @@ namespace SalSystem.Services
                 throw;
             }
 
-            MySqlCommand _cmd = new("SELECT * FROM usuarios_sistema WHERE nome=@username AND senha=@password", _conn);
+            MySqlCommand _cmd = new(" SELECT * FROM usuario"    +
+                                    " WHERE usuario=@username AND senha=@password", _conn);
             _cmd.Parameters.AddWithValue("@username", username);
             _cmd.Parameters.AddWithValue("@password", password);
 
