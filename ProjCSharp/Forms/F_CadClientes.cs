@@ -63,7 +63,7 @@ namespace SalSystem.Views
         {
             if (string.IsNullOrWhiteSpace(txtNome.Text) || string.IsNullOrWhiteSpace(txtCPF.Text) || string.IsNullOrWhiteSpace(txtCEP.Text) ||
                 string.IsNullOrWhiteSpace(txtLogradouro.Text) || string.IsNullOrWhiteSpace(txtNumeroResid.Text))
-              
+
                 return false;               // <--- Se pelo menos um campo está vazio ou contém apenas espaços em branco //
             else
                 return true;                // <--- Todos os campos estão preenchidos corretamente //
@@ -158,6 +158,11 @@ namespace SalSystem.Views
             }
             else
                 Utilities.MessageCaution("Existem campos obrigatórios não preenchidos!");
+        }
+
+        private void txtCPF_Leave(object sender, EventArgs e)
+        {
+            Cliente.ValidaCPF(txtCPF.Text);
         }
     }
 }

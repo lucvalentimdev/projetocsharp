@@ -200,6 +200,7 @@
             txtCPF.Size = new Size(177, 23);
             txtCPF.TabIndex = 3;
             txtCPF.KeyPress += txtCPF_KeyPress;
+            txtCPF.Leave += txtCPF_Leave;
             // 
             // txtTelefone
             // 

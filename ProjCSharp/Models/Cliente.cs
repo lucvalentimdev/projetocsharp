@@ -20,9 +20,10 @@ namespace SalSystem.Models
             return dataController.QryInsertCliente( Nome,  CPF, Telefone,  Cidade, Cep, Uf, Logradouro, NumeroResidencia);
         }
 
-        public void VerificarExistenciaCPF (int _CPF)
+        public static void ValidaCPF (string _CPF)
         {
-
+            if (!CPFValidator.ValidateCPF(_CPF))
+                Utilities.MessageCaution("Atenção: CPF Inválido, cuidado ao salvar!");
         }
 
     }
