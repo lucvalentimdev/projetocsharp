@@ -1,4 +1,5 @@
-﻿public class CepService : IDisposable
+﻿
+public class CepService : IDisposable
 {
     private readonly HttpClient _httpClient;
 

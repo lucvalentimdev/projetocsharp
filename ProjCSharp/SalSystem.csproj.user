@@ -4,6 +4,9 @@
     <Compile Update="Forms\F_CadClientes.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\F_CadProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Utils\TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>

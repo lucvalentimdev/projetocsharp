@@ -1,64 +1,63 @@
 ﻿using SalSystem.Services;
 
-namespace SalSystem.Views
+namespace SalSystem.Views;
+
+public partial class F_Login : Form
 {
-    public partial class F_Login : Form
+  //  private readonly string _stringConnect = ;
+    private bool fechaLogin = false;
+
+    public F_Login()
     {
-      //  private readonly string _stringConnect = ;
-        private bool fechaLogin = false;
+        InitializeComponent();
+    }
 
-        public F_Login()
-        {
-            InitializeComponent();
-        }
+    private void F_Login_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        if (!fechaLogin)
+            Application.Exit();
+    }
 
-        private void F_Login_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (!fechaLogin)
-                Application.Exit();
-        }
+    private void BtnLogin_Click(object sender, EventArgs e)
+    {
+        ExecutaLogin();
+    }
 
-        private void BtnLogin_Click(object sender, EventArgs e)
-        {
+    private void F_Login_Load(object sender, EventArgs e)
+    {
+        TestConnect testConnect = new();
+
+        if (testConnect.ConnectTest())
+            lbStatusConn.Text = "Status: Conectado!";
+        else
+            lbStatusConn.Text = "Status: Desconectado! [Erro]";
+    }
+
+    private void F_Login_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.KeyCode == Keys.Enter)
             ExecutaLogin();
-        }
+    }
 
-        private void F_Login_Load(object sender, EventArgs e)
+    private void ExecutaLogin()         // Procedure para tratar o login do usuário //
+    {
+        ProcessLogin login = new();
+        if (login.ValidaLogin(txtUsuario.Text, txtSenha.Text))
         {
-            TestConnect testConnect = new();
-
-            if (testConnect.ConnectTest())
-                lbStatusConn.Text = "Status: Conectado!";
-            else
-                lbStatusConn.Text = "Status: Desconectado! [Erro]";
+            fechaLogin = true;
+            Close();
         }
-
-        private void F_Login_KeyDown(object sender, KeyEventArgs e)
+        else
         {
-            if (e.KeyCode == Keys.Enter)
-                ExecutaLogin();
+            MessageBox.Show("Usuário não encontrado ou senha incorreta!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            txtSenha.Text = string.Empty;
+            txtUsuario.Text = string.Empty;
+            txtUsuario.Focus();
         }
+    }
 
-        private void ExecutaLogin()         // Procedure para tratar o login do usuário //
-        {
-            ProcessLogin login = new();
-            if (login.ValidaLogin(txtUsuario.Text, txtSenha.Text))
-            {
-                fechaLogin = true;
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Usuário não encontrado ou senha incorreta!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtSenha.Text = string.Empty;
-                txtUsuario.Text = string.Empty;
-                txtUsuario.Focus();
-            }
-        }
-
-        private void F_Login_Resize(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-        }
+    private void F_Login_Resize(object sender, EventArgs e)
+    {
+        this.WindowState = FormWindowState.Normal;
     }
 }

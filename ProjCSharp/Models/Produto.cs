@@ -1,6 +1,5 @@
-﻿namespace SalSystem.Models
+﻿namespace SalSystem.Models;
+
+internal class Produto
 {
-    internal class Produto
-    {
-    }
 }

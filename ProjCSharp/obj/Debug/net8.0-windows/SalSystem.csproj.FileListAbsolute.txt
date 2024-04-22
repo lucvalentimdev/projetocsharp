@@ -34,3 +34,4 @@ C:\projetocsharp\ProjCSharp\obj\Debug\net8.0-windows\SalSystem.genruntimeconfig.
 C:\projetocsharp\ProjCSharp\obj\Debug\net8.0-windows\ref\SalSystem.dll
 C:\projetocsharp\ProjCSharp\obj\Debug\net8.0-windows\SalSystem.Views.F_CadClientes.resources
 C:\projetocsharp\ProjCSharp\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\projetocsharp\ProjCSharp\obj\Debug\net8.0-windows\SalSystem.Forms.F_CadProdutos.resources

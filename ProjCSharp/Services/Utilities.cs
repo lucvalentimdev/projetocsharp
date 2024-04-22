@@ -1,34 +1,31 @@
-﻿using Microsoft.VisualBasic.Logging;
+﻿namespace SalSystem.Services;
 
-namespace SalSystem.Services
+internal class Utilities
 {
-    internal class Utilities
-    {
-    // Igonara teclas que não forem número // ** Como parametro recebe (e) do evento KeyPress **  ---------------------------------------------------------------// 
-        public static void NumbersOnly(KeyPressEventArgs e)  
-        {                                                         
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;              
-            }
-        }
-    //---------------------------------------------------------------------------------------------------------------------------------------------------------//
-
-    // Metodos de Mensagens de exibição -----------------------------------------------------------------------------------------------------------------------//
-        public static void MessageError(string _text)       // Mensagem de Erro //
+// Igonara teclas que não forem número // ** Como parametro recebe (e) do evento KeyPress **  ---------------------------------------------------------------// 
+    public static void NumbersOnly(KeyPressEventArgs e)  
+    {                                                         
+        if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
         {
-            MessageBox.Show(_text, "SalSystem - Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            e.Handled = true;              
         }
-
-        public static void MessageCaution(string _text)     // Mensagem de Aviso //
-        {
-            MessageBox.Show(_text, "SalSystem - Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-
-        public static void MessageInformation(string _text)  // Mensagem Informativa //
-        {
-            MessageBox.Show(_text, "SalSystem informa:", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-    //----------------------------------------------------------------------------------------------------------------------------------------------------------//
     }
+//---------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+// Metodos de Mensagens de exibição -----------------------------------------------------------------------------------------------------------------------//
+    public static void MessageError(string _text)       // Mensagem de Erro //
+    {
+        MessageBox.Show(_text, "SalSystem - Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+
+    public static void MessageCaution(string _text)     // Mensagem de Aviso //
+    {
+        MessageBox.Show(_text, "SalSystem - Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+    }
+
+    public static void MessageInformation(string _text)  // Mensagem Informativa //
+    {
+        MessageBox.Show(_text, "SalSystem informa:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+//----------------------------------------------------------------------------------------------------------------------------------------------------------//
 }

@@ -1,23 +1,22 @@
 ﻿using MySql.Data.MySqlClient;
 
-namespace SalSystem.Services
+namespace SalSystem.Services;
+
+internal class TestConnect()
 {
-    internal class TestConnect()
+    readonly private string StringConnectionTest = "server=localhost;user=root;pwd=;database=test;";
+    public bool ConnectTest()
     {
-        readonly private string StringConnectionTest = "server=localhost;user=root;pwd=;database=test;";
-        public bool ConnectTest()
+        try
         {
-            try
-            {
-                MySqlConnection _conn = new(StringConnectionTest);
-                _conn.Open();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-                throw;
-            }
+            MySqlConnection _conn = new(StringConnectionTest);
+            _conn.Open();
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+            throw;
         }
     }
 }
