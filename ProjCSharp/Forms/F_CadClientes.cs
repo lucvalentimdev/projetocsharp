@@ -66,7 +66,6 @@ public partial class F_CadClientes : Form
 
     }
 
-
     private async Task GetCEP(string _cep)
     {
         using var cepService = new CepService();
