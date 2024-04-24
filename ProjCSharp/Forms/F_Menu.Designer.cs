@@ -43,6 +43,7 @@
             BtnVendas = new Button();
             BtnClientes = new Button();
             transparentPanel1 = new Views.Utils.TransparentPanel();
+            button1 = new Button();
             BtnProdutos = new Button();
             menuStrip1.SuspendLayout();
             panel_Rodape.SuspendLayout();
@@ -105,6 +106,7 @@
             imageListIcons.Images.SetKeyName(1, "cadastrar.png");
             imageListIcons.Images.SetKeyName(2, "vendas.png");
             imageListIcons.Images.SetKeyName(3, "sair.png");
+            imageListIcons.Images.SetKeyName(4, "finance 32x32.png");
             // 
             // panel_Rodape
             // 
@@ -140,9 +142,10 @@
             BtnSair.ImageList = imageListIcons;
             BtnSair.Location = new Point(8, 649);
             BtnSair.Name = "BtnSair";
-            BtnSair.Size = new Size(115, 50);
+            BtnSair.Size = new Size(100, 50);
             BtnSair.TabIndex = 3;
             BtnSair.Text = "Sair";
+            BtnSair.TextImageRelation = TextImageRelation.ImageBeforeText;
             BtnSair.UseVisualStyleBackColor = true;
             BtnSair.Click += BtnSair_Click;
             // 
@@ -158,11 +161,12 @@
             BtnVendas.ImageList = imageListIcons;
             BtnVendas.Location = new Point(8, 127);
             BtnVendas.Name = "BtnVendas";
-            BtnVendas.Size = new Size(110, 50);
+            BtnVendas.Size = new Size(100, 50);
             BtnVendas.TabIndex = 2;
             BtnVendas.TabStop = false;
             BtnVendas.Text = "Vender";
             BtnVendas.TextAlign = ContentAlignment.MiddleRight;
+            BtnVendas.TextImageRelation = TextImageRelation.ImageBeforeText;
             BtnVendas.UseVisualStyleBackColor = true;
             BtnVendas.Click += BtnPagamentos_Click;
             // 
@@ -178,17 +182,19 @@
             BtnClientes.ImageList = imageListIcons;
             BtnClientes.Location = new Point(8, 15);
             BtnClientes.Name = "BtnClientes";
-            BtnClientes.Size = new Size(110, 50);
+            BtnClientes.Size = new Size(100, 50);
             BtnClientes.TabIndex = 0;
             BtnClientes.TabStop = false;
             BtnClientes.Text = "Clientes";
             BtnClientes.TextAlign = ContentAlignment.MiddleRight;
+            BtnClientes.TextImageRelation = TextImageRelation.ImageBeforeText;
             BtnClientes.UseVisualStyleBackColor = true;
             BtnClientes.Click += BtnClientes_Click;
             // 
             // transparentPanel1
             // 
             transparentPanel1.BackColor = Color.Transparent;
+            transparentPanel1.Controls.Add(button1);
             transparentPanel1.Controls.Add(BtnProdutos);
             transparentPanel1.Controls.Add(BtnClientes);
             transparentPanel1.Controls.Add(BtnSair);
@@ -196,8 +202,27 @@
             transparentPanel1.Dock = DockStyle.Left;
             transparentPanel1.Location = new Point(0, 27);
             transparentPanel1.Name = "transparentPanel1";
-            transparentPanel1.Size = new Size(129, 714);
+            transparentPanel1.Size = new Size(120, 714);
             transparentPanel1.TabIndex = 7;
+            // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.IndianRed;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.ImageIndex = 4;
+            button1.ImageList = imageListIcons;
+            button1.Location = new Point(8, 183);
+            button1.Name = "button1";
+            button1.Size = new Size(100, 50);
+            button1.TabIndex = 4;
+            button1.Text = "Caixa";
+            button1.TextAlign = ContentAlignment.MiddleRight;
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = true;
             // 
             // BtnProdutos
             // 
@@ -211,11 +236,12 @@
             BtnProdutos.ImageList = imageListIcons;
             BtnProdutos.Location = new Point(8, 71);
             BtnProdutos.Name = "BtnProdutos";
-            BtnProdutos.Size = new Size(110, 50);
+            BtnProdutos.Size = new Size(100, 50);
             BtnProdutos.TabIndex = 1;
             BtnProdutos.TabStop = false;
-            BtnProdutos.Text = "Produtos";
+            BtnProdutos.Text = "Produto";
             BtnProdutos.TextAlign = ContentAlignment.MiddleRight;
+            BtnProdutos.TextImageRelation = TextImageRelation.ImageBeforeText;
             BtnProdutos.UseVisualStyleBackColor = true;
             BtnProdutos.Click += BtnProdutos_Click;
             // 
@@ -263,5 +289,6 @@
         private Button BtnClientes;
         private Views.Utils.TransparentPanel transparentPanel1;
         private Button BtnProdutos;
+        private Button button1;
     }
 }

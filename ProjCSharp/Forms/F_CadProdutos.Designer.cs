@@ -42,20 +42,25 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            label8 = new Label();
-            label9 = new Label();
             label10 = new Label();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            pictureBox1 = new PictureBox();
+            cboPublico = new ComboBox();
+            txtNomeProd = new TextBox();
+            txtCategoria = new TextBox();
+            txtVolume = new TextBox();
+            txtPreco = new TextBox();
+            txtMarca = new TextBox();
+            txtQntInicial = new TextBox();
+            openFileDialog = new OpenFileDialog();
+            groupBox1 = new GroupBox();
+            BtnRemoverImg = new Button();
             BtnUploadImg = new Button();
+            imgProduto = new PictureBox();
+            txtDescricao = new TextBox();
+            labellb = new Label();
+            label6 = new Label();
             transparentPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)imgProduto).BeginInit();
             SuspendLayout();
             // 
             // transparentPanel1
@@ -100,6 +105,7 @@
             imageListIcons.Images.SetKeyName(4, "adicionar.png");
             imageListIcons.Images.SetKeyName(5, "voltar.png");
             imageListIcons.Images.SetKeyName(6, "delete.png");
+            imageListIcons.Images.SetKeyName(7, "photo_up.png");
             // 
             // BtnConfirmar
             // 
@@ -117,6 +123,7 @@
             BtnConfirmar.Size = new Size(70, 40);
             BtnConfirmar.TabIndex = 4;
             BtnConfirmar.UseVisualStyleBackColor = true;
+            BtnConfirmar.Click += BtnConfirmar_Click;
             // 
             // BtnConsultar
             // 
@@ -177,7 +184,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 21);
+            label1.Location = new Point(14, 21);
             label1.Name = "label1";
             label1.Size = new Size(102, 17);
             label1.TabIndex = 3;
@@ -188,7 +195,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(12, 190);
+            label2.Location = new Point(14, 190);
             label2.Name = "label2";
             label2.Size = new Size(69, 17);
             label2.TabIndex = 4;
@@ -210,7 +217,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(12, 245);
+            label4.Location = new Point(279, 190);
             label4.Name = "label4";
             label4.Size = new Size(56, 17);
             label4.TabIndex = 6;
@@ -227,117 +234,169 @@
             label5.TabIndex = 7;
             label5.Text = "Qnt. Inicial:";
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(458, 21);
-            label8.Name = "label8";
-            label8.Size = new Size(135, 17);
-            label8.TabIndex = 10;
-            label8.Text = "Imagem do Produto:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(14, 131);
-            label9.Name = "label9";
-            label9.Size = new Size(86, 17);
-            label9.TabIndex = 11;
-            label9.Text = "Publico Alvo:";
-            // 
             // label10
             // 
             label10.AutoSize = true;
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(14, 79);
+            label10.Location = new Point(12, 79);
             label10.Name = "label10";
             label10.Size = new Size(48, 17);
             label10.TabIndex = 12;
             label10.Text = "Marca:";
             // 
-            // comboBox1
+            // cboPublico
             // 
-            comboBox1.BackColor = Color.Gainsboro;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Homens", "Mulheres", "Crianças", "Outros" });
-            comboBox1.Location = new Point(14, 151);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(190, 23);
-            comboBox1.TabIndex = 13;
+            cboPublico.BackColor = Color.Gainsboro;
+            cboPublico.FormattingEnabled = true;
+            cboPublico.Items.AddRange(new object[] { "Homens", "Mulheres", "Crianças", "Outros" });
+            cboPublico.Location = new Point(14, 151);
+            cboPublico.Name = "cboPublico";
+            cboPublico.Size = new Size(190, 23);
+            cboPublico.TabIndex = 13;
             // 
-            // textBox1
+            // txtNomeProd
             // 
-            textBox1.Location = new Point(14, 41);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(335, 23);
-            textBox1.TabIndex = 14;
+            txtNomeProd.Location = new Point(14, 41);
+            txtNomeProd.MaxLength = 300;
+            txtNomeProd.Name = "txtNomeProd";
+            txtNomeProd.Size = new Size(373, 23);
+            txtNomeProd.TabIndex = 14;
             // 
-            // textBox2
+            // txtCategoria
             // 
-            textBox2.Location = new Point(12, 210);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 15;
+            txtCategoria.Location = new Point(12, 210);
+            txtCategoria.MaxLength = 150;
+            txtCategoria.Name = "txtCategoria";
+            txtCategoria.Size = new Size(269, 23);
+            txtCategoria.TabIndex = 15;
             // 
-            // textBox3
+            // txtVolume
             // 
-            textBox3.Location = new Point(12, 265);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 16;
-            textBox3.TextChanged += textBox3_TextChanged;
+            txtVolume.Location = new Point(287, 210);
+            txtVolume.MaxLength = 3;
+            txtVolume.Name = "txtVolume";
+            txtVolume.Size = new Size(100, 23);
+            txtVolume.TabIndex = 16;
             // 
-            // textBox4
+            // txtPreco
             // 
-            textBox4.Location = new Point(12, 318);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 17;
+            txtPreco.Location = new Point(12, 318);
+            txtPreco.MaxLength = 8;
+            txtPreco.Name = "txtPreco";
+            txtPreco.Size = new Size(100, 23);
+            txtPreco.TabIndex = 17;
             // 
-            // textBox5
+            // txtMarca
             // 
-            textBox5.Location = new Point(14, 99);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(286, 23);
-            textBox5.TabIndex = 18;
+            txtMarca.Location = new Point(14, 99);
+            txtMarca.MaxLength = 200;
+            txtMarca.Name = "txtMarca";
+            txtMarca.Size = new Size(373, 23);
+            txtMarca.TabIndex = 18;
             // 
-            // textBox6
+            // txtQntInicial
             // 
-            textBox6.Location = new Point(129, 318);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(75, 23);
-            textBox6.TabIndex = 19;
+            txtQntInicial.Location = new Point(129, 318);
+            txtQntInicial.MaxLength = 4;
+            txtQntInicial.Name = "txtQntInicial";
+            txtQntInicial.Size = new Size(75, 23);
+            txtQntInicial.TabIndex = 19;
             // 
-            // pictureBox1
+            // openFileDialog
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(458, 41);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(248, 192);
-            pictureBox1.TabIndex = 20;
-            pictureBox1.TabStop = false;
+            openFileDialog.FileName = "openFileDialog1";
+            // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = Color.Transparent;
+            groupBox1.Controls.Add(BtnRemoverImg);
+            groupBox1.Controls.Add(BtnUploadImg);
+            groupBox1.Controls.Add(imgProduto);
+            groupBox1.FlatStyle = FlatStyle.Flat;
+            groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            groupBox1.Location = new Point(470, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(314, 312);
+            groupBox1.TabIndex = 22;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Imagem do Produto:";
+            // 
+            // BtnRemoverImg
+            // 
+            BtnRemoverImg.Cursor = Cursors.Hand;
+            BtnRemoverImg.FlatAppearance.BorderSize = 0;
+            BtnRemoverImg.FlatAppearance.MouseDownBackColor = Color.LightGray;
+            BtnRemoverImg.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
+            BtnRemoverImg.FlatStyle = FlatStyle.Flat;
+            BtnRemoverImg.ImageIndex = 6;
+            BtnRemoverImg.ImageList = imageListIcons;
+            BtnRemoverImg.Location = new Point(231, 247);
+            BtnRemoverImg.Name = "BtnRemoverImg";
+            BtnRemoverImg.Size = new Size(48, 40);
+            BtnRemoverImg.TabIndex = 24;
+            BtnRemoverImg.UseVisualStyleBackColor = true;
+            BtnRemoverImg.Click += BtnRemoverImg_Click;
             // 
             // BtnUploadImg
             // 
             BtnUploadImg.BackColor = Color.Transparent;
+            BtnUploadImg.Cursor = Cursors.Hand;
             BtnUploadImg.FlatAppearance.BorderSize = 0;
             BtnUploadImg.FlatAppearance.MouseDownBackColor = Color.LightGray;
             BtnUploadImg.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             BtnUploadImg.FlatStyle = FlatStyle.Flat;
             BtnUploadImg.ForeColor = Color.Transparent;
-            BtnUploadImg.ImageIndex = 4;
+            BtnUploadImg.ImageIndex = 7;
             BtnUploadImg.ImageList = imageListIcons;
-            BtnUploadImg.Location = new Point(631, 239);
+            BtnUploadImg.Location = new Point(185, 247);
             BtnUploadImg.Name = "BtnUploadImg";
-            BtnUploadImg.Size = new Size(75, 23);
-            BtnUploadImg.TabIndex = 21;
+            BtnUploadImg.Size = new Size(48, 40);
+            BtnUploadImg.TabIndex = 23;
             BtnUploadImg.UseVisualStyleBackColor = false;
+            BtnUploadImg.Click += BtnUploadImg_Click;
+            // 
+            // imgProduto
+            // 
+            imgProduto.BackColor = Color.Honeydew;
+            imgProduto.BorderStyle = BorderStyle.Fixed3D;
+            imgProduto.ErrorImage = Properties.Resources.not_img_128x128;
+            imgProduto.Image = (Image)resources.GetObject("imgProduto.Image");
+            imgProduto.Location = new Point(26, 20);
+            imgProduto.Name = "imgProduto";
+            imgProduto.Size = new Size(265, 221);
+            imgProduto.SizeMode = PictureBoxSizeMode.StretchImage;
+            imgProduto.TabIndex = 22;
+            imgProduto.TabStop = false;
+            // 
+            // txtDescricao
+            // 
+            txtDescricao.Location = new Point(12, 268);
+            txtDescricao.Name = "txtDescricao";
+            txtDescricao.Size = new Size(375, 23);
+            txtDescricao.TabIndex = 23;
+            // 
+            // labellb
+            // 
+            labellb.AutoSize = true;
+            labellb.BackColor = Color.Transparent;
+            labellb.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labellb.Location = new Point(12, 248);
+            labellb.Name = "labellb";
+            labellb.Size = new Size(106, 17);
+            labellb.TabIndex = 24;
+            labellb.Text = "Breve Descrição:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(12, 131);
+            label6.Name = "label6";
+            label6.Size = new Size(86, 17);
+            label6.TabIndex = 25;
+            label6.Text = "Publico Alvo:";
             // 
             // F_CadProdutos
             // 
@@ -346,18 +405,18 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(784, 561);
-            Controls.Add(BtnUploadImg);
-            Controls.Add(pictureBox1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox1);
+            Controls.Add(label6);
+            Controls.Add(labellb);
+            Controls.Add(txtDescricao);
+            Controls.Add(groupBox1);
+            Controls.Add(txtQntInicial);
+            Controls.Add(txtMarca);
+            Controls.Add(txtPreco);
+            Controls.Add(txtVolume);
+            Controls.Add(txtCategoria);
+            Controls.Add(txtNomeProd);
+            Controls.Add(cboPublico);
             Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -372,7 +431,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "F_CadProdutos";
             transparentPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)imgProduto).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -391,17 +451,21 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private Label label8;
-        private Label label9;
         private Label label10;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private PictureBox pictureBox1;
+        private ComboBox cboPublico;
+        private TextBox txtNomeProd;
+        private TextBox txtCategoria;
+        private TextBox txtVolume;
+        private TextBox txtPreco;
+        private TextBox txtMarca;
+        private TextBox txtQntInicial;
+        private OpenFileDialog openFileDialog;
+        private GroupBox groupBox1;
         private Button BtnUploadImg;
+        private PictureBox imgProduto;
+        private Button BtnRemoverImg;
+        private TextBox txtDescricao;
+        private Label labellb;
+        private Label label6;
     }
 }
