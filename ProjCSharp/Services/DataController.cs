@@ -18,7 +18,9 @@ internal class DataController()
 			conn.Close();
 	}
 
-//======================== QUERYS DE INSERT / SELECT / UPDATE =====================================================================================================//
+ //======================== QUERYS DE INSERT / SELECT / UPDATE =====================================================================================================//
+
+    //*** Query 01 --> Insert de Clientes ***//
     public string QryInsertCliente(string _nome, string _cpf, string _telefone, string _cidade, string _cep, string _uf,string _logradouro,  string _nuResidencia )	
 	{																									
             try
@@ -29,7 +31,7 @@ internal class DataController()
                 if (conn != null)
 			{
 				Connect();
-				MySqlCommand _cmd = new(_sqlString, conn);                                             //*** Query 01 --> Insert de Clientes ***//
+				MySqlCommand _cmd = new(_sqlString, conn);                                             
                     _cmd.Parameters.AddWithValue("@nome", _nome);
                     _cmd.Parameters.AddWithValue("cpf", _cpf);
                     _cmd.Parameters.AddWithValue("@telefone", _telefone);
@@ -54,9 +56,10 @@ internal class DataController()
 		{
                 Disconnect();
             }
-        } 
-	
-	public static Boolean BooleanQuery(string _sqlString)  //----- Query apenas True ou False através de Select -----//
+        }
+
+    //*** Query 02 --> Apenas True ou False através de Select ***//
+    public static Boolean BooleanQuery(string _sqlString)  
         {
 		if (1>1)
 			return true;

@@ -1,4 +1,5 @@
 ﻿using SalSystem.Models;
+using SalSystem.Services;
 
 namespace SalSystem.Forms;
 
@@ -16,10 +17,9 @@ public partial class F_CadProdutos : Form
 
     private void BtnUploadImg_Click(object sender, EventArgs e)
     {
-        string _caminho;
         if (openFileDialog.ShowDialog() == DialogResult.OK)
         {
-            _caminho = openFileDialog.FileName;
+            string _caminho = openFileDialog.FileName;
             imgProduto.ImageLocation = _caminho;
         }
     }
@@ -32,7 +32,9 @@ public partial class F_CadProdutos : Form
 
     private void BtnConfirmar_Click(object sender, EventArgs e)
     {
-        Produto produto = new(txtNomeProd.Text, txtMarca.Text, txtCategoria.Text, Convert.ToInt32(txtVolume.Text), Convert.ToDouble(txtPreco.Text), txtDescricao.Text, cboPublico.Text, Convert.ToInt32(txtQntInicial.Text), DateTime.Now);
+        string _img = ImagemConverter.ImageToBase64(imgProduto.Image);  
+
+        Produto produto = new(txtNomeProd.Text, txtMarca.Text, txtCategoria.Text, Convert.ToInt32(txtVolume.Text), Convert.ToDouble(txtPreco.Text), txtDescricao.Text,                                                                                              cboPublico.Text, Convert.ToInt32(txtQntInicial.Text), DateTime.Now, _img);
         produto.CadastraNovoProd();
 
     }
