@@ -92,6 +92,7 @@
             BtnAdicionar.Size = new Size(70, 40);
             BtnAdicionar.TabIndex = 5;
             BtnAdicionar.UseVisualStyleBackColor = true;
+            BtnAdicionar.Click += BtnAdicionar_Click;
             // 
             // imageListIcons
             // 
@@ -178,6 +179,7 @@
             BtnFechar.Size = new Size(70, 40);
             BtnFechar.TabIndex = 1;
             BtnFechar.UseVisualStyleBackColor = false;
+            BtnFechar.Click += BtnFechar_Click;
             // 
             // label1
             // 

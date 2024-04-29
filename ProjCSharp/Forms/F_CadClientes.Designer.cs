@@ -141,6 +141,7 @@
             BtnConsultar.Size = new Size(70, 40);
             BtnConsultar.TabIndex = 3;
             BtnConsultar.UseVisualStyleBackColor = true;
+            BtnConsultar.Click += BtnConsultar_Click;
             // 
             // BtnCancelar
             // 

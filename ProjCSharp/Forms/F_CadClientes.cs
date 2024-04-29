@@ -158,4 +158,9 @@ public partial class F_CadClientes : Form
     {
         Cliente.ValidaCPF(txtCPF.Text);
     }
+
+    private void BtnConsultar_Click(object sender, EventArgs e)
+    {
+
+    }
 }

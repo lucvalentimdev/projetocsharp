@@ -18,9 +18,11 @@ internal class DataController()
 			conn.Close();
 	}
 
- //======================== QUERYS DE INSERT / SELECT / UPDATE =====================================================================================================//
-
-    //*** Query 01 --> Insert de Clientes ***//
+	//=====================================================================================================================================================================//
+    //====================== QUERYS GERAIS -> INSERT / SELECT / UPDATE ====================================================================================================//
+	//=====================================================================================================================================================================//
+    
+	//******* Query 01 --> Insert de Clientes *******//
     public string QryInsertCliente(string _nome, string _cpf, string _telefone, string _cidade, string _cep, string _uf,string _logradouro,  string _nuResidencia )	
 	{																									
         try
@@ -59,20 +61,22 @@ internal class DataController()
     }
 
     //*** Query 02 --> Apenas True ou False através de Select ***//
-    public static Boolean BooleanQuery(string _sqlString)  
+    /*public static Boolean BooleanQuery(string _sqlString)  
         {
 		if (1>1)
 			return true;
 		else
 			return false;
-	}
+	} */
 
-	public string QueryInsertPruduto(string _nome, string _marca, string _categoria, int _volumeEmMl, double _preco, string _descricao, string _publicoAlvo, int _qntEntradaIni, DateTime _dataCadastro, string _img)
+    //******* Query 03 --> Insert PRODUTOS *******//
+    public string QueryInsertPruduto(string _nome, string _marca, string _categoria, int _volumeEmMl, double _preco, string _descricao, string _publicoAlvo, int _qntEntradaIni, DateTime _dataCadastro, string _img)
 	{
 		try
 		{
 			if (conn != null)
-			{ 
+			{
+				Connect();
 			   string _sqlScript = " INSERT INTO Produtos (Nome, Marca, Categoria, VolumeEmMl, Preco, Descricao, PublicoAlvo, QntEntradaInicial, DataCadastro, Imagem)\r\n						VALUES (@Nome, @Marca, @Categoria, @VolumeEmMl, @Preco, @Descricao, @PublicoAlvo, @QntEntradaInicial, @DataCadastro, @Imagem);";
 				MySqlCommand _cmd = new(_sqlScript, conn);
 				_cmd.Parameters.AddWithValue("@Nome", _nome);
