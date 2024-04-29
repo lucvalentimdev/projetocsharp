@@ -1,4 +1,6 @@
-﻿namespace SalSystem.Models;
+﻿using SalSystem.Services;
+
+namespace SalSystem.Models;
 
 internal class Produto(string _nome, string _marca, string _categoria, int _volumeEmMl, double _preco, string _descricao, string _publicoAlvo, int _qntEntradaIni,  DateTime _dataCadastro, string _img)
 {
@@ -13,13 +15,11 @@ internal class Produto(string _nome, string _marca, string _categoria, int _volu
     public DateTime DataCadastro { get; set; } = _dataCadastro;
     public string Imagem { get; set; } = _img;
 
-    public bool CadastraNovoProd()
-    {
-        if (2 > 1)
-            return true;
-        else
-            return false;
+    readonly DataController dataController = new();
 
+    public string CadastraNovoProd()
+    {
+        return dataController.QueryInsertPruduto(Nome, Marca, Categoria, VolumeEmMl, Preco, Descricao, PublicoAlvo, QntEntradaInicial, DataCadastro, Imagem);
     }
 
 }

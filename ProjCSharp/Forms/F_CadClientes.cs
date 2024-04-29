@@ -145,7 +145,6 @@ public partial class F_CadClientes : Form
             if (_log == "Salvo com sucesso!")
             {
                 Utilities.MessageInformation(_log);
-
                 BtnCancelar_Click(sender, e);
             }
             else

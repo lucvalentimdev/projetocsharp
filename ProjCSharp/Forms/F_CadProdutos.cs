@@ -33,9 +33,14 @@ public partial class F_CadProdutos : Form
     private void BtnConfirmar_Click(object sender, EventArgs e)
     {
         string _img = ImagemConverter.ImageToBase64(imgProduto.Image);  
-
-        Produto produto = new(txtNomeProd.Text, txtMarca.Text, txtCategoria.Text, Convert.ToInt32(txtVolume.Text), Convert.ToDouble(txtPreco.Text), txtDescricao.Text,                                                                                              cboPublico.Text, Convert.ToInt32(txtQntInicial.Text), DateTime.Now, _img);
-        produto.CadastraNovoProd();
+        Produto produto = new(txtNomeProd.Text, txtMarca.Text, txtCategoria.Text, Convert.ToInt32(txtVolume.Text), Convert.ToDouble(txtPreco.Text), txtDescricao.Text,                                                                                          cboPublico.Text, Convert.ToInt32(txtQntInicial.Text), DateTime.Now, _img);
+        string _log = produto.CadastraNovoProd();
+        if ( _log == "Salvo com sucesso!")
+        {
+            Utilities.MessageInformation(_log);
+        }
+        else
+            Utilities.MessageError(_log);
 
     }
 }
