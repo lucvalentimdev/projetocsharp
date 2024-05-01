@@ -58,6 +58,8 @@
             txtDescricao = new TextBox();
             labellb = new Label();
             label6 = new Label();
+            txtIDProd = new TextBox();
+            label7 = new Label();
             transparentPanel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imgProduto).BeginInit();
@@ -90,7 +92,8 @@
             BtnAdicionar.Location = new Point(203, 8);
             BtnAdicionar.Name = "BtnAdicionar";
             BtnAdicionar.Size = new Size(70, 40);
-            BtnAdicionar.TabIndex = 5;
+            BtnAdicionar.TabIndex = 1;
+            BtnAdicionar.TabStop = false;
             BtnAdicionar.UseVisualStyleBackColor = true;
             BtnAdicionar.Click += BtnAdicionar_Click;
             // 
@@ -122,7 +125,8 @@
             BtnConfirmar.Location = new Point(279, 8);
             BtnConfirmar.Name = "BtnConfirmar";
             BtnConfirmar.Size = new Size(70, 40);
-            BtnConfirmar.TabIndex = 4;
+            BtnConfirmar.TabIndex = 2;
+            BtnConfirmar.TabStop = false;
             BtnConfirmar.UseVisualStyleBackColor = true;
             BtnConfirmar.Click += BtnConfirmar_Click;
             // 
@@ -140,6 +144,7 @@
             BtnConsultar.Name = "BtnConsultar";
             BtnConsultar.Size = new Size(70, 40);
             BtnConsultar.TabIndex = 3;
+            BtnConsultar.TabStop = false;
             BtnConsultar.UseVisualStyleBackColor = true;
             // 
             // BtnCancelar
@@ -157,7 +162,8 @@
             BtnCancelar.Location = new Point(431, 8);
             BtnCancelar.Name = "BtnCancelar";
             BtnCancelar.Size = new Size(70, 40);
-            BtnCancelar.TabIndex = 2;
+            BtnCancelar.TabIndex = 4;
+            BtnCancelar.TabStop = false;
             BtnCancelar.UseVisualStyleBackColor = false;
             BtnCancelar.Click += BtnCancelar_Click;
             // 
@@ -177,7 +183,8 @@
             BtnFechar.Name = "BtnFechar";
             BtnFechar.RightToLeft = RightToLeft.No;
             BtnFechar.Size = new Size(70, 40);
-            BtnFechar.TabIndex = 1;
+            BtnFechar.TabIndex = 5;
+            BtnFechar.TabStop = false;
             BtnFechar.UseVisualStyleBackColor = false;
             BtnFechar.Click += BtnFechar_Click;
             // 
@@ -186,7 +193,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(14, 21);
+            label1.Location = new Point(14, 44);
             label1.Name = "label1";
             label1.Size = new Size(102, 17);
             label1.TabIndex = 3;
@@ -197,7 +204,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(14, 190);
+            label2.Location = new Point(14, 213);
             label2.Name = "label2";
             label2.Size = new Size(69, 17);
             label2.TabIndex = 4;
@@ -208,7 +215,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(12, 298);
+            label3.Location = new Point(12, 321);
             label3.Name = "label3";
             label3.Size = new Size(74, 17);
             label3.TabIndex = 5;
@@ -219,7 +226,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(279, 190);
+            label4.Location = new Point(279, 213);
             label4.Name = "label4";
             label4.Size = new Size(56, 17);
             label4.TabIndex = 6;
@@ -230,7 +237,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(129, 298);
+            label5.Location = new Point(129, 321);
             label5.Name = "label5";
             label5.Size = new Size(75, 17);
             label5.TabIndex = 7;
@@ -241,7 +248,7 @@
             label10.AutoSize = true;
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(12, 79);
+            label10.Location = new Point(12, 102);
             label10.Name = "label10";
             label10.Size = new Size(48, 17);
             label10.TabIndex = 12;
@@ -249,61 +256,74 @@
             // 
             // cboPublico
             // 
-            cboPublico.BackColor = Color.Gainsboro;
+            cboPublico.BackColor = Color.LightGray;
+            cboPublico.Enabled = false;
             cboPublico.FormattingEnabled = true;
             cboPublico.Items.AddRange(new object[] { "Homens", "Mulheres", "Crianças", "Outros" });
-            cboPublico.Location = new Point(14, 151);
+            cboPublico.Location = new Point(14, 174);
             cboPublico.Name = "cboPublico";
             cboPublico.Size = new Size(190, 23);
-            cboPublico.TabIndex = 13;
+            cboPublico.TabIndex = 2;
             // 
             // txtNomeProd
             // 
-            txtNomeProd.Location = new Point(14, 41);
+            txtNomeProd.BackColor = Color.LightGray;
+            txtNomeProd.Enabled = false;
+            txtNomeProd.Location = new Point(14, 64);
             txtNomeProd.MaxLength = 300;
             txtNomeProd.Name = "txtNomeProd";
             txtNomeProd.Size = new Size(373, 23);
-            txtNomeProd.TabIndex = 14;
+            txtNomeProd.TabIndex = 0;
             // 
             // txtCategoria
             // 
-            txtCategoria.Location = new Point(12, 210);
+            txtCategoria.BackColor = Color.LightGray;
+            txtCategoria.Enabled = false;
+            txtCategoria.Location = new Point(12, 233);
             txtCategoria.MaxLength = 150;
             txtCategoria.Name = "txtCategoria";
             txtCategoria.Size = new Size(269, 23);
-            txtCategoria.TabIndex = 15;
+            txtCategoria.TabIndex = 3;
             // 
             // txtVolume
             // 
-            txtVolume.Location = new Point(287, 210);
+            txtVolume.BackColor = Color.LightGray;
+            txtVolume.Enabled = false;
+            txtVolume.Location = new Point(287, 233);
             txtVolume.MaxLength = 3;
             txtVolume.Name = "txtVolume";
             txtVolume.Size = new Size(100, 23);
-            txtVolume.TabIndex = 16;
+            txtVolume.TabIndex = 4;
             // 
             // txtPreco
             // 
-            txtPreco.Location = new Point(12, 318);
+            txtPreco.BackColor = Color.LightGray;
+            txtPreco.Enabled = false;
+            txtPreco.Location = new Point(12, 341);
             txtPreco.MaxLength = 8;
             txtPreco.Name = "txtPreco";
             txtPreco.Size = new Size(100, 23);
-            txtPreco.TabIndex = 17;
+            txtPreco.TabIndex = 6;
             // 
             // txtMarca
             // 
-            txtMarca.Location = new Point(14, 99);
+            txtMarca.BackColor = Color.LightGray;
+            txtMarca.Enabled = false;
+            txtMarca.Location = new Point(14, 122);
             txtMarca.MaxLength = 200;
             txtMarca.Name = "txtMarca";
             txtMarca.Size = new Size(373, 23);
-            txtMarca.TabIndex = 18;
+            txtMarca.TabIndex = 1;
             // 
             // txtQntInicial
             // 
-            txtQntInicial.Location = new Point(129, 318);
+            txtQntInicial.BackColor = Color.LightGray;
+            txtQntInicial.Enabled = false;
+            txtQntInicial.Location = new Point(129, 341);
             txtQntInicial.MaxLength = 4;
             txtQntInicial.Name = "txtQntInicial";
             txtQntInicial.Size = new Size(75, 23);
-            txtQntInicial.TabIndex = 19;
+            txtQntInicial.TabIndex = 7;
             // 
             // openFileDialog
             // 
@@ -317,16 +337,17 @@
             groupBox1.Controls.Add(imgProduto);
             groupBox1.FlatStyle = FlatStyle.Flat;
             groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            groupBox1.Location = new Point(470, 3);
+            groupBox1.Location = new Point(470, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(314, 312);
-            groupBox1.TabIndex = 22;
+            groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Imagem do Produto:";
             // 
             // BtnRemoverImg
             // 
             BtnRemoverImg.Cursor = Cursors.Hand;
+            BtnRemoverImg.Enabled = false;
             BtnRemoverImg.FlatAppearance.BorderSize = 0;
             BtnRemoverImg.FlatAppearance.MouseDownBackColor = Color.LightGray;
             BtnRemoverImg.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
@@ -336,7 +357,7 @@
             BtnRemoverImg.Location = new Point(231, 247);
             BtnRemoverImg.Name = "BtnRemoverImg";
             BtnRemoverImg.Size = new Size(48, 40);
-            BtnRemoverImg.TabIndex = 24;
+            BtnRemoverImg.TabIndex = 9;
             BtnRemoverImg.UseVisualStyleBackColor = true;
             BtnRemoverImg.Click += BtnRemoverImg_Click;
             // 
@@ -344,6 +365,7 @@
             // 
             BtnUploadImg.BackColor = Color.Transparent;
             BtnUploadImg.Cursor = Cursors.Hand;
+            BtnUploadImg.Enabled = false;
             BtnUploadImg.FlatAppearance.BorderSize = 0;
             BtnUploadImg.FlatAppearance.MouseDownBackColor = Color.LightGray;
             BtnUploadImg.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
@@ -354,7 +376,7 @@
             BtnUploadImg.Location = new Point(185, 247);
             BtnUploadImg.Name = "BtnUploadImg";
             BtnUploadImg.Size = new Size(48, 40);
-            BtnUploadImg.TabIndex = 23;
+            BtnUploadImg.TabIndex = 8;
             BtnUploadImg.UseVisualStyleBackColor = false;
             BtnUploadImg.Click += BtnUploadImg_Click;
             // 
@@ -373,17 +395,19 @@
             // 
             // txtDescricao
             // 
-            txtDescricao.Location = new Point(12, 268);
+            txtDescricao.BackColor = Color.LightGray;
+            txtDescricao.Enabled = false;
+            txtDescricao.Location = new Point(12, 291);
             txtDescricao.Name = "txtDescricao";
             txtDescricao.Size = new Size(375, 23);
-            txtDescricao.TabIndex = 23;
+            txtDescricao.TabIndex = 5;
             // 
             // labellb
             // 
             labellb.AutoSize = true;
             labellb.BackColor = Color.Transparent;
             labellb.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labellb.Location = new Point(12, 248);
+            labellb.Location = new Point(12, 271);
             labellb.Name = "labellb";
             labellb.Size = new Size(106, 17);
             labellb.TabIndex = 24;
@@ -394,11 +418,37 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(12, 131);
+            label6.Location = new Point(12, 154);
             label6.Name = "label6";
             label6.Size = new Size(86, 17);
             label6.TabIndex = 25;
             label6.Text = "Publico Alvo:";
+            // 
+            // txtIDProd
+            // 
+            txtIDProd.BackColor = Color.LightGray;
+            txtIDProd.BorderStyle = BorderStyle.None;
+            txtIDProd.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtIDProd.ForeColor = Color.Red;
+            txtIDProd.Location = new Point(91, 17);
+            txtIDProd.Name = "txtIDProd";
+            txtIDProd.ReadOnly = true;
+            txtIDProd.Size = new Size(64, 20);
+            txtIDProd.TabIndex = 26;
+            txtIDProd.TabStop = false;
+            txtIDProd.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            label7.ForeColor = Color.Firebrick;
+            label7.Location = new Point(14, 17);
+            label7.Name = "label7";
+            label7.Size = new Size(71, 20);
+            label7.TabIndex = 27;
+            label7.Text = "CÓDIGO:";
             // 
             // F_CadProdutos
             // 
@@ -407,6 +457,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(784, 561);
+            Controls.Add(label7);
+            Controls.Add(txtIDProd);
             Controls.Add(label6);
             Controls.Add(labellb);
             Controls.Add(txtDescricao);
@@ -432,6 +484,7 @@
             Name = "F_CadProdutos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "F_CadProdutos";
+            Load += F_CadProdutos_Load;
             transparentPanel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)imgProduto).EndInit();
@@ -469,5 +522,7 @@
         private TextBox txtDescricao;
         private Label labellb;
         private Label label6;
+        private TextBox txtIDProd;
+        private Label label7;
     }
 }

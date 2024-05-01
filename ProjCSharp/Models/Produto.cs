@@ -2,8 +2,9 @@
 
 namespace SalSystem.Models;
 
-internal class Produto(string _nome, string _marca, string _categoria, int _volumeEmMl, double _preco, string _descricao, string _publicoAlvo, int _qntEntradaIni,  DateTime _dataCadastro, string _img)
+internal class Produto(int _idprod, string _nome, string _marca, string _categoria, int _volumeEmMl, double _preco, string _descricao, string _publicoAlvo, int _qntEntradaIni,  DateTime _dataCadastro, string _img)
 {
+    public int IdProd { get; set; } = _idprod;
     public string Nome { get; set; } = _nome;
     public string Marca { get; set; } = _marca;
     public string Categoria { get; set; } = _categoria;

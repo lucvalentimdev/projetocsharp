@@ -67,6 +67,7 @@
             // transparentPanel1
             // 
             transparentPanel1.BackColor = Color.Transparent;
+            transparentPanel1.Controls.Add(label13);
             transparentPanel1.Controls.Add(BtnAdicionar);
             transparentPanel1.Controls.Add(BtnConfirmar);
             transparentPanel1.Controls.Add(BtnConsultar);
@@ -92,6 +93,7 @@
             BtnAdicionar.Name = "BtnAdicionar";
             BtnAdicionar.Size = new Size(70, 40);
             BtnAdicionar.TabIndex = 5;
+            BtnAdicionar.TabStop = false;
             BtnAdicionar.UseVisualStyleBackColor = true;
             BtnAdicionar.Click += BtnAdicionar_Click;
             // 
@@ -123,6 +125,7 @@
             BtnConfirmar.Name = "BtnConfirmar";
             BtnConfirmar.Size = new Size(70, 40);
             BtnConfirmar.TabIndex = 4;
+            BtnConfirmar.TabStop = false;
             BtnConfirmar.UseVisualStyleBackColor = true;
             BtnConfirmar.Click += BtnConfirmar_Click;
             // 
@@ -140,6 +143,7 @@
             BtnConsultar.Name = "BtnConsultar";
             BtnConsultar.Size = new Size(70, 40);
             BtnConsultar.TabIndex = 3;
+            BtnConsultar.TabStop = false;
             BtnConsultar.UseVisualStyleBackColor = true;
             BtnConsultar.Click += BtnConsultar_Click;
             // 
@@ -159,6 +163,7 @@
             BtnCancelar.Name = "BtnCancelar";
             BtnCancelar.Size = new Size(70, 40);
             BtnCancelar.TabIndex = 2;
+            BtnCancelar.TabStop = false;
             BtnCancelar.UseVisualStyleBackColor = false;
             BtnCancelar.Click += BtnCancelar_Click;
             // 
@@ -179,6 +184,7 @@
             BtnFechar.RightToLeft = RightToLeft.No;
             BtnFechar.Size = new Size(70, 40);
             BtnFechar.TabIndex = 1;
+            BtnFechar.TabStop = false;
             BtnFechar.UseVisualStyleBackColor = false;
             BtnFechar.Click += BtnFechar_Click;
             // 
@@ -388,6 +394,7 @@
             BtnEdtEndereco.Name = "BtnEdtEndereco";
             BtnEdtEndereco.Size = new Size(36, 36);
             BtnEdtEndereco.TabIndex = 19;
+            BtnEdtEndereco.TabStop = false;
             BtnEdtEndereco.UseVisualStyleBackColor = false;
             BtnEdtEndereco.Click += BtnEdtEndereco_Click;
             // 
@@ -455,7 +462,7 @@
             label13.BackColor = Color.Transparent;
             label13.Font = new Font("Segoe UI", 8F, FontStyle.Italic);
             label13.ForeColor = Color.Firebrick;
-            label13.Location = new Point(496, 248);
+            label13.Location = new Point(651, 35);
             label13.Name = "label13";
             label13.Size = new Size(111, 13);
             label13.TabIndex = 25;
@@ -468,7 +475,6 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(784, 561);
-            Controls.Add(label13);
             Controls.Add(label12);
             Controls.Add(label11);
             Controls.Add(label10);
@@ -501,6 +507,7 @@
             StartPosition = FormStartPosition.CenterParent;
             Text = "Cadastrar Clientes";
             transparentPanel1.ResumeLayout(false);
+            transparentPanel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

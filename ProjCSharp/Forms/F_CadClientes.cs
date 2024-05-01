@@ -42,15 +42,15 @@ public partial class F_CadClientes : Form
         cboUF.BackColor = Color.LightGray;
         chkNaoInfoCPF.Checked = false;
 
-        txtNome.Text = String.Empty;                //<--- Limpeza de campos comuns do formulário ---//
-        txtCPF.Text = String.Empty;
-        txtTelefone.Text = String.Empty;
-        txtCEP.Text = String.Empty;
-        txtCidade.Text = String.Empty;
-        txtLogradouro.Text = String.Empty;
-        txtNumeroResid.Text = String.Empty;
-        cboUF.Text = String.Empty;
-        rtfObservacao.Text = String.Empty;
+        txtNome.Text = string.Empty;                //<--- Limpeza de campos comuns do formulário ---//
+        txtCPF.Text = string.Empty;
+        txtTelefone.Text = string.Empty;
+        txtCEP.Text = string.Empty;
+        txtCidade.Text = string.Empty;
+        txtLogradouro.Text = string.Empty;
+        txtNumeroResid.Text = string.Empty;
+        cboUF.Text = string.Empty;
+        rtfObservacao.Text = string.Empty;
 
         EnabledController(false);
     }

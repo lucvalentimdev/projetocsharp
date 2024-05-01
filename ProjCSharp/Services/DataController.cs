@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
 
 namespace SalSystem.Services;
 
@@ -105,6 +106,43 @@ internal class DataController()
 			Disconnect();
         }
 	}
+
+    //******* Query 04 --> Encontra para apresentar o prox. Cód Produto *******//
+    public string QueryBuscaIDProd()
+	{
+		string _sqlScript = "SELECT MAX((id)+1) FROM produtos";
+		try
+		{
+            Connect();
+            if (conn != null)
+            {
+                MySqlCommand _cmd = new(_sqlScript, conn);
+				object _result = _cmd.ExecuteScalar();			// <-- ExecuteScalar para retornar apenas um valor//
+
+				if (_result != null)
+					return _result.ToString();
+				else
+					return "";
+            }
+            else
+                return "";
+
+        }
+		catch (Exception)
+		{
+			throw;
+		}
+		finally
+		{
+			Disconnect();
+		}
+			
+	
+	}
+
+
+
+
 }
 
 
