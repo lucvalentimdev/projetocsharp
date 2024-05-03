@@ -31,48 +31,48 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Vendas));
             groupBox1 = new GroupBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
+            txtCPF = new TextBox();
+            txtNomeCliente = new TextBox();
             label5 = new Label();
             label4 = new Label();
-            button2 = new Button();
+            btnConsultaCliente = new Button();
             imageList1 = new ImageList(components);
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
-            button4 = new Button();
-            button3 = new Button();
+            btnRemoveProd = new Button();
+            btnAddProd = new Button();
             label6 = new Label();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            txtValorUnitario = new TextBox();
+            txtDescricaoProd = new TextBox();
+            txtCodProd = new TextBox();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            button1 = new Button();
-            textBox1 = new TextBox();
-            pictureBox1 = new PictureBox();
+            btnConsultaProd = new Button();
+            txtConsultaProd = new TextBox();
+            imgProduto = new PictureBox();
             groupBox4 = new GroupBox();
-            comboBox1 = new ComboBox();
+            cboFormaReceb = new ComboBox();
             label9 = new Label();
-            textBox8 = new TextBox();
+            txtQntItens = new TextBox();
             label8 = new Label();
-            textBox7 = new TextBox();
+            txtValorTotal = new TextBox();
             label7 = new Label();
-            button6 = new Button();
-            button5 = new Button();
+            btnCancelar = new Button();
+            btnConcluir = new Button();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imgProduto).BeginInit();
             groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox6);
-            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(txtCPF);
+            groupBox1.Controls.Add(txtNomeCliente);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(btnConsultaCliente);
             groupBox1.FlatStyle = FlatStyle.Flat;
             groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             groupBox1.ForeColor = Color.IndianRed;
@@ -83,29 +83,34 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Informações Cliente: ";
             // 
-            // textBox6
+            // txtCPF
             // 
-            textBox6.Location = new Point(11, 89);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(193, 25);
-            textBox6.TabIndex = 9;
+            txtCPF.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtCPF.Location = new Point(140, 84);
+            txtCPF.Name = "txtCPF";
+            txtCPF.Size = new Size(184, 27);
+            txtCPF.TabIndex = 9;
             // 
-            // textBox5
+            // txtNomeCliente
             // 
-            textBox5.Location = new Point(11, 41);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(313, 25);
-            textBox5.TabIndex = 8;
+            txtNomeCliente.BackColor = SystemColors.Window;
+            txtNomeCliente.BorderStyle = BorderStyle.None;
+            txtNomeCliente.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtNomeCliente.Location = new Point(11, 41);
+            txtNomeCliente.Name = "txtNomeCliente";
+            txtNomeCliente.ReadOnly = true;
+            txtNomeCliente.Size = new Size(434, 20);
+            txtNomeCliente.TabIndex = 8;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.ForeColor = Color.Gray;
-            label5.Location = new Point(11, 69);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(11, 88);
             label5.Name = "label5";
-            label5.Size = new Size(82, 17);
+            label5.Size = new Size(123, 17);
             label5.TabIndex = 7;
-            label5.Text = "CPF Cliente:";
+            label5.Text = "Consultar por CPF:";
             // 
             // label4
             // 
@@ -117,23 +122,25 @@
             label4.TabIndex = 6;
             label4.Text = "Nome Cliente:";
             // 
-            // button2
+            // btnConsultaCliente
             // 
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderSize = 2;
-            button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(224, 224, 224);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.DarkGreen;
-            button2.ImageIndex = 4;
-            button2.ImageList = imageList1;
-            button2.Location = new Point(210, 80);
-            button2.Name = "button2";
-            button2.Size = new Size(115, 40);
-            button2.TabIndex = 0;
-            button2.Text = "Pesquisar";
-            button2.TextAlign = ContentAlignment.MiddleRight;
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = true;
+            btnConsultaCliente.Cursor = Cursors.Hand;
+            btnConsultaCliente.FlatAppearance.BorderSize = 2;
+            btnConsultaCliente.FlatAppearance.MouseDownBackColor = Color.LightGray;
+            btnConsultaCliente.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
+            btnConsultaCliente.FlatStyle = FlatStyle.Flat;
+            btnConsultaCliente.ForeColor = Color.DarkGreen;
+            btnConsultaCliente.ImageIndex = 4;
+            btnConsultaCliente.ImageList = imageList1;
+            btnConsultaCliente.Location = new Point(330, 76);
+            btnConsultaCliente.Name = "btnConsultaCliente";
+            btnConsultaCliente.Size = new Size(115, 40);
+            btnConsultaCliente.TabIndex = 0;
+            btnConsultaCliente.Text = "Pesquisar";
+            btnConsultaCliente.TextAlign = ContentAlignment.MiddleRight;
+            btnConsultaCliente.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnConsultaCliente.UseVisualStyleBackColor = true;
+            btnConsultaCliente.Click += btnConsultaCliente_Click;
             // 
             // imageList1
             // 
@@ -161,18 +168,18 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(button4);
-            groupBox3.Controls.Add(button3);
+            groupBox3.Controls.Add(btnRemoveProd);
+            groupBox3.Controls.Add(btnAddProd);
             groupBox3.Controls.Add(label6);
-            groupBox3.Controls.Add(textBox4);
-            groupBox3.Controls.Add(textBox3);
-            groupBox3.Controls.Add(textBox2);
+            groupBox3.Controls.Add(txtValorUnitario);
+            groupBox3.Controls.Add(txtDescricaoProd);
+            groupBox3.Controls.Add(txtCodProd);
             groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(label2);
             groupBox3.Controls.Add(label1);
-            groupBox3.Controls.Add(button1);
-            groupBox3.Controls.Add(textBox1);
-            groupBox3.Controls.Add(pictureBox1);
+            groupBox3.Controls.Add(btnConsultaProd);
+            groupBox3.Controls.Add(txtConsultaProd);
+            groupBox3.Controls.Add(imgProduto);
             groupBox3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             groupBox3.ForeColor = Color.IndianRed;
             groupBox3.Location = new Point(1, 136);
@@ -182,71 +189,79 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Produto: ";
             // 
-            // button4
+            // btnRemoveProd
             // 
-            button4.Cursor = Cursors.Hand;
-            button4.FlatAppearance.BorderSize = 2;
-            button4.FlatAppearance.MouseDownBackColor = Color.FromArgb(224, 224, 224);
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.ImageIndex = 3;
-            button4.ImageList = imageList1;
-            button4.Location = new Point(298, 444);
-            button4.Name = "button4";
-            button4.Size = new Size(115, 44);
-            button4.TabIndex = 11;
-            button4.Text = "Remover";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button4.UseVisualStyleBackColor = true;
+            btnRemoveProd.Cursor = Cursors.Hand;
+            btnRemoveProd.FlatAppearance.BorderSize = 2;
+            btnRemoveProd.FlatAppearance.MouseDownBackColor = Color.LightGray;
+            btnRemoveProd.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
+            btnRemoveProd.FlatStyle = FlatStyle.Flat;
+            btnRemoveProd.ImageIndex = 3;
+            btnRemoveProd.ImageList = imageList1;
+            btnRemoveProd.Location = new Point(298, 444);
+            btnRemoveProd.Name = "btnRemoveProd";
+            btnRemoveProd.Size = new Size(115, 44);
+            btnRemoveProd.TabIndex = 11;
+            btnRemoveProd.Text = "Remover";
+            btnRemoveProd.TextAlign = ContentAlignment.MiddleLeft;
+            btnRemoveProd.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnRemoveProd.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAddProd
             // 
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderSize = 2;
-            button3.FlatAppearance.MouseDownBackColor = Color.FromArgb(224, 224, 224);
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.ImageIndex = 1;
-            button3.ImageList = imageList1;
-            button3.Location = new Point(177, 444);
-            button3.Name = "button3";
-            button3.Size = new Size(115, 44);
-            button3.TabIndex = 10;
-            button3.Text = "Adicionar";
-            button3.TextAlign = ContentAlignment.MiddleRight;
-            button3.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button3.UseVisualStyleBackColor = true;
+            btnAddProd.Cursor = Cursors.Hand;
+            btnAddProd.FlatAppearance.BorderSize = 2;
+            btnAddProd.FlatAppearance.MouseDownBackColor = Color.LightGray;
+            btnAddProd.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
+            btnAddProd.FlatStyle = FlatStyle.Flat;
+            btnAddProd.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAddProd.ImageIndex = 1;
+            btnAddProd.ImageList = imageList1;
+            btnAddProd.Location = new Point(177, 444);
+            btnAddProd.Name = "btnAddProd";
+            btnAddProd.Size = new Size(115, 44);
+            btnAddProd.TabIndex = 10;
+            btnAddProd.Text = "Adicionar";
+            btnAddProd.TextAlign = ContentAlignment.MiddleRight;
+            btnAddProd.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnAddProd.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.ForeColor = Color.Gray;
+            label6.ForeColor = Color.Black;
             label6.Location = new Point(11, 357);
             label6.Name = "label6";
-            label6.Size = new Size(239, 17);
+            label6.Size = new Size(255, 17);
             label6.TabIndex = 9;
-            label6.Text = "Buscar por nome de produto ou cód.:";
+            label6.Text = "Buscar por nome de produto ou código:";
             // 
-            // textBox4
+            // txtValorUnitario
             // 
-            textBox4.Location = new Point(192, 268);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 25);
-            textBox4.TabIndex = 8;
+            txtValorUnitario.BorderStyle = BorderStyle.None;
+            txtValorUnitario.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtValorUnitario.Location = new Point(192, 268);
+            txtValorUnitario.Name = "txtValorUnitario";
+            txtValorUnitario.Size = new Size(100, 20);
+            txtValorUnitario.TabIndex = 8;
             // 
-            // textBox3
+            // txtDescricaoProd
             // 
-            textBox3.Location = new Point(192, 159);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(281, 25);
-            textBox3.TabIndex = 7;
+            txtDescricaoProd.BorderStyle = BorderStyle.None;
+            txtDescricaoProd.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtDescricaoProd.Location = new Point(192, 159);
+            txtDescricaoProd.Name = "txtDescricaoProd";
+            txtDescricaoProd.Size = new Size(281, 20);
+            txtDescricaoProd.TabIndex = 7;
             // 
-            // textBox2
+            // txtCodProd
             // 
-            textBox2.Location = new Point(195, 62);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 25);
-            textBox2.TabIndex = 6;
+            txtCodProd.BorderStyle = BorderStyle.None;
+            txtCodProd.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtCodProd.Location = new Point(195, 62);
+            txtCodProd.Name = "txtCodProd";
+            txtCodProd.Size = new Size(100, 20);
+            txtCodProd.TabIndex = 6;
             // 
             // label3
             // 
@@ -278,50 +293,56 @@
             label1.TabIndex = 3;
             label1.Text = "Descrição item:";
             // 
-            // button1
+            // btnConsultaProd
             // 
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 2;
-            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(224, 224, 224);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.ImageIndex = 0;
-            button1.ImageList = imageList1;
-            button1.Location = new Point(53, 445);
-            button1.Name = "button1";
-            button1.Size = new Size(115, 44);
-            button1.TabIndex = 2;
-            button1.Text = "Buscar";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button1.UseVisualStyleBackColor = true;
+            btnConsultaProd.Cursor = Cursors.Hand;
+            btnConsultaProd.FlatAppearance.BorderSize = 2;
+            btnConsultaProd.FlatAppearance.MouseDownBackColor = Color.LightGray;
+            btnConsultaProd.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
+            btnConsultaProd.FlatStyle = FlatStyle.Flat;
+            btnConsultaProd.ImageAlign = ContentAlignment.MiddleLeft;
+            btnConsultaProd.ImageIndex = 0;
+            btnConsultaProd.ImageList = imageList1;
+            btnConsultaProd.Location = new Point(53, 445);
+            btnConsultaProd.Name = "btnConsultaProd";
+            btnConsultaProd.Size = new Size(115, 44);
+            btnConsultaProd.TabIndex = 2;
+            btnConsultaProd.Text = "Buscar";
+            btnConsultaProd.TextAlign = ContentAlignment.MiddleRight;
+            btnConsultaProd.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnConsultaProd.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtConsultaProd
             // 
-            textBox1.Location = new Point(11, 377);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(462, 25);
-            textBox1.TabIndex = 1;
+            txtConsultaProd.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtConsultaProd.Location = new Point(11, 377);
+            txtConsultaProd.Name = "txtConsultaProd";
+            txtConsultaProd.Size = new Size(462, 27);
+            txtConsultaProd.TabIndex = 1;
             // 
-            // pictureBox1
+            // imgProduto
             // 
-            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox1.Location = new Point(11, 42);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(175, 251);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            imgProduto.BackgroundImageLayout = ImageLayout.Center;
+            imgProduto.BorderStyle = BorderStyle.FixedSingle;
+            imgProduto.ErrorImage = Properties.Resources.not_img_128x128;
+            imgProduto.Image = Properties.Resources.not_img_128x128;
+            imgProduto.Location = new Point(11, 42);
+            imgProduto.Name = "imgProduto";
+            imgProduto.Size = new Size(175, 251);
+            imgProduto.SizeMode = PictureBoxSizeMode.StretchImage;
+            imgProduto.TabIndex = 0;
+            imgProduto.TabStop = false;
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(comboBox1);
+            groupBox4.Controls.Add(cboFormaReceb);
             groupBox4.Controls.Add(label9);
-            groupBox4.Controls.Add(textBox8);
+            groupBox4.Controls.Add(txtQntItens);
             groupBox4.Controls.Add(label8);
-            groupBox4.Controls.Add(textBox7);
+            groupBox4.Controls.Add(txtValorTotal);
             groupBox4.Controls.Add(label7);
-            groupBox4.Controls.Add(button6);
-            groupBox4.Controls.Add(button5);
+            groupBox4.Controls.Add(btnCancelar);
+            groupBox4.Controls.Add(btnConcluir);
             groupBox4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             groupBox4.ForeColor = Color.IndianRed;
             groupBox4.Location = new Point(486, 407);
@@ -331,13 +352,13 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Pagamento:";
             // 
-            // comboBox1
+            // cboFormaReceb
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(81, 41);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(236, 25);
-            comboBox1.TabIndex = 21;
+            cboFormaReceb.FormattingEnabled = true;
+            cboFormaReceb.Location = new Point(81, 41);
+            cboFormaReceb.Name = "cboFormaReceb";
+            cboFormaReceb.Size = new Size(236, 25);
+            cboFormaReceb.TabIndex = 21;
             // 
             // label9
             // 
@@ -349,12 +370,16 @@
             label9.TabIndex = 20;
             label9.Text = "Forma Recebimento:";
             // 
-            // textBox8
+            // txtQntItens
             // 
-            textBox8.Location = new Point(81, 106);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(100, 25);
-            textBox8.TabIndex = 19;
+            txtQntItens.BackColor = SystemColors.ControlLightLight;
+            txtQntItens.BorderStyle = BorderStyle.None;
+            txtQntItens.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            txtQntItens.Location = new Point(81, 106);
+            txtQntItens.Name = "txtQntItens";
+            txtQntItens.ReadOnly = true;
+            txtQntItens.Size = new Size(100, 22);
+            txtQntItens.TabIndex = 19;
             // 
             // label8
             // 
@@ -366,12 +391,16 @@
             label8.TabIndex = 18;
             label8.Text = "Valor total:";
             // 
-            // textBox7
+            // txtValorTotal
             // 
-            textBox7.Location = new Point(217, 106);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 25);
-            textBox7.TabIndex = 17;
+            txtValorTotal.BackColor = SystemColors.ControlLightLight;
+            txtValorTotal.BorderStyle = BorderStyle.None;
+            txtValorTotal.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            txtValorTotal.Location = new Point(217, 106);
+            txtValorTotal.Name = "txtValorTotal";
+            txtValorTotal.ReadOnly = true;
+            txtValorTotal.Size = new Size(100, 22);
+            txtValorTotal.TabIndex = 17;
             // 
             // label7
             // 
@@ -383,42 +412,44 @@
             label7.TabIndex = 16;
             label7.Text = "Qnt. Itens:";
             // 
-            // button6
+            // btnCancelar
             // 
-            button6.Cursor = Cursors.Hand;
-            button6.FlatAppearance.BorderSize = 2;
-            button6.FlatAppearance.MouseDownBackColor = Color.FromArgb(224, 224, 224);
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            button6.ForeColor = Color.Red;
-            button6.ImageIndex = 6;
-            button6.ImageList = imageList1;
-            button6.Location = new Point(202, 173);
-            button6.Name = "button6";
-            button6.Size = new Size(115, 44);
-            button6.TabIndex = 15;
-            button6.Text = "Cancelar";
-            button6.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            btnCancelar.Cursor = Cursors.Hand;
+            btnCancelar.FlatAppearance.BorderSize = 2;
+            btnCancelar.FlatAppearance.MouseDownBackColor = Color.LightGray;
+            btnCancelar.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            btnCancelar.ForeColor = Color.Red;
+            btnCancelar.ImageIndex = 6;
+            btnCancelar.ImageList = imageList1;
+            btnCancelar.Location = new Point(202, 173);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(115, 44);
+            btnCancelar.TabIndex = 15;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
-            // button5
+            // btnConcluir
             // 
-            button5.Cursor = Cursors.Hand;
-            button5.FlatAppearance.BorderSize = 2;
-            button5.FlatAppearance.MouseDownBackColor = Color.FromArgb(224, 224, 224);
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            button5.ForeColor = Color.DarkCyan;
-            button5.ImageIndex = 5;
-            button5.ImageList = imageList1;
-            button5.Location = new Point(81, 173);
-            button5.Name = "button5";
-            button5.Size = new Size(115, 44);
-            button5.TabIndex = 14;
-            button5.Text = "Concluir";
-            button5.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button5.UseVisualStyleBackColor = true;
+            btnConcluir.Cursor = Cursors.Hand;
+            btnConcluir.FlatAppearance.BorderSize = 2;
+            btnConcluir.FlatAppearance.MouseDownBackColor = Color.LightGray;
+            btnConcluir.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
+            btnConcluir.FlatStyle = FlatStyle.Flat;
+            btnConcluir.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            btnConcluir.ForeColor = Color.DarkCyan;
+            btnConcluir.ImageIndex = 5;
+            btnConcluir.ImageList = imageList1;
+            btnConcluir.Location = new Point(81, 173);
+            btnConcluir.Name = "btnConcluir";
+            btnConcluir.Size = new Size(115, 44);
+            btnConcluir.TabIndex = 14;
+            btnConcluir.Text = "Concluir";
+            btnConcluir.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnConcluir.UseVisualStyleBackColor = true;
             // 
             // F_Vendas
             // 
@@ -438,7 +469,7 @@
             groupBox1.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgProduto).EndInit();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             ResumeLayout(false);
@@ -449,32 +480,32 @@
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
-        private PictureBox pictureBox1;
-        private Button button1;
-        private TextBox textBox1;
+        private PictureBox imgProduto;
+        private Button btnConsultaProd;
+        private TextBox txtConsultaProd;
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox txtValorUnitario;
+        private TextBox txtDescricaoProd;
+        private TextBox txtCodProd;
         private Label label5;
         private Label label4;
-        private Button button2;
-        private TextBox textBox6;
-        private TextBox textBox5;
+        private Button btnConsultaCliente;
+        private TextBox txtCPF;
+        private TextBox txtNomeCliente;
         private Label label6;
         private ImageList imageList1;
-        private Button button4;
-        private Button button3;
+        private Button btnRemoveProd;
+        private Button btnAddProd;
         private GroupBox groupBox4;
-        private TextBox textBox8;
+        private TextBox txtQntItens;
         private Label label8;
-        private TextBox textBox7;
+        private TextBox txtValorTotal;
         private Label label7;
-        private Button button6;
-        private Button button5;
-        private ComboBox comboBox1;
+        private Button btnCancelar;
+        private Button btnConcluir;
+        private ComboBox cboFormaReceb;
         private Label label9;
     }
 }

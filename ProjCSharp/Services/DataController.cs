@@ -140,7 +140,34 @@ internal class DataController()
 	
 	}
 
+    //******* Query 05 --> Encontra o cliente buscando pelo CPF *******//
+	public string GetCliente(string _cpf)
+	{
+		string _stringSql = "SELECT nome FROM cliente WHERE cpf = @cpf ";
+		
+		try
+		{
+            Connect();
+			if (conn != null)
+			{
+				MySqlCommand _cmd = new(_stringSql, conn);
+				_cmd.Parameters.AddWithValue("@cpf", _cpf);
+				object _result = _cmd.ExecuteScalar();
 
+				if (_result != null)
+					return _result.ToString();
+				else
+					return "Não foi encontrado nenhum cliente nessa consulta!";
+			}
+			else
+				return "Erro ao conectar ao banco de dados!";
+        }
+		catch (Exception)
+		{
+            return "Erro ao executar a consulta";
+            throw;
+		}
+	}
 
 
 }

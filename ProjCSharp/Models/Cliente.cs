@@ -2,14 +2,14 @@
 
 namespace SalSystem.Models;
 
-internal class Cliente(string _nome,string _cpf,string _telefone,string _cep, string _uf, string _cidade, string _logradouro, string _numeroResidencia)
+internal class Cliente(string _nome, string _cpf, string _telefone, string _cep, string _uf, string _cidade, string _logradouro, string _numeroResidencia)
 {
     public string Nome { get; } = _nome;
     public string CPF { get; } = _cpf;
     public string Telefone { get; } = _telefone;
     public string Cep { get; } = _cep;
     public string Cidade { get; } = _cidade;
-    public string Uf {  get; } = _uf;
+    public string Uf { get; } = _uf;
     public string Logradouro { get; } = _logradouro;
     public string NumeroResidencia { get; } = _numeroResidencia;
 
@@ -25,5 +25,13 @@ internal class Cliente(string _nome,string _cpf,string _telefone,string _cep, st
         if (!CPFValidator.ValidateCPF(_CPF))
             Utilities.MessageCaution("Atenção: CPF Inválido, cuidado ao salvar!");
     }
+
+    public static string GetCliente(string _cpf)
+    {
+        DataController dataController = new();
+        return dataController.GetCliente(_cpf);
+    }
+
+
 
 }

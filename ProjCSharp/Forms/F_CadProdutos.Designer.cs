@@ -339,7 +339,7 @@
             groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             groupBox1.Location = new Point(470, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(314, 312);
+            groupBox1.Size = new Size(314, 362);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Imagem do Produto:";
@@ -354,7 +354,7 @@
             BtnRemoverImg.FlatStyle = FlatStyle.Flat;
             BtnRemoverImg.ImageIndex = 6;
             BtnRemoverImg.ImageList = imageListIcons;
-            BtnRemoverImg.Location = new Point(231, 247);
+            BtnRemoverImg.Location = new Point(243, 316);
             BtnRemoverImg.Name = "BtnRemoverImg";
             BtnRemoverImg.Size = new Size(48, 40);
             BtnRemoverImg.TabIndex = 9;
@@ -373,7 +373,7 @@
             BtnUploadImg.ForeColor = Color.Transparent;
             BtnUploadImg.ImageIndex = 7;
             BtnUploadImg.ImageList = imageListIcons;
-            BtnUploadImg.Location = new Point(185, 247);
+            BtnUploadImg.Location = new Point(192, 316);
             BtnUploadImg.Name = "BtnUploadImg";
             BtnUploadImg.Size = new Size(48, 40);
             BtnUploadImg.TabIndex = 8;
@@ -382,13 +382,13 @@
             // 
             // imgProduto
             // 
-            imgProduto.BackColor = Color.Honeydew;
-            imgProduto.BorderStyle = BorderStyle.Fixed3D;
+            imgProduto.BackColor = Color.Transparent;
+            imgProduto.BorderStyle = BorderStyle.FixedSingle;
             imgProduto.ErrorImage = Properties.Resources.not_img_128x128;
-            imgProduto.Image = (Image)resources.GetObject("imgProduto.Image");
+            imgProduto.Image = Properties.Resources.not_img_128x128;
             imgProduto.Location = new Point(26, 20);
             imgProduto.Name = "imgProduto";
-            imgProduto.Size = new Size(265, 221);
+            imgProduto.Size = new Size(265, 290);
             imgProduto.SizeMode = PictureBoxSizeMode.StretchImage;
             imgProduto.TabIndex = 22;
             imgProduto.TabStop = false;
