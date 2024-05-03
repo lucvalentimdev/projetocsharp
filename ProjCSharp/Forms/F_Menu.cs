@@ -19,7 +19,7 @@ public partial class F_Menu : Form
     {
         try
         {
-            F_Login login = new();              // Inicia-se a tela de login antes do form principal//
+            F_Login login = new();              // <--- Obs: Inicia-se a tela de login antes do form principal ---//
             login.ShowDialog();
         }
         catch (Exception)
@@ -30,7 +30,8 @@ public partial class F_Menu : Form
 
     private void BtnPagamentos_Click(object sender, EventArgs e)
     {
-
+        F_Vendas f_Vendas = new();
+        f_Vendas.ShowDialog();
     }
 
     private void FecharToolStripMenuItem_Click(object sender, EventArgs e)
