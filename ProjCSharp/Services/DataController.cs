@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Common;
+using SalSystem.Models;
 
 namespace SalSystem.Services;
 
@@ -51,7 +51,7 @@ internal class DataController()
 				return "Erro no processo de conexão com banco de dados!";
 			
 		}
-		catch (Exception E)
+		catch (MySqlException E)
 		{
 			return "Erro ao salvar! Log: "+ E.Message;
 		}
@@ -97,7 +97,7 @@ internal class DataController()
             else
             return "Erro no processo de conexão com banco de dados!";
 		}
-		catch (Exception E)
+		catch (MySqlException E)
 		{
 			return "Erro ao salvar! Log: "+ E.Message;
 		}
@@ -128,7 +128,7 @@ internal class DataController()
                 return "";
 
         }
-		catch (Exception)
+		catch (MySqlException)
 		{
 			throw;
 		}
@@ -162,12 +162,71 @@ internal class DataController()
 			else
 				return "Erro ao conectar ao banco de dados!";
         }
-		catch (Exception)
+		catch (MySqlException)
 		{
             return "Erro ao executar a consulta";
             throw;
 		}
+		finally
+		{
+			Disconnect();
+		}
 	}
+
+
+	public List <Produto> GetProduto(string _filtroSql)
+	{
+		List<Produto> _list = new();
+		string _sqlScript = "SELECT * FROM produtos " +
+							"WHERE nome LIKE CONCAT('%', @filtro, '%') OR cod LIKE CONCAT('%', @filtro, '%');";
+
+		try
+		{
+			Connect();
+
+			if (conn != null)
+			{
+				MySqlCommand _cmd = new(_sqlScript, conn);
+				_cmd.Parameters.AddWithValue("@filtro", _filtroSql);
+				MySqlDataReader _dr = _cmd.ExecuteReader();
+
+				while (_dr.Read())
+				{
+					{
+						int _idProd = Convert.ToInt32(_dr["id"]);
+						string _nome = _dr["nome"].ToString();
+						string _marca = _dr["marca"].ToString();
+						string _categoria = _dr["categoria"].ToString();
+						int _volumeEmMl = Convert.ToInt32(_dr["volumeEmMl"]);
+						double _preco = Convert.ToDouble(_dr["preco"]);
+						string _descricao = _dr["descricao"].ToString();
+						string _publicoAlvo = _dr["publicoAlvo"].ToString();
+						int _qntEntradaIni = Convert.ToInt32(_dr["qntEntradaInicial"]);
+						DateTime _dataCadastro = Convert.ToDateTime(_dr["dataCadastro"]);
+						string _img = _dr["imagem"].ToString();
+
+						Produto _produto = new(_idProd, _nome, _marca, _categoria, _volumeEmMl, _preco, _descricao, _publicoAlvo, _qntEntradaIni, _dataCadastro, _img);
+					};
+				}
+
+				return _list;
+			}
+			else
+				return _list;
+
+		}
+		catch (MySqlException)
+		{
+			return _list;
+			throw;
+		}
+		finally
+		{
+			Disconnect();
+		}
+		
+	} 
+
 
 
 }

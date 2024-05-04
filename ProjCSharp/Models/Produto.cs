@@ -23,4 +23,10 @@ internal class Produto(int _idprod, string _nome, string _marca, string _categor
         return dataController.QueryInsertPruduto(Nome, Marca, Categoria, VolumeEmMl, Preco, Descricao, PublicoAlvo, QntEntradaInicial, DataCadastro, Imagem);
     }
 
+    public void GetProduto(string _filtro)
+    {
+        dataController.GetProduto(_filtro);
+
+    }
+
 }
