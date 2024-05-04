@@ -3,7 +3,7 @@
 internal class Utilities
 {//----------------------------------------------------------------------------------------------------------------------------------------------------------//
 // Igonara teclas que não forem número // ** Como parametro recebe (e) do evento KeyPress **  ---------------------------------------------------------------// 
-    public static void NumbersOnly(KeyPressEventArgs e)  
+    public static void NumbersOnly(KeyPressEventArgs e)                                 // Chamar esse metodo no evento: KeyPress do TxtBox ----------------//
     {                                                         
         if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
         {

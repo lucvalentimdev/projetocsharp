@@ -18,14 +18,16 @@ internal class Produto(int _idprod, string _nome, string _marca, string _categor
 
     readonly DataController dataController = new();
 
-    public string CadastraNovoProd()
+    public string CadastraNovoProd()        // Retorna Log derivado da DataController ao front-end//
     {
         return dataController.QueryInsertPruduto(Nome, Marca, Categoria, VolumeEmMl, Preco, Descricao, PublicoAlvo, QntEntradaInicial, DataCadastro, Imagem);
     }
 
-    public void GetProduto(string _filtro)
+    public static List <Produto> GetProduto(string _filtro)  // Retorna o Produto encontrado pela DataController ao front-end//
     {
-        dataController.GetProduto(_filtro);
+        DataController dataController = new();
+        List <Produto> _produtoEncontrado = dataController.GetProduto(_filtro);
+        return _produtoEncontrado;
 
     }
 

@@ -26,10 +26,10 @@ internal class Cliente(string _nome, string _cpf, string _telefone, string _cep,
             Utilities.MessageCaution("Atenção: CPF Inválido, cuidado ao salvar!");
     }
 
-    public static string GetCliente(string _cpf)
+    public static string EncontrarNomeCliente(string _cpf)
     {
         DataController dataController = new();
-        return dataController.GetCliente(_cpf);
+        return dataController.GetClienteNome(_cpf);
     }
 
 

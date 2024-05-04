@@ -358,6 +358,7 @@
             BtnRemoverImg.Name = "BtnRemoverImg";
             BtnRemoverImg.Size = new Size(48, 40);
             BtnRemoverImg.TabIndex = 9;
+            BtnRemoverImg.TabStop = false;
             BtnRemoverImg.UseVisualStyleBackColor = true;
             BtnRemoverImg.Click += BtnRemoverImg_Click;
             // 
@@ -377,6 +378,7 @@
             BtnUploadImg.Name = "BtnUploadImg";
             BtnUploadImg.Size = new Size(48, 40);
             BtnUploadImg.TabIndex = 8;
+            BtnUploadImg.TabStop = false;
             BtnUploadImg.UseVisualStyleBackColor = false;
             BtnUploadImg.Click += BtnUploadImg_Click;
             // 
@@ -483,7 +485,7 @@
             MinimizeBox = false;
             Name = "F_CadProdutos";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "F_CadProdutos";
+            Text = "Cadastro-Consulta de Produtos";
             Load += F_CadProdutos_Load;
             transparentPanel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);

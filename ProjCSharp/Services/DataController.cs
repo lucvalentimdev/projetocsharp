@@ -10,7 +10,7 @@ internal class DataController()
 	private void Connect()
 	{
 		if (conn.State != System.Data.ConnectionState.Open)
-		conn.Open();
+			conn.Open();
 	}
 	
 	private void Disconnect()
@@ -140,8 +140,8 @@ internal class DataController()
 	
 	}
 
-    //******* Query 05 --> Encontra o cliente buscando pelo CPF *******//
-	public string GetCliente(string _cpf)
+    //******* Query 05 --> Encontra o cliente ( Apenas o NOME) buscando pelo CPF *******//
+	public string GetClienteNome(string _cpf)
 	{
 		string _stringSql = "SELECT nome FROM cliente WHERE cpf = @cpf ";
 		
@@ -178,8 +178,7 @@ internal class DataController()
 	{
 		List<Produto> _list = new();
 		string _sqlScript = "SELECT * FROM produtos " +
-							"WHERE nome LIKE CONCAT('%', @filtro, '%') OR cod LIKE CONCAT('%', @filtro, '%');";
-
+							"WHERE nome LIKE CONCAT('%' @filtro '%') OR id LIKE CONCAT('%' @filtro '%');";
 		try
 		{
 			Connect();
@@ -206,10 +205,11 @@ internal class DataController()
 						string _img = _dr["imagem"].ToString();
 
 						Produto _produto = new(_idProd, _nome, _marca, _categoria, _volumeEmMl, _preco, _descricao, _publicoAlvo, _qntEntradaIni, _dataCadastro, _img);
-					};
-				}
+						_list.Add(_produto);
 
-				return _list;
+                    };
+				}
+                return _list;
 			}
 			else
 				return _list;
