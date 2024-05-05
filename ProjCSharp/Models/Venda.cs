@@ -1,4 +1,6 @@
-﻿namespace SalSystem.Models;
+﻿using SalSystem.Forms;
+
+namespace SalSystem.Models;
 
 internal class Venda(int _id, string _nomeprod, int _idProdVenda, int _quantidade, double _preco)
 {
@@ -13,9 +15,13 @@ internal class Venda(int _id, string _nomeprod, int _idProdVenda, int _quantidad
         return Quantidade * Preco;
     }
 
-    public void ExibirDetalhes()
+    public List<string> ExibirDetalhes()
     {
-       
+        double _subtotal = CalcularItemVenda();
+        
+        List<string> _list = [ "Id.Prod: "+IdProdVenda.ToString()+ " Produto: "+NomeProd.ToString()+ " Qnt.: "+Quantidade.ToString()+" Vl.Unt.: "+Preco.ToString()+" SubTotal: " +_subtotal.ToString() ];
+        
+        return _list;
     }
 
 }

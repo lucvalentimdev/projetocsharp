@@ -39,7 +39,7 @@
             label4 = new Label();
             btnConsultaCliente = new Button();
             groupBox2 = new GroupBox();
-            listView1 = new ListView();
+            rtPedido = new RichTextBox();
             groupBox3 = new GroupBox();
             label11 = new Label();
             btnLimpar = new Button();
@@ -184,7 +184,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(listView1);
+            groupBox2.Controls.Add(rtPedido);
             groupBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             groupBox2.ForeColor = Color.IndianRed;
             groupBox2.Location = new Point(586, 2);
@@ -194,14 +194,16 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Lista de pedidos:";
             // 
-            // listView1
+            // rtPedido
             // 
-            listView1.BorderStyle = BorderStyle.None;
-            listView1.Location = new Point(6, 24);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(374, 369);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
+            rtPedido.BackColor = SystemColors.ControlLightLight;
+            rtPedido.BorderStyle = BorderStyle.FixedSingle;
+            rtPedido.Font = new Font("Segoe UI", 9F);
+            rtPedido.Location = new Point(6, 24);
+            rtPedido.Name = "rtPedido";
+            rtPedido.Size = new Size(374, 369);
+            rtPedido.TabIndex = 0;
+            rtPedido.Text = "";
             // 
             // groupBox3
             // 
@@ -259,6 +261,7 @@
             btnLimpar.TextAlign = ContentAlignment.MiddleRight;
             btnLimpar.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnLimpar.UseVisualStyleBackColor = true;
+            btnLimpar.Click += btnLimpar_Click;
             // 
             // txtNomeProd
             // 
@@ -316,6 +319,7 @@
             btnAddProd.TextAlign = ContentAlignment.MiddleRight;
             btnAddProd.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnAddProd.UseVisualStyleBackColor = true;
+            btnAddProd.Click += btnAddProd_Click;
             // 
             // label6
             // 
@@ -605,8 +609,8 @@
         private Label label10;
         private TextBox txtNomeProd;
         private Button btnLimpar;
-        private ListView listView1;
         private Label label11;
         private Button btnLimparClie;
+        private RichTextBox rtPedido;
     }
 }
