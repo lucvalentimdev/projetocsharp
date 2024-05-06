@@ -1,6 +1,5 @@
 ﻿using SalSystem.Models;
 using SalSystem.Services;
-using System.Runtime.CompilerServices;
 
 namespace SalSystem.Forms;
 
@@ -52,6 +51,8 @@ public partial class F_Vendas : Form
                 else
                     imgProduto.Image = Properties.Resources.not_img_128x128;
             }
+
+            txtQntProd.Text = "1";
         }
     }
 
@@ -73,17 +74,45 @@ public partial class F_Vendas : Form
         txtDescricaoProd.Text = string.Empty;
         txtValorUnitario.Text = string.Empty;
         txtConsultaProd.Text = string.Empty;
+        txtQntProd.Text = string.Empty;
     }
 
     private void btnAddProd_Click(object sender, EventArgs e)
     {
-        Venda venda = new(0, txtNomeProd.Text, Convert.ToInt32(txtCodProd.Text), 1, Convert.ToDouble(txtValorUnitario.Text));
-        
-        List<string> _vendasConteudo = new(venda.ExibirDetalhes());             //<-- Ao adicionar um produto a Venda, exibe os detalhes da venda //
+        Venda venda = new(0, txtNomeProd.Text, Convert.ToInt32(txtCodProd.Text), Convert.ToInt32(txtQntProd.Text), Convert.ToDouble(txtValorUnitario.Text));
+
+        List<string> _vendasConteudo = new(venda.ExibirDetalhes());                         //<-- Inserindo um prod a uma Venda, EXIBE OS DETALHES populando o RichText  //
         foreach (string _itens in _vendasConteudo)
         {
             rtPedido.AppendText(_itens);
         }
+
+        txtValorTotal.Text = "R$ " + Convert.ToString(Venda.ExibirValorTotal());            // <-- Sempre após add um produto à venda apresenta novamente o total //
     }
 
+    private void txtQntProd_KeyPress(object sender, KeyPressEventArgs e)
+    {
+        Utilities.NumbersOnly(e);
+    }
+
+    private void F_Vendas_KeyDown(object sender, KeyEventArgs e)                            // <-- Trata o pressionamento das TECLAS DE ATALHO //
+    {
+        if (e.KeyCode == Keys.F1)
+            btnConsultaProd_Click(sender, e);
+
+        if (e.KeyCode == Keys.F2)
+            btnAddProd_Click(sender, e);
+
+        if (e.KeyCode == Keys.F5)
+            btnRemoveProd_Click(sender, e);
+
+        if (e.KeyCode == Keys.F8)
+            btnLimpar_Click(sender, e);
+
+    }
+
+    private void btnRemoveProd_Click(object sender, EventArgs e)
+    {
+
+    }
 }

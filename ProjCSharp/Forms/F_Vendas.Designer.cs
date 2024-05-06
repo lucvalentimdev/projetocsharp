@@ -41,6 +41,8 @@
             groupBox2 = new GroupBox();
             rtPedido = new RichTextBox();
             groupBox3 = new GroupBox();
+            label12 = new Label();
+            txtQntProd = new TextBox();
             label11 = new Label();
             btnLimpar = new Button();
             txtNomeProd = new TextBox();
@@ -135,11 +137,12 @@
             // 
             txtNomeCliente.BackColor = SystemColors.Window;
             txtNomeCliente.BorderStyle = BorderStyle.None;
-            txtNomeCliente.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtNomeCliente.Font = new Font("Segoe UI", 12F);
+            txtNomeCliente.ForeColor = Color.DimGray;
             txtNomeCliente.Location = new Point(11, 41);
             txtNomeCliente.Name = "txtNomeCliente";
             txtNomeCliente.ReadOnly = true;
-            txtNomeCliente.Size = new Size(427, 20);
+            txtNomeCliente.Size = new Size(427, 22);
             txtNomeCliente.TabIndex = 8;
             // 
             // label5
@@ -207,6 +210,8 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(label12);
+            groupBox3.Controls.Add(txtQntProd);
             groupBox3.Controls.Add(label11);
             groupBox3.Controls.Add(btnLimpar);
             groupBox3.Controls.Add(txtNomeProd);
@@ -231,6 +236,27 @@
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "Produto: ";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.ForeColor = Color.Gray;
+            label12.Location = new Point(220, 222);
+            label12.Name = "label12";
+            label12.Size = new Size(39, 17);
+            label12.TabIndex = 17;
+            label12.Text = "Qnt.:";
+            // 
+            // txtQntProd
+            // 
+            txtQntProd.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtQntProd.ForeColor = Color.MediumBlue;
+            txtQntProd.Location = new Point(265, 218);
+            txtQntProd.Name = "txtQntProd";
+            txtQntProd.Size = new Size(88, 27);
+            txtQntProd.TabIndex = 16;
+            txtQntProd.TextAlign = HorizontalAlignment.Center;
+            txtQntProd.KeyPress += txtQntProd_KeyPress;
             // 
             // label11
             // 
@@ -265,11 +291,14 @@
             // 
             // txtNomeProd
             // 
+            txtNomeProd.BackColor = SystemColors.ButtonHighlight;
             txtNomeProd.BorderStyle = BorderStyle.None;
-            txtNomeProd.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtNomeProd.Font = new Font("Segoe UI", 12F);
+            txtNomeProd.ForeColor = Color.DimGray;
             txtNomeProd.Location = new Point(220, 116);
             txtNomeProd.Name = "txtNomeProd";
-            txtNomeProd.Size = new Size(353, 20);
+            txtNomeProd.ReadOnly = true;
+            txtNomeProd.Size = new Size(353, 22);
             txtNomeProd.TabIndex = 13;
             // 
             // label10
@@ -300,6 +329,7 @@
             btnRemoveProd.TextAlign = ContentAlignment.MiddleRight;
             btnRemoveProd.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnRemoveProd.UseVisualStyleBackColor = true;
+            btnRemoveProd.Click += btnRemoveProd_Click;
             // 
             // btnAddProd
             // 
@@ -333,30 +363,41 @@
             // 
             // txtValorUnitario
             // 
+            txtValorUnitario.BackColor = SystemColors.ButtonHighlight;
             txtValorUnitario.BorderStyle = BorderStyle.None;
-            txtValorUnitario.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            txtValorUnitario.Location = new Point(220, 223);
+            txtValorUnitario.Font = new Font("Segoe UI", 12F);
+            txtValorUnitario.ForeColor = Color.DimGray;
+            txtValorUnitario.Location = new Point(467, 220);
             txtValorUnitario.Name = "txtValorUnitario";
-            txtValorUnitario.Size = new Size(100, 20);
+            txtValorUnitario.ReadOnly = true;
+            txtValorUnitario.Size = new Size(106, 22);
             txtValorUnitario.TabIndex = 8;
+            txtValorUnitario.TextAlign = HorizontalAlignment.Center;
             // 
             // txtDescricaoProd
             // 
+            txtDescricaoProd.BackColor = SystemColors.ButtonHighlight;
             txtDescricaoProd.BorderStyle = BorderStyle.None;
-            txtDescricaoProd.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtDescricaoProd.Font = new Font("Segoe UI", 12F);
+            txtDescricaoProd.ForeColor = Color.DimGray;
             txtDescricaoProd.Location = new Point(220, 168);
             txtDescricaoProd.Name = "txtDescricaoProd";
-            txtDescricaoProd.Size = new Size(353, 20);
+            txtDescricaoProd.ReadOnly = true;
+            txtDescricaoProd.Size = new Size(353, 22);
             txtDescricaoProd.TabIndex = 7;
             // 
             // txtCodProd
             // 
+            txtCodProd.BackColor = SystemColors.ButtonHighlight;
             txtCodProd.BorderStyle = BorderStyle.None;
-            txtCodProd.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtCodProd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            txtCodProd.ForeColor = Color.DimGray;
             txtCodProd.Location = new Point(220, 63);
             txtCodProd.Name = "txtCodProd";
-            txtCodProd.Size = new Size(100, 20);
+            txtCodProd.ReadOnly = true;
+            txtCodProd.Size = new Size(100, 22);
             txtCodProd.TabIndex = 6;
+            txtCodProd.TextAlign = HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -372,11 +413,11 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.Gray;
-            label2.Location = new Point(220, 203);
+            label2.Location = new Point(359, 222);
             label2.Name = "label2";
-            label2.Size = new Size(97, 17);
+            label2.Size = new Size(102, 17);
             label2.TabIndex = 4;
-            label2.Text = "Valor unitário:";
+            label2.Text = "Vlr.Unitário: R$";
             // 
             // label1
             // 
@@ -410,7 +451,7 @@
             // 
             // txtConsultaProd
             // 
-            txtConsultaProd.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtConsultaProd.Font = new Font("Segoe UI", 11F);
             txtConsultaProd.Location = new Point(11, 357);
             txtConsultaProd.Name = "txtConsultaProd";
             txtConsultaProd.Size = new Size(562, 27);
@@ -559,10 +600,12 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             MaximizeBox = false;
             Name = "F_Vendas";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Vendas - Mini PDV";
+            KeyDown += F_Vendas_KeyDown;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -612,5 +655,7 @@
         private Label label11;
         private Button btnLimparClie;
         private RichTextBox rtPedido;
+        private Label label12;
+        private TextBox txtQntProd;
     }
 }

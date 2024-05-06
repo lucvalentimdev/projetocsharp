@@ -1,5 +1,4 @@
 ﻿using SalSystem.Services;
-
 namespace SalSystem.Models;
 
 internal class Produto(int _idprod, string _nome, string _marca, string _categoria, int _volumeEmMl, double _preco, string _descricao, string _publicoAlvo, int _qntEntradaIni,  DateTime _dataCadastro, string _img)
