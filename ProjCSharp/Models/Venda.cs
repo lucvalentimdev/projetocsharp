@@ -10,8 +10,7 @@ internal class Venda(int _idCliente, string _nomeprod, int _idProdVenda, int _qu
     
     // var //
     private static double totais;
-    
-
+   
     public double CalcularItemVenda()
     {
         return Quantidade * Preco;
@@ -22,7 +21,7 @@ internal class Venda(int _idCliente, string _nomeprod, int _idProdVenda, int _qu
         double _subtotal = CalcularItemVenda();
         totais += _subtotal;
         
-        List<string> _list = [ "Cód: "+IdProdVenda.ToString()+ " Prod.: "+NomeProd.ToString()+ " Qnt.: "+Quantidade.ToString()+" Vl.Unt.: "+Preco.ToString()+" SubTotal: " +_subtotal.ToString()+"\r\n"];
+        List <string> _list = [ "Cód: "+IdProdVenda.ToString()+ " Prod.: "+NomeProd.ToString()+ " Qnt.: "+Quantidade.ToString()+" Vl.Unt.: "+Preco.ToString()+" SubTotal: " +_subtotal.ToString()+"\r\n"];
 
         return _list;
     }
@@ -31,5 +30,12 @@ internal class Venda(int _idCliente, string _nomeprod, int _idProdVenda, int _qu
     {
         return totais;
     }
+
+    public Boolean SalvarVenda(List <Produto> _produtosVendidos)
+    {
+
+        return true;
+    }
+
 
 }

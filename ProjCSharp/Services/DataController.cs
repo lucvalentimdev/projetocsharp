@@ -110,7 +110,7 @@ internal class DataController()
     //******* Query 04 --> Encontra para apresentar o prox. Cód Produto *******//
     public string QueryBuscaIDProd()
 	{
-		string _sqlScript = "SELECT MAX((id)+1) FROM produtos";
+		string _sqlScript = "SELECT MAX((id)+1) FROM _produtos";
 		try
 		{
             Connect();
@@ -177,7 +177,7 @@ internal class DataController()
 	public List <Produto> GetProduto(string _filtroSql)
 	{
 		List<Produto> _list = new();
-		string _sqlScript = "SELECT * FROM produtos " +
+		string _sqlScript = "SELECT * FROM _produtos " +
 							"WHERE nome LIKE CONCAT('%' @filtro '%') OR id LIKE CONCAT('%' @filtro '%');";
 		try
 		{

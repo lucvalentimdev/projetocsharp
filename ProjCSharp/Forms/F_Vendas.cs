@@ -10,6 +10,9 @@ public partial class F_Vendas : Form
         InitializeComponent();
     }
 
+    // Var //
+    List<Venda>? listaVendas;
+
     private void btnCancelar_Click(object sender, EventArgs e)
     {
         rtPedido.Clear();
@@ -31,7 +34,7 @@ public partial class F_Vendas : Form
         if (txtConsultaProd.Text == "")
             return;
 
-        List<Produto> _produtos = new(Produto.GetProduto(txtConsultaProd.Text));
+        List<Produto> _produtos = Produto.GetProduto(txtConsultaProd.Text);
 
         if (_produtos == null)
         {
@@ -40,7 +43,7 @@ public partial class F_Vendas : Form
         }
         else
         {
-            foreach (Produto _produto in _produtos)                              // Acessa o objeto _produto e dentro do laço carrega os dados //
+            foreach (Produto _produto in _produtos)                              // Acessa o objeto _produtos e dentro do laço carrega os dados para EXIBIÇÃO //
             {
                 txtCodProd.Text = _produto.IdProd.ToString();
                 txtNomeProd.Text = _produto.Nome.ToString();
@@ -80,9 +83,10 @@ public partial class F_Vendas : Form
     private void btnAddProd_Click(object sender, EventArgs e)
     {
         Venda venda = new(0, txtNomeProd.Text, Convert.ToInt32(txtCodProd.Text), Convert.ToInt32(txtQntProd.Text), Convert.ToDouble(txtValorUnitario.Text));
+        listaVendas.Add(venda);                                                             //<-- Alimenta a lista de vendas com a Venda pré concluída //
 
-        List<string> _vendasConteudo = new(venda.ExibirDetalhes());                         //<-- Inserindo um prod a uma Venda, EXIBE OS DETALHES populando o RichText  //
-        foreach (string _itens in _vendasConteudo)
+        List<string> _vendasDetalhes = new(venda.ExibirDetalhes());                         //<-- Após add um prod a uma Venda, EXIBE OS DETALHES populando o RichText  //
+        foreach (string _itens in _vendasDetalhes)
         {
             rtPedido.AppendText(_itens);
         }
