@@ -9,15 +9,15 @@ public partial class F_Vendas : Form
     {
         InitializeComponent();
     }
-
-    // Var //
-    List<Venda>? listaVendas;
+    //Var//
+    private static List<Venda> listaVendas = [];
+      
 
     private void btnCancelar_Click(object sender, EventArgs e)
     {
         rtPedido.Clear();
         cboFormaReceb.Text = "";
-        txtValorTotal.Text = string.Empty;
+        txtTotalItens.Text = string.Empty;
         txtQntItens.Text = string.Empty;
         btnLimparClie_Click(sender, e);
         btnLimpar_Click(sender, e);
@@ -82,16 +82,23 @@ public partial class F_Vendas : Form
 
     private void btnAddProd_Click(object sender, EventArgs e)
     {
-        Venda venda = new(0, txtNomeProd.Text, Convert.ToInt32(txtCodProd.Text), Convert.ToInt32(txtQntProd.Text), Convert.ToDouble(txtValorUnitario.Text));
-        listaVendas.Add(venda);                                                             //<-- Alimenta a lista de vendas com a Venda pré concluída //
+        if (txtCodProd.Text == "")
+            return;
 
-        List<string> _vendasDetalhes = new(venda.ExibirDetalhes());                         //<-- Após add um prod a uma Venda, EXIBE OS DETALHES populando o RichText  //
-        foreach (string _itens in _vendasDetalhes)
+        for (int i = 0; i < Convert.ToInt32(txtQntProd.Text); i++)
         {
-            rtPedido.AppendText(_itens);
+            Venda venda = new(0, txtNomeProd.Text, Convert.ToInt32(txtCodProd.Text), 1, Convert.ToDouble(txtValorUnitario.Text));
+            _ = venda.CalcularSubTotal();
+            listaVendas.Add(venda);                                                             //<-- Alimenta a lista de vendas com a Venda pré concluída //
+            ExibirDetalhesVendas(listaVendas);
         }
+    }
 
-        txtValorTotal.Text = "R$ " + Convert.ToString(Venda.ExibirValorTotal());            // <-- Sempre após add um produto à venda apresenta novamente o total //
+    private void btnRemoveProd_Click(object sender, EventArgs e)
+    {
+        listaVendas.RemoveAt(listaVendas.Count - 1);
+        Venda.totais = Venda.totais - Convert.ToInt32(txtValorUnitario.Text);
+        ExibirDetalhesVendas(listaVendas);
     }
 
     private void txtQntProd_KeyPress(object sender, KeyPressEventArgs e)
@@ -99,7 +106,7 @@ public partial class F_Vendas : Form
         Utilities.NumbersOnly(e);
     }
 
-    private void F_Vendas_KeyDown(object sender, KeyEventArgs e)                            // <-- Trata o pressionamento das TECLAS DE ATALHO //
+    private void F_Vendas_KeyDown(object sender, KeyEventArgs e)                            // -- Trata o pressionamento das TECLAS DE ATALHO --- //
     {
         if (e.KeyCode == Keys.F1)
             btnConsultaProd_Click(sender, e);
@@ -112,11 +119,38 @@ public partial class F_Vendas : Form
 
         if (e.KeyCode == Keys.F8)
             btnLimpar_Click(sender, e);
-
     }
 
-    private void btnRemoveProd_Click(object sender, EventArgs e)
+    private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
     {
+        Utilities.NumbersOnly(e);
+    }
 
+    private void txtPercDescontos_Leave(object sender, EventArgs e)
+    {
+        if (Convert.ToInt32(txtPercDescontos.Text) > 100)
+        {
+            Utilities.MessageCaution("Desconto não pode ser maior a 100%");
+        }
+        txtValorReceber.Text = Convert.ToString(Venda.CalcularTotalFinal(Convert.ToDouble(txtTotalItens.Text), Convert.ToDouble(txtPercDescontos.Text)));
+    }
+
+    private void txtPercDescontos_Enter(object sender, EventArgs e)
+    {
+        txtPercDescontos.Text = string.Empty;
+    }
+
+    private void ExibirDetalhesVendas(List<Venda> _listaVendas)
+    {
+        rtPedido.Clear();
+
+        foreach (Venda _venda in _listaVendas)
+        {
+            string _detalhes = "Cód: " + _venda.IdProdVenda.ToString() + " Prod.: " + _venda.NomeProd.ToString() + " Qnt.: " + _venda.Quantidade.ToString() + " Vl.Unt.: " + _venda.Preco.ToString() + "\r\n";
+
+            rtPedido.AppendText(_detalhes);      // Adiciona os detalhes da venda ao RichTextBox //  
+        }
+        
+       txtTotalItens.Text = Convert.ToString(Venda.totais);
     }
 }

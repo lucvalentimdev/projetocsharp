@@ -7,35 +7,38 @@ internal class Venda(int _idCliente, string _nomeprod, int _idProdVenda, int _qu
     public int IdProdVenda { get; set; } = _idProdVenda;
     public int Quantidade { get; set; } = _quantidade;
     public double Preco { get; set; } = _preco;
-    
+
     // var //
-    private static double totais;
-   
+    public static double totais;
+    public static double subtotais;
+
     public double CalcularItemVenda()
     {
         return Quantidade * Preco;
     }
 
-    public List<string> ExibirDetalhes()
+    public static double CalcularTotalFinal(double _valorTotalItens, double _percentualDesconto)
     {
-        double _subtotal = CalcularItemVenda();
-        totais += _subtotal;
-        
-        List <string> _list = [ "Cód: "+IdProdVenda.ToString()+ " Prod.: "+NomeProd.ToString()+ " Qnt.: "+Quantidade.ToString()+" Vl.Unt.: "+Preco.ToString()+" SubTotal: " +_subtotal.ToString()+"\r\n"];
+        double _desconto = _valorTotalItens * (_percentualDesconto / 100);
+        double _precoFinal = _valorTotalItens - _desconto;
 
-        return _list;
+        return _precoFinal;
     }
 
-    public static double ExibirValorTotal()
+    public double CalcularSubTotal()
     {
-        return totais;
+        subtotais = CalcularItemVenda();
+        totais += subtotais;
+
+        return subtotais;
+       
     }
 
     public Boolean SalvarVenda(List <Produto> _produtosVendidos)
     {
 
         return true;
-    }
+    } 
 
 
 }

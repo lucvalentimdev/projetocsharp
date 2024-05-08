@@ -60,11 +60,15 @@
             txtConsultaProd = new TextBox();
             imgProduto = new PictureBox();
             groupBox4 = new GroupBox();
+            txtValorReceber = new TextBox();
+            label14 = new Label();
+            txtPercDescontos = new TextBox();
+            label13 = new Label();
             cboFormaReceb = new ComboBox();
             label9 = new Label();
             txtQntItens = new TextBox();
             label8 = new Label();
-            txtValorTotal = new TextBox();
+            txtTotalItens = new TextBox();
             label7 = new Label();
             btnCancelar = new Button();
             btnConcluir = new Button();
@@ -97,7 +101,7 @@
             // 
             btnLimparClie.FlatAppearance.BorderSize = 2;
             btnLimparClie.FlatStyle = FlatStyle.Flat;
-            btnLimparClie.ForeColor = Color.DarkGreen;
+            btnLimparClie.ForeColor = Color.IndianRed;
             btnLimparClie.ImageIndex = 6;
             btnLimparClie.ImageList = imageList1;
             btnLimparClie.Location = new Point(444, 77);
@@ -126,6 +130,7 @@
             // 
             // txtCPF
             // 
+            txtCPF.BorderStyle = BorderStyle.FixedSingle;
             txtCPF.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             txtCPF.Location = new Point(140, 84);
             txtCPF.Name = "txtCPF";
@@ -172,7 +177,7 @@
             btnConsultaCliente.FlatAppearance.MouseDownBackColor = Color.LightGray;
             btnConsultaCliente.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             btnConsultaCliente.FlatStyle = FlatStyle.Flat;
-            btnConsultaCliente.ForeColor = Color.DarkGreen;
+            btnConsultaCliente.ForeColor = Color.DarkBlue;
             btnConsultaCliente.ImageIndex = 0;
             btnConsultaCliente.ImageList = imageList1;
             btnConsultaCliente.Location = new Point(323, 76);
@@ -192,7 +197,7 @@
             groupBox2.ForeColor = Color.IndianRed;
             groupBox2.Location = new Point(586, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(386, 399);
+            groupBox2.Size = new Size(386, 440);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Lista de pedidos:";
@@ -204,7 +209,8 @@
             rtPedido.Font = new Font("Segoe UI", 9F);
             rtPedido.Location = new Point(6, 24);
             rtPedido.Name = "rtPedido";
-            rtPedido.Size = new Size(374, 369);
+            rtPedido.ReadOnly = true;
+            rtPedido.Size = new Size(374, 394);
             rtPedido.TabIndex = 0;
             rtPedido.Text = "";
             // 
@@ -249,6 +255,7 @@
             // 
             // txtQntProd
             // 
+            txtQntProd.BorderStyle = BorderStyle.FixedSingle;
             txtQntProd.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             txtQntProd.ForeColor = Color.MediumBlue;
             txtQntProd.Location = new Point(265, 218);
@@ -262,7 +269,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label11.ForeColor = Color.Gray;
+            label11.ForeColor = Color.DimGray;
             label11.Location = new Point(133, 501);
             label11.Name = "label11";
             label11.Size = new Size(312, 15);
@@ -338,6 +345,7 @@
             btnAddProd.FlatAppearance.MouseDownBackColor = Color.LightGray;
             btnAddProd.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             btnAddProd.FlatStyle = FlatStyle.Flat;
+            btnAddProd.ForeColor = Color.DarkBlue;
             btnAddProd.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddProd.ImageIndex = 1;
             btnAddProd.ImageList = imageList1;
@@ -436,6 +444,7 @@
             btnConsultaProd.FlatAppearance.MouseDownBackColor = Color.LightGray;
             btnConsultaProd.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             btnConsultaProd.FlatStyle = FlatStyle.Flat;
+            btnConsultaProd.ForeColor = Color.DarkBlue;
             btnConsultaProd.ImageAlign = ContentAlignment.MiddleLeft;
             btnConsultaProd.ImageIndex = 0;
             btnConsultaProd.ImageList = imageList1;
@@ -451,6 +460,7 @@
             // 
             // txtConsultaProd
             // 
+            txtConsultaProd.BorderStyle = BorderStyle.FixedSingle;
             txtConsultaProd.Font = new Font("Segoe UI", 11F);
             txtConsultaProd.Location = new Point(11, 357);
             txtConsultaProd.Name = "txtConsultaProd";
@@ -472,36 +482,89 @@
             // 
             // groupBox4
             // 
+            groupBox4.Controls.Add(txtValorReceber);
+            groupBox4.Controls.Add(label14);
+            groupBox4.Controls.Add(txtPercDescontos);
+            groupBox4.Controls.Add(label13);
             groupBox4.Controls.Add(cboFormaReceb);
             groupBox4.Controls.Add(label9);
             groupBox4.Controls.Add(txtQntItens);
             groupBox4.Controls.Add(label8);
-            groupBox4.Controls.Add(txtValorTotal);
+            groupBox4.Controls.Add(txtTotalItens);
             groupBox4.Controls.Add(label7);
             groupBox4.Controls.Add(btnCancelar);
             groupBox4.Controls.Add(btnConcluir);
             groupBox4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             groupBox4.ForeColor = Color.IndianRed;
-            groupBox4.Location = new Point(586, 407);
+            groupBox4.Location = new Point(586, 448);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(386, 250);
+            groupBox4.Size = new Size(386, 209);
             groupBox4.TabIndex = 14;
             groupBox4.TabStop = false;
             groupBox4.Text = "Pagamento:";
             // 
+            // txtValorReceber
+            // 
+            txtValorReceber.BorderStyle = BorderStyle.None;
+            txtValorReceber.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            txtValorReceber.ForeColor = Color.LightSeaGreen;
+            txtValorReceber.Location = new Point(263, 149);
+            txtValorReceber.Name = "txtValorReceber";
+            txtValorReceber.ReadOnly = true;
+            txtValorReceber.Size = new Size(112, 22);
+            txtValorReceber.TabIndex = 25;
+            txtValorReceber.TextAlign = HorizontalAlignment.Right;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.ForeColor = Color.Gray;
+            label14.Location = new Point(263, 129);
+            label14.Name = "label14";
+            label14.Size = new Size(96, 17);
+            label14.TabIndex = 24;
+            label14.Text = "Total Receber:";
+            // 
+            // txtPercDescontos
+            // 
+            txtPercDescontos.BorderStyle = BorderStyle.FixedSingle;
+            txtPercDescontos.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtPercDescontos.ForeColor = Color.Red;
+            txtPercDescontos.Location = new Point(263, 99);
+            txtPercDescontos.MaxLength = 3;
+            txtPercDescontos.Name = "txtPercDescontos";
+            txtPercDescontos.Size = new Size(112, 27);
+            txtPercDescontos.TabIndex = 23;
+            txtPercDescontos.Text = "0";
+            txtPercDescontos.TextAlign = HorizontalAlignment.Right;
+            txtPercDescontos.Enter += txtPercDescontos_Enter;
+            txtPercDescontos.KeyPress += textBox1_KeyPress;
+            txtPercDescontos.Leave += txtPercDescontos_Leave;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.ForeColor = Color.Black;
+            label13.Location = new Point(263, 79);
+            label13.Name = "label13";
+            label13.Size = new Size(91, 17);
+            label13.TabIndex = 22;
+            label13.Text = "Descontos %:";
+            // 
             // cboFormaReceb
             // 
             cboFormaReceb.FormattingEnabled = true;
-            cboFormaReceb.Location = new Point(81, 54);
+            cboFormaReceb.Items.AddRange(new object[] { "Dinheiro", "PIX", "Cartão " });
+            cboFormaReceb.Location = new Point(6, 48);
             cboFormaReceb.Name = "cboFormaReceb";
-            cboFormaReceb.Size = new Size(236, 25);
+            cboFormaReceb.Size = new Size(172, 25);
             cboFormaReceb.TabIndex = 21;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.Gray;
-            label9.Location = new Point(6, 34);
+            label9.Location = new Point(6, 28);
             label9.Name = "label9";
             label9.Size = new Size(135, 17);
             label9.TabIndex = 20;
@@ -512,38 +575,39 @@
             txtQntItens.BackColor = SystemColors.ControlLightLight;
             txtQntItens.BorderStyle = BorderStyle.None;
             txtQntItens.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            txtQntItens.Location = new Point(81, 121);
+            txtQntItens.Location = new Point(184, 51);
             txtQntItens.Name = "txtQntItens";
             txtQntItens.ReadOnly = true;
-            txtQntItens.Size = new Size(100, 22);
+            txtQntItens.Size = new Size(73, 22);
             txtQntItens.TabIndex = 19;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.ForeColor = Color.Gray;
-            label8.Location = new Point(193, 96);
+            label8.Location = new Point(263, 28);
             label8.Name = "label8";
-            label8.Size = new Size(77, 17);
+            label8.Size = new Size(94, 17);
             label8.TabIndex = 18;
-            label8.Text = "Valor total:";
+            label8.Text = "Vl.Total Itens:";
             // 
-            // txtValorTotal
+            // txtTotalItens
             // 
-            txtValorTotal.BackColor = SystemColors.ControlLightLight;
-            txtValorTotal.BorderStyle = BorderStyle.None;
-            txtValorTotal.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            txtValorTotal.Location = new Point(265, 116);
-            txtValorTotal.Name = "txtValorTotal";
-            txtValorTotal.ReadOnly = true;
-            txtValorTotal.Size = new Size(104, 22);
-            txtValorTotal.TabIndex = 17;
+            txtTotalItens.BackColor = SystemColors.ControlLightLight;
+            txtTotalItens.BorderStyle = BorderStyle.None;
+            txtTotalItens.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            txtTotalItens.Location = new Point(263, 51);
+            txtTotalItens.Name = "txtTotalItens";
+            txtTotalItens.ReadOnly = true;
+            txtTotalItens.Size = new Size(112, 22);
+            txtTotalItens.TabIndex = 17;
+            txtTotalItens.TextAlign = HorizontalAlignment.Right;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.Gray;
-            label7.Location = new Point(6, 96);
+            label7.Location = new Point(184, 28);
             label7.Name = "label7";
             label7.Size = new Size(73, 17);
             label7.TabIndex = 16;
@@ -552,15 +616,15 @@
             // btnCancelar
             // 
             btnCancelar.Cursor = Cursors.Hand;
-            btnCancelar.FlatAppearance.BorderSize = 2;
+            btnCancelar.FlatAppearance.BorderSize = 3;
             btnCancelar.FlatAppearance.MouseDownBackColor = Color.LightGray;
             btnCancelar.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            btnCancelar.ForeColor = Color.Red;
+            btnCancelar.ForeColor = Color.IndianRed;
             btnCancelar.ImageIndex = 7;
             btnCancelar.ImageList = imageList1;
-            btnCancelar.Location = new Point(202, 166);
+            btnCancelar.Location = new Point(134, 129);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(115, 44);
             btnCancelar.TabIndex = 15;
@@ -573,15 +637,15 @@
             // btnConcluir
             // 
             btnConcluir.Cursor = Cursors.Hand;
-            btnConcluir.FlatAppearance.BorderSize = 2;
+            btnConcluir.FlatAppearance.BorderSize = 3;
             btnConcluir.FlatAppearance.MouseDownBackColor = Color.LightGray;
             btnConcluir.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             btnConcluir.FlatStyle = FlatStyle.Flat;
             btnConcluir.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            btnConcluir.ForeColor = Color.DarkCyan;
+            btnConcluir.ForeColor = Color.Green;
             btnConcluir.ImageIndex = 5;
             btnConcluir.ImageList = imageList1;
-            btnConcluir.Location = new Point(81, 166);
+            btnConcluir.Location = new Point(13, 129);
             btnConcluir.Name = "btnConcluir";
             btnConcluir.Size = new Size(115, 44);
             btnConcluir.TabIndex = 14;
@@ -594,6 +658,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(195, 195, 195);
             ClientSize = new Size(984, 661);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
@@ -643,7 +708,7 @@
         private GroupBox groupBox4;
         private TextBox txtQntItens;
         private Label label8;
-        private TextBox txtValorTotal;
+        private TextBox txtTotalItens;
         private Label label7;
         private Button btnCancelar;
         private Button btnConcluir;
@@ -657,5 +722,9 @@
         private RichTextBox rtPedido;
         private Label label12;
         private TextBox txtQntProd;
+        private TextBox txtPercDescontos;
+        private Label label13;
+        private TextBox txtValorReceber;
+        private Label label14;
     }
 }

@@ -53,7 +53,7 @@ internal class DataController()
 		}
 		catch (MySqlException E)
 		{
-			return "Erro ao salvar! Log: "+ E.Message;
+			return "Erro ao salvar! Log: \r\n "+ E;
 		}
 		finally
 		{
@@ -99,7 +99,7 @@ internal class DataController()
 		}
 		catch (MySqlException E)
 		{
-			return "Erro ao salvar! Log: "+ E.Message;
+			return "Erro ao salvar! Log: \r\n" + E;
 		}
 		finally
 		{
@@ -136,8 +136,6 @@ internal class DataController()
 		{
 			Disconnect();
 		}
-			
-	
 	}
 
     //******* Query 05 --> Encontra o cliente ( Apenas o NOME) buscando pelo CPF *******//
@@ -162,9 +160,9 @@ internal class DataController()
 			else
 				return "Erro ao conectar ao banco de dados!";
         }
-		catch (MySqlException)
+		catch (MySqlException E)
 		{
-            return "Erro ao executar a consulta";
+            return "Erro ao executar a consulta. Log: \r\n " + E;
             throw;
 		}
 		finally
@@ -173,11 +171,11 @@ internal class DataController()
 		}
 	}
 
-
-	public List <Produto> GetProduto(string _filtroSql)
+    //******* Query 06 --> Encontra o Produto atravez do filtro (NomeProduto ou IdProduto) *******//
+    public List <Produto> GetProduto(string _filtroSql)
 	{
-		List<Produto> _list = new();
-		string _sqlScript = "SELECT * FROM _produtos " +
+		List<Produto> _list = [];
+		string _sqlScript = "SELECT * FROM produtos " +
 							"WHERE nome LIKE CONCAT('%' @filtro '%') OR id LIKE CONCAT('%' @filtro '%');";
 		try
 		{
@@ -192,28 +190,15 @@ internal class DataController()
 				while (_dr.Read())
 				{
 					{
-						int _idProd = Convert.ToInt32(_dr["id"]);
-						string _nome = _dr["nome"].ToString();
-						string _marca = _dr["marca"].ToString();
-						string _categoria = _dr["categoria"].ToString();
-						int _volumeEmMl = Convert.ToInt32(_dr["volumeEmMl"]);
-						double _preco = Convert.ToDouble(_dr["preco"]);
-						string _descricao = _dr["descricao"].ToString();
-						string _publicoAlvo = _dr["publicoAlvo"].ToString();
-						int _qntEntradaIni = Convert.ToInt32(_dr["qntEntradaInicial"]);
-						DateTime _dataCadastro = Convert.ToDateTime(_dr["dataCadastro"]);
-						string _img = _dr["imagem"].ToString();
-
-						Produto _produto = new(_idProd, _nome, _marca, _categoria, _volumeEmMl, _preco, _descricao, _publicoAlvo, _qntEntradaIni, _dataCadastro, _img);
-						_list.Add(_produto);
-
+						Produto _produto = new(Convert.ToInt32(_dr["id"]), _dr["nome"].ToString(), _dr["marca"].ToString(), _dr["categoria"].ToString(), Convert.ToInt32(_dr["volumeEmMl"]), Convert.ToDouble(_dr["preco"]), _dr["descricao"].ToString(), _dr["publicoAlvo"].ToString(), Convert.ToInt32(_dr["qntEntradaInicial"]), Convert.ToDateTime(_dr["dataCadastro"]), _dr["imagem"].ToString());
+						
+						_list.Add(_produto);		//<-- Retorna Lista com os produtos encontrados //
                     };
 				}
                 return _list;
 			}
 			else
 				return _list;
-
 		}
 		catch (MySqlException)
 		{
@@ -226,6 +211,43 @@ internal class DataController()
 		}
 		
 	} 
+
+	public string SetVendaConcluida(int idcliente, double vlitens, double vldescontos, double vltotal, int idcolaborador)
+	{
+		string _sqlScript = " INSERT INTO vendas (id_cliente, valor_itens, valor_descontos, valor_total, id_colaborador) " +
+							" VALUES (@idcliente, @vlitens, @vldescontos, @vltotal, @idcolaborador)";
+		try
+		{
+            Connect();
+
+            if (conn != null)
+            {
+                MySqlCommand _cmd = new(_sqlScript, conn);
+                _cmd.Parameters.AddWithValue("@idcliente", idcliente);
+                _cmd.Parameters.AddWithValue("@vlitens", vlitens);
+                _cmd.Parameters.AddWithValue("@vldescontos", vldescontos);
+                _cmd.Parameters.AddWithValue("@vltotal", vltotal);
+                _cmd.Parameters.AddWithValue("i@idcolaborador", 1);
+                _cmd.ExecuteNonQuery();
+
+                return "Venda concluída com sucesso!";
+            }
+            else
+                return "Ocorreu um erro ao iniciar a conexão com o banco de dados.";
+
+        }
+		catch (MySqlException E)
+		{
+			return "Ocorreu um erro ao concluir a venda. Log: \r\n " + E;
+			throw;
+		}
+		finally
+		{
+			Disconnect() ;
+		}
+
+	}
+
 
 
 
