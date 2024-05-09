@@ -81,7 +81,7 @@ public partial class F_CadProdutos : Form
     }
     private void BtnAdicionar_Click(object sender, EventArgs e)
     {
-        txtIDProd.Text = dataController.QueryBuscaIDProd();
+        txtIDProd.Text = dataController.QueryGetIDProd();
 
         EnabledController(true);
         ColorsController(Color.White);

@@ -17,7 +17,7 @@ internal class Cliente(string _nome, string _cpf, string _telefone, string _cep,
 
     public string CadastrarNovoCliente()
     {
-        return dataController.QryInsertCliente( Nome,  CPF, Telefone,  Cidade, Cep, Uf, Logradouro, NumeroResidencia);
+        return dataController.QrySetCliente( Nome,  CPF, Telefone,  Cidade, Cep, Uf, Logradouro, NumeroResidencia);
     }
 
     public static void ValidaCPF (string _CPF)

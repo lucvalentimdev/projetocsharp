@@ -10,8 +10,7 @@ public partial class F_Vendas : Form
         InitializeComponent();
     }
     //Var//
-    private static List<Venda> listaVendas = [];
-      
+    private static List<ItensVenda> listaVendas = [];
 
     private void btnCancelar_Click(object sender, EventArgs e)
     {
@@ -19,9 +18,9 @@ public partial class F_Vendas : Form
         cboFormaReceb.Text = "";
         txtTotalItens.Text = string.Empty;
         txtQntItens.Text = string.Empty;
+        txtValorReceber.Text = string.Empty;   
         btnLimparClie_Click(sender, e);
         btnLimpar_Click(sender, e);
-        Close();
     }
 
     private void btnConsultaCliente_Click(object sender, EventArgs e)
@@ -78,6 +77,7 @@ public partial class F_Vendas : Form
         txtValorUnitario.Text = string.Empty;
         txtConsultaProd.Text = string.Empty;
         txtQntProd.Text = string.Empty;
+        imgProduto.Image = Properties.Resources.not_img_128x128;
     }
 
     private void btnAddProd_Click(object sender, EventArgs e)
@@ -85,10 +85,10 @@ public partial class F_Vendas : Form
         if (txtCodProd.Text == "")
             return;
 
-        for (int i = 0; i < Convert.ToInt32(txtQntProd.Text); i++)
+        for (int i = 0; i < Convert.ToInt32(txtQntProd.Text); i++)                              // <-- Laço que controla as unidades a serem inseridas na lista //
         {
-            Venda venda = new(0, txtNomeProd.Text, Convert.ToInt32(txtCodProd.Text), 1, Convert.ToDouble(txtValorUnitario.Text));
-            _ = venda.CalcularSubTotal();
+            ItensVenda venda = new(txtNomeProd.Text, Convert.ToInt32(txtCodProd.Text), 1, Convert.ToDouble(txtValorUnitario.Text));
+            venda.CalcSubTotal_Itens();
             listaVendas.Add(venda);                                                             //<-- Alimenta a lista de vendas com a Venda pré concluída //
             ExibirDetalhesVendas(listaVendas);
         }
@@ -96,9 +96,15 @@ public partial class F_Vendas : Form
 
     private void btnRemoveProd_Click(object sender, EventArgs e)
     {
-        listaVendas.RemoveAt(listaVendas.Count - 1);
-        Venda.totais = Venda.totais - Convert.ToInt32(txtValorUnitario.Text);
-        ExibirDetalhesVendas(listaVendas);
+        if (rtPedido.Text == "")
+        {
+            btnCancelar_Click(sender, e);
+            return;
+        }
+
+        listaVendas.RemoveAt(listaVendas.Count - 1);                                    //<-- Remove o ultimo registro de Venda da Lista //
+        ItensVenda.totaisItens -= Convert.ToDouble(txtValorUnitario.Text);                        //<-- Subtrai o ultimo valor adicionado ao subtotal
+        ExibirDetalhesVendas(listaVendas);                                              //<-- Exibe a lista de vendas novamente //
     }
 
     private void txtQntProd_KeyPress(object sender, KeyPressEventArgs e)
@@ -106,7 +112,7 @@ public partial class F_Vendas : Form
         Utilities.NumbersOnly(e);
     }
 
-    private void F_Vendas_KeyDown(object sender, KeyEventArgs e)                            // -- Trata o pressionamento das TECLAS DE ATALHO --- //
+    private void F_Vendas_KeyDown(object sender, KeyEventArgs e)                       // ---- Trata o pressionamento das TECLAS DE ATALHO ----- //
     {
         if (e.KeyCode == Keys.F1)
             btnConsultaProd_Click(sender, e);
@@ -117,8 +123,17 @@ public partial class F_Vendas : Form
         if (e.KeyCode == Keys.F5)
             btnRemoveProd_Click(sender, e);
 
-        if (e.KeyCode == Keys.F8)
+        if (e.KeyCode == Keys.F6)
             btnLimpar_Click(sender, e);
+
+        if (e.KeyCode == Keys.F9)
+            btnCancelar_Click(sender, e);
+
+        if(e.KeyCode == Keys.F12)
+            btnConcluir_Click(sender, e);
+
+        if (e.KeyCode == Keys.Escape)
+            Close();
     }
 
     private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -132,7 +147,7 @@ public partial class F_Vendas : Form
         {
             Utilities.MessageCaution("Desconto não pode ser maior a 100%");
         }
-        txtValorReceber.Text = Convert.ToString(Venda.CalcularTotalFinal(Convert.ToDouble(txtTotalItens.Text), Convert.ToDouble(txtPercDescontos.Text)));
+        txtValorReceber.Text = Convert.ToString(ItensVenda.CalcTotalItensFinal(Convert.ToDouble(txtTotalItens.Text), Convert.ToDouble(txtPercDescontos.Text)));
     }
 
     private void txtPercDescontos_Enter(object sender, EventArgs e)
@@ -140,17 +155,38 @@ public partial class F_Vendas : Form
         txtPercDescontos.Text = string.Empty;
     }
 
-    private void ExibirDetalhesVendas(List<Venda> _listaVendas)
+    private void ExibirDetalhesVendas(List<ItensVenda> _listaVendas)     // --- Carrega a Exibição do item adicionado a VENDA --- //
     {
         rtPedido.Clear();
 
-        foreach (Venda _venda in _listaVendas)
+        foreach (ItensVenda _venda in _listaVendas)
         {
             string _detalhes = "Cód: " + _venda.IdProdVenda.ToString() + " Prod.: " + _venda.NomeProd.ToString() + " Qnt.: " + _venda.Quantidade.ToString() + " Vl.Unt.: " + _venda.Preco.ToString() + "\r\n";
 
-            rtPedido.AppendText(_detalhes);      // Adiciona os detalhes da venda ao RichTextBox //  
+            rtPedido.AppendText(_detalhes);      // <--- Adiciona os detalhes da venda ao RichTextBox //  
         }
-        
-       txtTotalItens.Text = Convert.ToString(Venda.totais);
+
+        txtTotalItens.Text = Convert.ToString(ItensVenda.totaisItens);
+    }
+
+    private void btnConcluir_Click(object sender, EventArgs e)
+    {
+       if (txtPercDescontos.Text == "0")
+            txtValorReceber.Text = txtTotalItens.Text;
+
+        double _valorDesconto = Convert.ToDouble(txtTotalItens.Text) - Convert.ToDouble(txtValorReceber.Text);
+
+
+        Venda venda = new(1, Convert.ToDouble(txtTotalItens.Text), _valorDesconto , Convert.ToDouble(txtValorReceber.Text), 1);
+
+        string _log = venda.SalvarVenda();
+
+        if (_log == "ok")
+            Utilities.MessageInformation("Venda concluída com sucesso!");
+        else if (_log == "erro_conn")
+            Utilities.MessageError("Ocorreu um erro na conexão com o banco de dados!");
+        else
+            Utilities.MessageError(_log);
+
     }
 }

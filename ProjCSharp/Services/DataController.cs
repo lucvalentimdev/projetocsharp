@@ -24,7 +24,7 @@ internal class DataController()
 	//=====================================================================================================================================================================//
     
 	//******* Query 01 --> Insert de Clientes *******//
-    public string QryInsertCliente(string _nome, string _cpf, string _telefone, string _cidade, string _cep, string _uf,string _logradouro,  string _nuResidencia )	
+    public string QrySetCliente(string _nome, string _cpf, string _telefone, string _cidade, string _cep, string _uf,string _logradouro,  string _nuResidencia )	
 	{																									
         try
 		{
@@ -71,7 +71,7 @@ internal class DataController()
 	} */
 
     //******* Query 03 --> Insert PRODUTOS *******//
-    public string QueryInsertPruduto(string _nome, string _marca, string _categoria, int _volumeEmMl, double _preco, string _descricao, string _publicoAlvo, int _qntEntradaIni, DateTime _dataCadastro, string _img)
+    public string QuerySetPruduto(string _nome, string _marca, string _categoria, int _volumeEmMl, double _preco, string _descricao, string _publicoAlvo, int _qntEntradaIni, DateTime _dataCadastro, string _img)
 	{
 		try
 		{
@@ -108,7 +108,7 @@ internal class DataController()
 	}
 
     //******* Query 04 --> Encontra para apresentar o prox. Cód Produto *******//
-    public string QueryBuscaIDProd()
+    public string QueryGetIDProd()
 	{
 		string _sqlScript = "SELECT MAX((id)+1) FROM _produtos";
 		try
@@ -212,29 +212,27 @@ internal class DataController()
 		
 	} 
 
-	public string SetVendaConcluida(int idcliente, double vlitens, double vldescontos, double vltotal, int idcolaborador)
+	public string QuerySetVenda(int _idcliente, double _vlitens, double _vldescontos, double _vltotal, int _idcolaborador)
 	{
 		string _sqlScript = " INSERT INTO vendas (id_cliente, valor_itens, valor_descontos, valor_total, id_colaborador) " +
 							" VALUES (@idcliente, @vlitens, @vldescontos, @vltotal, @idcolaborador)";
 		try
 		{
             Connect();
-
             if (conn != null)
             {
                 MySqlCommand _cmd = new(_sqlScript, conn);
-                _cmd.Parameters.AddWithValue("@idcliente", idcliente);
-                _cmd.Parameters.AddWithValue("@vlitens", vlitens);
-                _cmd.Parameters.AddWithValue("@vldescontos", vldescontos);
-                _cmd.Parameters.AddWithValue("@vltotal", vltotal);
-                _cmd.Parameters.AddWithValue("i@idcolaborador", 1);
+                _cmd.Parameters.AddWithValue("@idcliente", _idcliente);
+                _cmd.Parameters.AddWithValue("@vlitens", _vlitens);
+                _cmd.Parameters.AddWithValue("@vldescontos", _vldescontos);
+                _cmd.Parameters.AddWithValue("@vltotal", _vltotal);
+                _cmd.Parameters.AddWithValue("@idcolaborador", 1);
                 _cmd.ExecuteNonQuery();
 
-                return "Venda concluída com sucesso!";
+                return "ok";
             }
             else
-                return "Ocorreu um erro ao iniciar a conexão com o banco de dados.";
-
+                return "erro_conn";
         }
 		catch (MySqlException E)
 		{
@@ -245,7 +243,6 @@ internal class DataController()
 		{
 			Disconnect() ;
 		}
-
 	}
 
 

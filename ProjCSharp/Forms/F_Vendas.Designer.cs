@@ -60,6 +60,7 @@
             txtConsultaProd = new TextBox();
             imgProduto = new PictureBox();
             groupBox4 = new GroupBox();
+            label15 = new Label();
             txtValorReceber = new TextBox();
             label14 = new Label();
             txtPercDescontos = new TextBox();
@@ -153,7 +154,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.ForeColor = Color.Black;
+            label5.ForeColor = Color.Blue;
             label5.Location = new Point(11, 88);
             label5.Name = "label5";
             label5.Size = new Size(123, 17);
@@ -270,11 +271,11 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label11.ForeColor = Color.DimGray;
-            label11.Location = new Point(133, 501);
+            label11.Location = new Point(95, 501);
             label11.Name = "label11";
-            label11.Size = new Size(312, 15);
+            label11.Size = new Size(390, 15);
             label11.TabIndex = 15;
-            label11.Text = "F1 - Buscar | F2 - Adicionar | F5 - Remover | F8 - Limpar";
+            label11.Text = "F1 - Buscar | F2 - Adicionar | F5 - Remover | F6 - Limpar | ESC - Fechar";
             // 
             // btnLimpar
             // 
@@ -362,7 +363,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.ForeColor = Color.Black;
+            label6.ForeColor = Color.Blue;
             label6.Location = new Point(11, 333);
             label6.Name = "label6";
             label6.Size = new Size(255, 17);
@@ -482,6 +483,7 @@
             // 
             // groupBox4
             // 
+            groupBox4.Controls.Add(label15);
             groupBox4.Controls.Add(txtValorReceber);
             groupBox4.Controls.Add(label14);
             groupBox4.Controls.Add(txtPercDescontos);
@@ -503,15 +505,26 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Pagamento:";
             // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label15.ForeColor = Color.DimGray;
+            label15.Location = new Point(119, 189);
+            label15.Name = "label15";
+            label15.Size = new Size(164, 15);
+            label15.TabIndex = 18;
+            label15.Text = "F9 - Cancelar | F12 - Concluir";
+            // 
             // txtValorReceber
             // 
             txtValorReceber.BorderStyle = BorderStyle.None;
-            txtValorReceber.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            txtValorReceber.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             txtValorReceber.ForeColor = Color.LightSeaGreen;
             txtValorReceber.Location = new Point(263, 149);
             txtValorReceber.Name = "txtValorReceber";
             txtValorReceber.ReadOnly = true;
-            txtValorReceber.Size = new Size(112, 22);
+            txtValorReceber.Size = new Size(112, 25);
             txtValorReceber.TabIndex = 25;
             txtValorReceber.TextAlign = HorizontalAlignment.Right;
             // 
@@ -544,7 +557,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.ForeColor = Color.Black;
+            label13.ForeColor = Color.DarkRed;
             label13.Location = new Point(263, 79);
             label13.Name = "label13";
             label13.Size = new Size(91, 17);
@@ -624,7 +637,7 @@
             btnCancelar.ForeColor = Color.IndianRed;
             btnCancelar.ImageIndex = 7;
             btnCancelar.ImageList = imageList1;
-            btnCancelar.Location = new Point(134, 129);
+            btnCancelar.Location = new Point(136, 130);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(115, 44);
             btnCancelar.TabIndex = 15;
@@ -645,7 +658,7 @@
             btnConcluir.ForeColor = Color.Green;
             btnConcluir.ImageIndex = 5;
             btnConcluir.ImageList = imageList1;
-            btnConcluir.Location = new Point(13, 129);
+            btnConcluir.Location = new Point(15, 130);
             btnConcluir.Name = "btnConcluir";
             btnConcluir.Size = new Size(115, 44);
             btnConcluir.TabIndex = 14;
@@ -653,6 +666,7 @@
             btnConcluir.TextAlign = ContentAlignment.MiddleRight;
             btnConcluir.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnConcluir.UseVisualStyleBackColor = true;
+            btnConcluir.Click += btnConcluir_Click;
             // 
             // F_Vendas
             // 
@@ -726,5 +740,6 @@
         private Label label13;
         private TextBox txtValorReceber;
         private Label label14;
+        private Label label15;
     }
 }
