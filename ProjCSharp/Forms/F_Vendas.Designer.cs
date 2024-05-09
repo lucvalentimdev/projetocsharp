@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Vendas));
             groupBox1 = new GroupBox();
+            txtIdCliente = new TextBox();
+            label16 = new Label();
             btnLimparClie = new Button();
             imageList1 = new ImageList(components);
             txtCPF = new TextBox();
@@ -82,6 +84,8 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtIdCliente);
+            groupBox1.Controls.Add(label16);
             groupBox1.Controls.Add(btnLimparClie);
             groupBox1.Controls.Add(txtCPF);
             groupBox1.Controls.Add(txtNomeCliente);
@@ -97,6 +101,28 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Informações Cliente: ";
+            // 
+            // txtIdCliente
+            // 
+            txtIdCliente.BorderStyle = BorderStyle.None;
+            txtIdCliente.Font = new Font("Segoe UI", 12F);
+            txtIdCliente.ForeColor = Color.DimGray;
+            txtIdCliente.Location = new Point(6, 41);
+            txtIdCliente.Name = "txtIdCliente";
+            txtIdCliente.ReadOnly = true;
+            txtIdCliente.Size = new Size(83, 22);
+            txtIdCliente.TabIndex = 12;
+            txtIdCliente.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.ForeColor = Color.Gray;
+            label16.Location = new Point(6, 21);
+            label16.Name = "label16";
+            label16.Size = new Size(71, 17);
+            label16.TabIndex = 11;
+            label16.Text = "Id.Cliente:";
             // 
             // btnLimparClie
             // 
@@ -132,7 +158,7 @@
             // txtCPF
             // 
             txtCPF.BorderStyle = BorderStyle.FixedSingle;
-            txtCPF.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            txtCPF.Font = new Font("Segoe UI", 11F);
             txtCPF.Location = new Point(140, 84);
             txtCPF.Name = "txtCPF";
             txtCPF.Size = new Size(177, 27);
@@ -145,10 +171,10 @@
             txtNomeCliente.BorderStyle = BorderStyle.None;
             txtNomeCliente.Font = new Font("Segoe UI", 12F);
             txtNomeCliente.ForeColor = Color.DimGray;
-            txtNomeCliente.Location = new Point(11, 41);
+            txtNomeCliente.Location = new Point(95, 41);
             txtNomeCliente.Name = "txtNomeCliente";
             txtNomeCliente.ReadOnly = true;
-            txtNomeCliente.Size = new Size(427, 22);
+            txtNomeCliente.Size = new Size(464, 22);
             txtNomeCliente.TabIndex = 8;
             // 
             // label5
@@ -165,7 +191,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.Gray;
-            label4.Location = new Point(11, 21);
+            label4.Location = new Point(95, 21);
             label4.Name = "label4";
             label4.Size = new Size(96, 17);
             label4.TabIndex = 6;
@@ -741,5 +767,7 @@
         private TextBox txtValorReceber;
         private Label label14;
         private Label label15;
+        private TextBox txtIdCliente;
+        private Label label16;
     }
 }

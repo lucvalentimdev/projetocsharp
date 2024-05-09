@@ -136,9 +136,9 @@ public partial class F_CadClientes : Form
 
     private void BtnConfirmar_Click(object sender, EventArgs e)
     {
-        if (ValidaCampos())
+        if (ValidaCampos())     // Obs: Passa o ID do Cliente zerado por se tratar de um novo cliente //
         {
-            Cliente _cliente = new(txtNome.Text, txtCPF.Text, txtTelefone.Text, txtCEP.Text, cboUF.Text, txtCidade.Text, txtLogradouro.Text, txtNumeroResid.Text);
+            Cliente _cliente = new(0,txtNome.Text, txtCPF.Text, txtTelefone.Text, txtCEP.Text, cboUF.Text, txtCidade.Text, txtLogradouro.Text, txtNumeroResid.Text);
             string _log = _cliente.CadastrarNovoCliente();
 
 

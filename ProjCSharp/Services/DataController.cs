@@ -138,31 +138,35 @@ internal class DataController()
 		}
 	}
 
-    //******* Query 05 --> Encontra o cliente ( Apenas o NOME) buscando pelo CPF *******//
-	public string GetClienteNome(string _cpf)
+    //******* Query 05 --> Encontra o cliente buscando pelo CPF *******//
+	public List <Cliente> GetClienteNome(string _cpf)
 	{
-		string _stringSql = "SELECT nome FROM cliente WHERE cpf = @cpf ";
-		
+		List <Cliente> _listaCliente = [];
+		string _stringSql = "SELECT * FROM cliente	"+
+							"WHERE cpf = @cpf ";
 		try
 		{
             Connect();
 			if (conn != null)
 			{
-				MySqlCommand _cmd = new(_stringSql, conn);
+               MySqlCommand _cmd = new(_stringSql, conn);
 				_cmd.Parameters.AddWithValue("@cpf", _cpf);
-				object _result = _cmd.ExecuteScalar();
+				MySqlDataReader _rd = _cmd.ExecuteReader();
 
-				if (_result != null)
-					return _result.ToString();
-				else
-					return "Não foi encontrado nenhum cliente nessa consulta!";
+				while (_rd.Read())
+				{
+                    Cliente cliente = new(Convert.ToInt32(_rd["id"]), Convert.ToString(_rd["nome"]), Convert.ToString( _rd["cpf"]), Convert.ToString(_rd["telefone"]), Convert.ToString(_rd["cep"]), Convert.ToString(_rd["uf"]), Convert.ToString(_rd["cidade"]), Convert.ToString(_rd["logradouro"]), Convert.ToString(_rd["numero_residencia"]));
+
+                   _listaCliente.Add(cliente);
+
+
+					return  _listaCliente;
+                }
 			}
-			else
-				return "Erro ao conectar ao banco de dados!";
+			return _listaCliente;
         }
-		catch (MySqlException E)
+		catch (MySqlException)
 		{
-            return "Erro ao executar a consulta. Log: \r\n " + E;
             throw;
 		}
 		finally
@@ -185,12 +189,12 @@ internal class DataController()
 			{
 				MySqlCommand _cmd = new(_sqlScript, conn);
 				_cmd.Parameters.AddWithValue("@filtro", _filtroSql);
-				MySqlDataReader _dr = _cmd.ExecuteReader();
+				MySqlDataReader _rd = _cmd.ExecuteReader();
 
-				while (_dr.Read())
+				while (_rd.Read())
 				{
 					{
-						Produto _produto = new(Convert.ToInt32(_dr["id"]), _dr["nome"].ToString(), _dr["marca"].ToString(), _dr["categoria"].ToString(), Convert.ToInt32(_dr["volumeEmMl"]), Convert.ToDouble(_dr["preco"]), _dr["descricao"].ToString(), _dr["publicoAlvo"].ToString(), Convert.ToInt32(_dr["qntEntradaInicial"]), Convert.ToDateTime(_dr["dataCadastro"]), _dr["imagem"].ToString());
+						Produto _produto = new(Convert.ToInt32(_rd["id"]), _rd["nome"].ToString(), _rd["marca"].ToString(), _rd["categoria"].ToString(), Convert.ToInt32(_rd["volumeEmMl"]), Convert.ToDouble(_rd["preco"]), _rd["descricao"].ToString(), _rd["publicoAlvo"].ToString(), Convert.ToInt32(_rd["qntEntradaInicial"]), Convert.ToDateTime(_rd["dataCadastro"]), _rd["imagem"].ToString());
 						
 						_list.Add(_produto);		//<-- Retorna Lista com os produtos encontrados //
                     };
@@ -210,12 +214,14 @@ internal class DataController()
 			Disconnect();
 		}
 		
-	} 
+	}
 
-	public string QuerySetVenda(int _idcliente, double _vlitens, double _vldescontos, double _vltotal, int _idcolaborador)
+
+    //******* Query 07 --> Realiza o INSERT de uma NOVA VENDA  *******//
+    public string QuerySetVenda(int _idcliente, double _vlitens, double _vldescontos, double _vltotal, int _idcolaborador, string _formapagto)
 	{
-		string _sqlScript = " INSERT INTO vendas (id_cliente, valor_itens, valor_descontos, valor_total, id_colaborador) " +
-							" VALUES (@idcliente, @vlitens, @vldescontos, @vltotal, @idcolaborador)";
+		string _sqlScript = " INSERT INTO vendas (id_cliente, valor_itens, valor_descontos, valor_total, id_colaborador, forma_pagto) " +
+							" VALUES (@idcliente, @vlitens, @vldescontos, @vltotal, @idcolaborador, @formapagto)";
 		try
 		{
             Connect();
@@ -227,6 +233,7 @@ internal class DataController()
                 _cmd.Parameters.AddWithValue("@vldescontos", _vldescontos);
                 _cmd.Parameters.AddWithValue("@vltotal", _vltotal);
                 _cmd.Parameters.AddWithValue("@idcolaborador", 1);
+				_cmd.Parameters.AddWithValue("@formapagto", _formapagto);
                 _cmd.ExecuteNonQuery();
 
                 return "ok";

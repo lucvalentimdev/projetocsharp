@@ -14,6 +14,7 @@ public partial class F_Vendas : Form
 
     private void btnCancelar_Click(object sender, EventArgs e)
     {
+        listaVendas.Clear();
         rtPedido.Clear();
         cboFormaReceb.Text = "";
         txtTotalItens.Text = string.Empty;
@@ -25,7 +26,13 @@ public partial class F_Vendas : Form
 
     private void btnConsultaCliente_Click(object sender, EventArgs e)
     {
-        txtNomeCliente.Text = Cliente.EncontrarNomeCliente(txtCPF.Text);
+        List <Cliente> _ListaClientes = new(Cliente.EncontrarCliente(txtCPF.Text));
+
+        foreach ( Cliente _cliente in _ListaClientes)
+        {
+            txtIdCliente.Text = Convert.ToString(_cliente.IdCliente);
+            txtNomeCliente.Text = _cliente.Nome;
+        }
     }
 
     private void btnConsultaProd_Click(object sender, EventArgs e)
@@ -65,8 +72,9 @@ public partial class F_Vendas : Form
 
     private void btnLimparClie_Click(object sender, EventArgs e)
     {
-        txtNomeCliente.Text = string.Empty;
         txtCPF.Text = string.Empty;
+        txtIdCliente.Text = string.Empty;
+        txtNomeCliente.Text = string.Empty;
     }
 
     private void btnLimpar_Click(object sender, EventArgs e)
@@ -169,24 +177,28 @@ public partial class F_Vendas : Form
         txtTotalItens.Text = Convert.ToString(ItensVenda.totaisItens);
     }
 
-    private void btnConcluir_Click(object sender, EventArgs e)
+    private void btnConcluir_Click(object sender, EventArgs e)  // --- Instancia uma nova venda e em seguida aciona o metodo de Salvar venda //  
     {
        if (txtPercDescontos.Text == "0")
             txtValorReceber.Text = txtTotalItens.Text;
 
+       if (cboFormaReceb.Text == "")
+        {
+            Utilities.MessageCaution("Informar a forma de recebimento!");
+            return;
+        }
+
         double _valorDesconto = Convert.ToDouble(txtTotalItens.Text) - Convert.ToDouble(txtValorReceber.Text);
 
-
-        Venda venda = new(1, Convert.ToDouble(txtTotalItens.Text), _valorDesconto , Convert.ToDouble(txtValorReceber.Text), 1);
-
+        Venda venda = new(Convert.ToInt32(txtIdCliente.Text), Convert.ToDouble(txtTotalItens.Text), _valorDesconto , Convert.ToDouble(txtValorReceber.Text), 1, cboFormaReceb.Text);
         string _log = venda.SalvarVenda();
-
-        if (_log == "ok")
-            Utilities.MessageInformation("Venda concluída com sucesso!");
-        else if (_log == "erro_conn")
-            Utilities.MessageError("Ocorreu um erro na conexão com o banco de dados!");
-        else
+            if (_log == "ok")
+                Utilities.MessageInformation("Venda concluída com sucesso!");
+            else if (_log == "erro_conn")
+                Utilities.MessageError("Ocorreu um erro na conexão com o banco de dados!");
+            else
             Utilities.MessageError(_log);
 
+        btnCancelar_Click(sender, e);
     }
 }
