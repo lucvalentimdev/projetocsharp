@@ -30,9 +30,7 @@ internal class Cliente(int _idCliente, string _nome, string _cpf, string _telefo
     public static List <Cliente> EncontrarCliente(string _cpf)
     {
         DataController dataController = new();
-        return dataController.GetClienteNome(_cpf);
+        return dataController.GetCliente(_cpf);
     } 
-
-
 
 }

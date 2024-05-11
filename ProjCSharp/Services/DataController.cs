@@ -139,7 +139,7 @@ internal class DataController()
 	}
 
     //******* Query 05 --> Encontra o cliente buscando pelo CPF *******//
-	public List <Cliente> GetClienteNome(string _cpf)
+	public List <Cliente> GetCliente(string _cpf)
 	{
 		List <Cliente> _listaCliente = [];
 		string _stringSql = "SELECT * FROM cliente	"+
@@ -158,8 +158,6 @@ internal class DataController()
                     Cliente cliente = new(Convert.ToInt32(_rd["id"]), Convert.ToString(_rd["nome"]), Convert.ToString( _rd["cpf"]), Convert.ToString(_rd["telefone"]), Convert.ToString(_rd["cep"]), Convert.ToString(_rd["uf"]), Convert.ToString(_rd["cidade"]), Convert.ToString(_rd["logradouro"]), Convert.ToString(_rd["numero_residencia"]));
 
                    _listaCliente.Add(cliente);
-
-
 					return  _listaCliente;
                 }
 			}
@@ -213,9 +211,7 @@ internal class DataController()
 		{
 			Disconnect();
 		}
-		
 	}
-
 
     //******* Query 07 --> Realiza o INSERT de uma NOVA VENDA  *******//
     public string QuerySetVenda(int _idcliente, double _vlitens, double _vldescontos, double _vltotal, int _idcolaborador, string _formapagto)

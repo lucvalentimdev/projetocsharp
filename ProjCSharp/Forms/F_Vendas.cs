@@ -19,7 +19,8 @@ public partial class F_Vendas : Form
         cboFormaReceb.Text = "";
         txtTotalItens.Text = string.Empty;
         txtQntItens.Text = string.Empty;
-        txtValorReceber.Text = string.Empty;   
+        txtValorReceber.Text = string.Empty; 
+        txtPercDescontos.Text = "0";
         btnLimparClie_Click(sender, e);
         btnLimpar_Click(sender, e);
     }
@@ -152,10 +153,9 @@ public partial class F_Vendas : Form
     private void txtPercDescontos_Leave(object sender, EventArgs e)
     {
         if (Convert.ToInt32(txtPercDescontos.Text) > 100)
-        {
-            Utilities.MessageCaution("Desconto não pode ser maior a 100%");
-        }
-        txtValorReceber.Text = Convert.ToString(ItensVenda.CalcTotalItensFinal(Convert.ToDouble(txtTotalItens.Text), Convert.ToDouble(txtPercDescontos.Text)));
+            Utilities.MessageCaution("Desconto não pode ser maior a 100% !");
+        else
+            txtValorReceber.Text = Convert.ToString(ItensVenda.CalcTotalItensFinal(Convert.ToDouble(txtTotalItens.Text), Convert.ToDouble(txtPercDescontos.Text)));
     }
 
     private void txtPercDescontos_Enter(object sender, EventArgs e)
@@ -181,10 +181,12 @@ public partial class F_Vendas : Form
     {
        if (txtPercDescontos.Text == "0")
             txtValorReceber.Text = txtTotalItens.Text;
+       else
+        txtPercDescontos_Leave(sender, e); // Aciona o calculo de descontos caso haja desconto
 
        if (cboFormaReceb.Text == "")
         {
-            Utilities.MessageCaution("Informar a forma de recebimento!");
+            Utilities.MessageCaution("Informe a forma de recebimento!");
             return;
         }
 

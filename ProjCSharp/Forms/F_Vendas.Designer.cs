@@ -104,6 +104,7 @@
             // 
             // txtIdCliente
             // 
+            txtIdCliente.BackColor = SystemColors.Window;
             txtIdCliente.BorderStyle = BorderStyle.None;
             txtIdCliente.Font = new Font("Segoe UI", 12F);
             txtIdCliente.ForeColor = Color.DimGray;
@@ -160,6 +161,7 @@
             txtCPF.BorderStyle = BorderStyle.FixedSingle;
             txtCPF.Font = new Font("Segoe UI", 11F);
             txtCPF.Location = new Point(140, 84);
+            txtCPF.MaxLength = 11;
             txtCPF.Name = "txtCPF";
             txtCPF.Size = new Size(177, 27);
             txtCPF.TabIndex = 9;
