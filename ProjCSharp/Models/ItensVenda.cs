@@ -1,4 +1,4 @@
-﻿using SalSystem.Services;
+﻿using SalSystem.Services.DataAcess;
 
 namespace SalSystem.Models;
 

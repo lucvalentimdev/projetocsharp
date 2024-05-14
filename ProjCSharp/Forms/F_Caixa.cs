@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using SalSystem.Services.DataAcess;
+namespace SalSystem.Forms;
 
-namespace SalSystem.Forms
+public partial class F_Caixa : Form
 {
-    public partial class F_Caixa : Form
+    readonly DataController controller = new();
+
+    public F_Caixa()
     {
-        public F_Caixa()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
+
+    private void BtnConsultar_Click(object sender, EventArgs e)
+    {
+        gridCaixa.DataSource = DataTableAssistant.ProcessData(controller.GetInfoCaixa());
     }
 }
