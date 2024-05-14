@@ -43,7 +43,7 @@
             BtnVendas = new Button();
             BtnClientes = new Button();
             transparentPanel1 = new Views.Utils.TransparentPanel();
-            button1 = new Button();
+            btnCaixa = new Button();
             BtnProdutos = new Button();
             menuStrip1.SuspendLayout();
             panel_Rodape.SuspendLayout();
@@ -194,7 +194,7 @@
             // transparentPanel1
             // 
             transparentPanel1.BackColor = Color.Transparent;
-            transparentPanel1.Controls.Add(button1);
+            transparentPanel1.Controls.Add(btnCaixa);
             transparentPanel1.Controls.Add(BtnProdutos);
             transparentPanel1.Controls.Add(BtnClientes);
             transparentPanel1.Controls.Add(BtnSair);
@@ -205,24 +205,25 @@
             transparentPanel1.Size = new Size(120, 714);
             transparentPanel1.TabIndex = 7;
             // 
-            // button1
+            // btnCaixa
             // 
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.IndianRed;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.ImageIndex = 4;
-            button1.ImageList = imageListIcons;
-            button1.Location = new Point(8, 183);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 50);
-            button1.TabIndex = 4;
-            button1.Text = "Caixa";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = true;
+            btnCaixa.Cursor = Cursors.Hand;
+            btnCaixa.FlatAppearance.BorderSize = 0;
+            btnCaixa.FlatStyle = FlatStyle.Flat;
+            btnCaixa.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCaixa.ForeColor = Color.IndianRed;
+            btnCaixa.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCaixa.ImageIndex = 4;
+            btnCaixa.ImageList = imageListIcons;
+            btnCaixa.Location = new Point(8, 183);
+            btnCaixa.Name = "btnCaixa";
+            btnCaixa.Size = new Size(100, 50);
+            btnCaixa.TabIndex = 4;
+            btnCaixa.Text = "Caixa";
+            btnCaixa.TextAlign = ContentAlignment.MiddleRight;
+            btnCaixa.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCaixa.UseVisualStyleBackColor = true;
+            btnCaixa.Click += BtnCaixa_Click;
             // 
             // BtnProdutos
             // 
@@ -289,6 +290,6 @@
         private Button BtnClientes;
         private Views.Utils.TransparentPanel transparentPanel1;
         private Button BtnProdutos;
-        private Button button1;
+        private Button btnCaixa;
     }
 }

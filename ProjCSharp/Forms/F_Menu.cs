@@ -56,4 +56,10 @@ public partial class F_Menu : Form
         F_CadProdutos f_CadProdutos = new();
         f_CadProdutos.ShowDialog();
     }
+
+    private void BtnCaixa_Click(object sender, EventArgs e)
+    {
+        F_Caixa f_Caixa = new();
+        f_Caixa.ShowDialog();
+    }
 }

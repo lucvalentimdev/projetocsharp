@@ -3,19 +3,31 @@
   "WorkspaceRootPath": "C:\\projetocsharp\\ProjCSharp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_vendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_vendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\forms\\f_caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_caixa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_vendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\forms\\f_vendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_vendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\forms\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\forms\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\forms\\f_vendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:forms\\f_vendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\models\\itensvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:models\\itensvenda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|c:\\projetocsharp\\projcsharp\\services\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|C:\\projetocsharp\\ProjCSharp\\services\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E61F1731-1319-4E7F-B1AF-622E3E566E50}|SalSystem.csproj|solutionrelative:services\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -30,11 +42,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "F_Caixa.cs [Projeto]",
+              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Caixa.cs",
+              "RelativeDocumentMoniker": "Forms\\F_Caixa.cs",
+              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Caixa.cs [Projeto]",
+              "RelativeToolTip": "Forms\\F_Caixa.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T19:20:34.189Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "F_Menu.cs",
+              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Menu.cs",
+              "RelativeDocumentMoniker": "Forms\\F_Menu.cs",
+              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Menu.cs",
+              "RelativeToolTip": "Forms\\F_Menu.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAwwEAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T19:14:45.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "F_Menu.cs [Projeto]",
+              "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Menu.cs",
+              "RelativeDocumentMoniker": "Forms\\F_Menu.cs",
+              "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Menu.cs [Projeto]",
+              "RelativeToolTip": "Forms\\F_Menu.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T19:14:41.684Z",
+              "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
@@ -50,20 +99,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "F_Vendas.cs",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Vendas.cs",
               "RelativeDocumentMoniker": "Forms\\F_Vendas.cs",
               "ToolTip": "C:\\projetocsharp\\ProjCSharp\\Forms\\F_Vendas.cs",
               "RelativeToolTip": "Forms\\F_Vendas.cs",
-              "ViewState": "AQIAAJUAAAAAAAAAAADwv5EAAAAFAAAA",
+              "ViewState": "AQIAALIAAAAAAAAAAAAuwNUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T19:59:20.143Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T19:59:20.143Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Venda.cs",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Models\\Venda.cs",
               "RelativeDocumentMoniker": "Models\\Venda.cs",
@@ -75,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ItensVenda.cs",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Models\\ItensVenda.cs",
               "RelativeDocumentMoniker": "Models\\ItensVenda.cs",
@@ -83,12 +131,11 @@
               "RelativeToolTip": "Models\\ItensVenda.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T18:41:27.419Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-02T18:41:27.419Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "DataController.cs",
               "DocumentMoniker": "C:\\projetocsharp\\ProjCSharp\\Services\\DataController.cs",
               "RelativeDocumentMoniker": "Services\\DataController.cs",
@@ -96,8 +143,7 @@
               "RelativeToolTip": "Services\\DataController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAANYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T00:08:47.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-05T00:08:47.2Z"
             }
           ]
         }
