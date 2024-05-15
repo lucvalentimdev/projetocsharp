@@ -5,11 +5,9 @@ namespace SalSystem.Services.DataAcess;
 
 internal class DataTableAssistant
 {
-    public static DataTable ProcessData(MySqlDataReader reader)
+    public static DataTable ProcessData(DataTable _table)
     {
-        DataTable dataTable = new();
-        dataTable.Load(reader);
-        return dataTable;
+        return _table;
     }
 
 

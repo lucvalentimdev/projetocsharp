@@ -48,14 +48,22 @@
             // 
             // gridCaixa
             // 
+            gridCaixa.AllowUserToAddRows = false;
+            gridCaixa.AllowUserToDeleteRows = false;
+            gridCaixa.AllowUserToResizeColumns = false;
+            gridCaixa.AllowUserToResizeRows = false;
             gridCaixa.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            gridCaixa.BackgroundColor = SystemColors.ControlLightLight;
+            gridCaixa.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            gridCaixa.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            gridCaixa.BackgroundColor = SystemColors.ButtonFace;
             gridCaixa.BorderStyle = BorderStyle.Fixed3D;
             gridCaixa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridCaixa.Location = new Point(0, 104);
             gridCaixa.Name = "gridCaixa";
+            gridCaixa.ReadOnly = true;
             gridCaixa.Size = new Size(985, 476);
             gridCaixa.TabIndex = 0;
+            gridCaixa.TabStop = false;
             // 
             // btnConsultar
             // 
@@ -108,6 +116,7 @@
             btnFechar.TextAlign = ContentAlignment.MiddleLeft;
             btnFechar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnFechar.UseVisualStyleBackColor = true;
+            btnFechar.Click += BtnFechar_Click;
             // 
             // groupBox1
             // 

@@ -1,5 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx.Datatypes;
 using SalSystem.Models;
+using System.Data;
 
 namespace SalSystem.Services.DataAcess;
 
@@ -248,17 +250,19 @@ internal class DataController()
         }
     }
 
-    public MySqlDataReader GetInfoCaixa()
+    //******* Query 08 --> Consulta de Vendas formando fluxo de Caixa conforme necessidade do usuário  *******//
+    public DataTable GetInfoCaixa()
     {
         string sqlString = "SELECT * FROM vendas  ";
-        Connect();
 
         try
         {
-            MySqlDataReader _rd;
-            MySqlCommand _cmd = new(sqlString, conn);
-            _rd = _cmd.ExecuteReader();
-            return _rd;
+            Connect();
+            MySqlDataAdapter _dataAdapter = new(sqlString, conn);
+            DataTable _dt = new();
+            _dataAdapter.Fill(_dt);
+
+            return _dt;
         }
         catch (MySqlException E)
         {
