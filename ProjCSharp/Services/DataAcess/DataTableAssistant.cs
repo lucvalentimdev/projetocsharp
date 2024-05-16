@@ -7,7 +7,18 @@ internal class DataTableAssistant
 {
     public static DataTable ProcessData(DataTable _table)
     {
-        return _table;
+		try
+		{
+            return _table;
+        }
+		catch (Exception)
+		{
+			throw;
+		}
+		finally
+		{
+			_table.Clear();
+		}
     }
 
 

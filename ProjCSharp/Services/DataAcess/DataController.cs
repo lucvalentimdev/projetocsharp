@@ -251,18 +251,31 @@ internal class DataController()
     }
 
     //******* Query 08 --> Consulta de Vendas formando fluxo de Caixa conforme necessidade do usuário  *******//
-    public DataTable GetInfoCaixa()
+    public DataTable GetInfoCaixa(string _formaPagto, int _idCliente, DateTime _dataInicio, DateTime _dataFinal)
     {
-        string sqlString = "SELECT * FROM vendas  ";
+        string sqlString = "SELECT c.nome AS 'Nome Cliente', v.forma_pagto AS 'Forma Recebimento', v.valor_itens AS 'Vl.Total Itens', v.valor_descontos AS 'Vl.Descontos', v.valor_total AS 'Valor Recebido', v.data_venda AS 'Data Venda' " +
+            "FROM vendas AS v " +
+            "INNER JOIN  cliente AS c ON v.id_cliente = c.id "+
+            "WHERE (v.forma_pagto = @formapgto OR @formapgto = '' OR @formapgto IS NULL) " + 
+            "AND (CASE WHEN @idcliente = 0 THEN v.id_cliente > 0 ELSE v.id_cliente = @idcliente END) AND (v.data_venda BETWEEN @dataInicio AND @dataFinal) "+
+            "UNION " +
+            "SELECT NULL, 'TOTAIS', SUM(v.valor_itens), SUM(v.valor_descontos), SUM(v.valor_total), NULL " + 
+            "FROM vendas AS v " +
+            "WHERE (v.forma_pagto = @formapgto OR @formapgto = '' OR @formapgto IS NULL) " +
+            "AND (CASE WHEN @idcliente = 0 THEN v.id_cliente > 0 ELSE v.id_cliente = @idcliente END) AND (v.data_venda BETWEEN @dataInicio AND @dataFinal); ";
 
         try
         {
             Connect();
             MySqlDataAdapter _dataAdapter = new(sqlString, conn);
-            DataTable _dt = new();
-            _dataAdapter.Fill(_dt);
+            _dataAdapter.SelectCommand.Parameters.AddWithValue("@formapgto", _formaPagto);
+            _dataAdapter.SelectCommand.Parameters.AddWithValue("@idcliente", _idCliente);
+            _dataAdapter.SelectCommand.Parameters.AddWithValue("@dataInicio", _dataInicio);
+            _dataAdapter.SelectCommand.Parameters.AddWithValue("@dataFinal", _dataFinal);
+            DataTable _dataTable = new();
+            _dataAdapter.Fill(_dataTable);
 
-            return _dt;
+            return _dataTable;
         }
         catch (MySqlException E)
         {
@@ -274,6 +287,9 @@ internal class DataController()
             Disconnect();
         }
     }
+
+
+
 
 
 }

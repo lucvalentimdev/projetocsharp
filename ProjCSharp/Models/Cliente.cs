@@ -15,7 +15,8 @@ internal class Cliente(int _idCliente, string _nome, string _cpf, string _telefo
     public string Logradouro { get; } = _logradouro;
     public string NumeroResidencia { get; } = _numeroResidencia;
 
-    readonly DataController dataController = new();        // <--- Instanciando o DataController ---//
+    //var//
+    readonly DataController dataController = new();        
 
     public string CadastrarNovoCliente()
     {

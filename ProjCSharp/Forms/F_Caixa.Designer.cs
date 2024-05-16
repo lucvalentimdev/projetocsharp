@@ -32,18 +32,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Caixa));
             gridCaixa = new DataGridView();
             btnConsultar = new Button();
+            imageList1 = new ImageList(components);
             btnLimpar = new Button();
             btnFechar = new Button();
             groupBox1 = new GroupBox();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
+            groupBox4 = new GroupBox();
             label3 = new Label();
+            txtCPF = new TextBox();
+            groupBox3 = new GroupBox();
+            cboFormaReceb = new ComboBox();
             label2 = new Label();
+            groupBox2 = new GroupBox();
+            dateFinal = new DateTimePicker();
+            label4 = new Label();
             label1 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            imageList1 = new ImageList(components);
+            dateInicio = new DateTimePicker();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)gridCaixa).BeginInit();
             groupBox1.SuspendLayout();
+            groupBox4.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // gridCaixa
@@ -58,10 +67,10 @@
             gridCaixa.BackgroundColor = SystemColors.ButtonFace;
             gridCaixa.BorderStyle = BorderStyle.Fixed3D;
             gridCaixa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridCaixa.Location = new Point(0, 104);
+            gridCaixa.Location = new Point(0, 160);
             gridCaixa.Name = "gridCaixa";
             gridCaixa.ReadOnly = true;
-            gridCaixa.Size = new Size(985, 476);
+            gridCaixa.Size = new Size(985, 420);
             gridCaixa.TabIndex = 0;
             gridCaixa.TabStop = false;
             // 
@@ -73,6 +82,9 @@
             btnConsultar.FlatStyle = FlatStyle.Flat;
             btnConsultar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             btnConsultar.ForeColor = Color.IndianRed;
+            btnConsultar.ImageAlign = ContentAlignment.MiddleRight;
+            btnConsultar.ImageIndex = 0;
+            btnConsultar.ImageList = imageList1;
             btnConsultar.Location = new Point(312, 603);
             btnConsultar.Name = "btnConsultar";
             btnConsultar.Size = new Size(115, 44);
@@ -83,6 +95,15 @@
             btnConsultar.UseVisualStyleBackColor = true;
             btnConsultar.Click += BtnConsultar_Click;
             // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "busca.png");
+            imageList1.Images.SetKeyName(1, "voltar.png");
+            imageList1.Images.SetKeyName(2, "sweep.png");
+            // 
             // btnLimpar
             // 
             btnLimpar.FlatAppearance.BorderSize = 2;
@@ -91,6 +112,9 @@
             btnLimpar.FlatStyle = FlatStyle.Flat;
             btnLimpar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             btnLimpar.ForeColor = Color.IndianRed;
+            btnLimpar.ImageAlign = ContentAlignment.MiddleRight;
+            btnLimpar.ImageIndex = 2;
+            btnLimpar.ImageList = imageList1;
             btnLimpar.Location = new Point(433, 603);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(115, 44);
@@ -108,6 +132,9 @@
             btnFechar.FlatStyle = FlatStyle.Flat;
             btnFechar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             btnFechar.ForeColor = Color.IndianRed;
+            btnFechar.ImageAlign = ContentAlignment.MiddleRight;
+            btnFechar.ImageIndex = 1;
+            btnFechar.ImageList = imageList1;
             btnFechar.Location = new Point(554, 603);
             btnFechar.Name = "btnFechar";
             btnFechar.Size = new Size(115, 44);
@@ -120,75 +147,142 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(dateTimePicker1);
+            groupBox1.Controls.Add(groupBox4);
+            groupBox1.Controls.Add(groupBox3);
+            groupBox1.Controls.Add(groupBox2);
             groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             groupBox1.ForeColor = Color.IndianRed;
             groupBox1.Location = new Point(0, 1);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(985, 97);
+            groupBox1.Size = new Size(985, 136);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Selecione os filtros para carregar o extrato:";
+            groupBox1.Text = "Filtros para carregar o extrato:";
             // 
-            // comboBox1
+            // groupBox4
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(291, 41);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(220, 25);
-            comboBox1.TabIndex = 5;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(517, 41);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 25);
-            textBox1.TabIndex = 4;
+            groupBox4.Controls.Add(label3);
+            groupBox4.Controls.Add(txtCPF);
+            groupBox4.ForeColor = Color.DimGray;
+            groupBox4.Location = new Point(710, 30);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(262, 100);
+            groupBox4.TabIndex = 8;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Selecione por:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(494, 21);
+            label3.Location = new Point(8, 28);
             label3.Name = "label3";
-            label3.Size = new Size(55, 17);
-            label3.TabIndex = 3;
-            label3.Text = "Cliente:";
+            label3.Size = new Size(91, 17);
+            label3.TabIndex = 6;
+            label3.Text = "CPF - Cliente:";
+            // 
+            // txtCPF
+            // 
+            txtCPF.BackColor = SystemColors.Info;
+            txtCPF.BorderStyle = BorderStyle.FixedSingle;
+            txtCPF.Location = new Point(8, 48);
+            txtCPF.MaxLength = 11;
+            txtCPF.Name = "txtCPF";
+            txtCPF.Size = new Size(233, 25);
+            txtCPF.TabIndex = 5;
+            txtCPF.TextAlign = HorizontalAlignment.Center;
+            txtCPF.KeyPress += TxtCPF_KeyPress;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(cboFormaReceb);
+            groupBox3.Controls.Add(label2);
+            groupBox3.ForeColor = Color.DimGray;
+            groupBox3.Location = new Point(412, 30);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(292, 100);
+            groupBox3.TabIndex = 7;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Selecione o tipo de:";
+            // 
+            // cboFormaReceb
+            // 
+            cboFormaReceb.BackColor = SystemColors.Info;
+            cboFormaReceb.FlatStyle = FlatStyle.System;
+            cboFormaReceb.FormattingEnabled = true;
+            cboFormaReceb.Items.AddRange(new object[] { "Dinheiro", "PIX", "Cartão " });
+            cboFormaReceb.Location = new Point(11, 48);
+            cboFormaReceb.Name = "cboFormaReceb";
+            cboFormaReceb.Size = new Size(260, 25);
+            cboFormaReceb.TabIndex = 7;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(291, 21);
+            label2.Location = new Point(11, 28);
             label2.Name = "label2";
-            label2.Size = new Size(95, 17);
-            label2.TabIndex = 2;
-            label2.Text = "Forma Receb.:";
+            label2.Size = new Size(135, 17);
+            label2.TabIndex = 6;
+            label2.Text = "Forma Recebimento:";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(dateFinal);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Controls.Add(label1);
+            groupBox2.Controls.Add(dateInicio);
+            groupBox2.ForeColor = Color.DimGray;
+            groupBox2.Location = new Point(6, 30);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(400, 100);
+            groupBox2.TabIndex = 6;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Selecione período de venda:";
+            // 
+            // dateFinal
+            // 
+            dateFinal.CalendarFont = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            dateFinal.CalendarMonthBackground = SystemColors.Info;
+            dateFinal.Location = new Point(91, 60);
+            dateFinal.Name = "dateFinal";
+            dateFinal.Size = new Size(299, 25);
+            dateFinal.TabIndex = 5;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(8, 66);
+            label4.Name = "label4";
+            label4.Size = new Size(75, 17);
+            label4.TabIndex = 4;
+            label4.Text = "Data Final:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 21);
+            label1.Location = new Point(6, 30);
             label1.Name = "label1";
-            label1.Size = new Size(41, 17);
-            label1.TabIndex = 1;
-            label1.Text = "Data:";
+            label1.Size = new Size(79, 17);
+            label1.TabIndex = 3;
+            label1.Text = "Data Início:";
             // 
-            // dateTimePicker1
+            // dateInicio
             // 
-            dateTimePicker1.Location = new Point(12, 41);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(273, 25);
-            dateTimePicker1.TabIndex = 0;
+            dateInicio.CalendarMonthBackground = SystemColors.Info;
+            dateInicio.Location = new Point(91, 24);
+            dateInicio.Name = "dateInicio";
+            dateInicio.Size = new Size(299, 25);
+            dateInicio.TabIndex = 2;
             // 
-            // imageList1
+            // label5
             // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageSize = new Size(16, 16);
-            imageList1.TransparentColor = Color.Transparent;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label5.ForeColor = Color.DimGray;
+            label5.Location = new Point(6, 140);
+            label5.Name = "label5";
+            label5.Size = new Size(145, 19);
+            label5.TabIndex = 5;
+            label5.Text = "Resultado - Extrato :";
             // 
             // F_Caixa
             // 
@@ -196,6 +290,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(195, 195, 195);
             ClientSize = new Size(984, 661);
+            Controls.Add(label5);
             Controls.Add(groupBox1);
             Controls.Add(btnFechar);
             Controls.Add(btnLimpar);
@@ -207,10 +302,17 @@
             Name = "F_Caixa";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Caixa";
+            Load += F_Caixa_Load;
             ((System.ComponentModel.ISupportInitialize)gridCaixa).EndInit();
             groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -221,11 +323,17 @@
         private Button btnFechar;
         private GroupBox groupBox1;
         private ImageList imageList1;
-        private DateTimePicker dateTimePicker1;
-        private Label label3;
-        private Label label2;
+        private GroupBox groupBox2;
         private Label label1;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
+        private DateTimePicker dateInicio;
+        private DateTimePicker dateFinal;
+        private Label label4;
+        private GroupBox groupBox4;
+        private Label label3;
+        private TextBox txtCPF;
+        private GroupBox groupBox3;
+        private ComboBox cboFormaReceb;
+        private Label label2;
+        private Label label5;
     }
 }
