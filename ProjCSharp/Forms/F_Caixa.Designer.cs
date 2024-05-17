@@ -70,6 +70,7 @@
             gridCaixa.Location = new Point(0, 160);
             gridCaixa.Name = "gridCaixa";
             gridCaixa.ReadOnly = true;
+            gridCaixa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gridCaixa.Size = new Size(985, 420);
             gridCaixa.TabIndex = 0;
             gridCaixa.TabStop = false;
@@ -123,6 +124,7 @@
             btnLimpar.TextAlign = ContentAlignment.MiddleLeft;
             btnLimpar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnLimpar.UseVisualStyleBackColor = true;
+            btnLimpar.Click += BtnLimpar_Click;
             // 
             // btnFechar
             // 
@@ -182,7 +184,7 @@
             // 
             // txtCPF
             // 
-            txtCPF.BackColor = SystemColors.Info;
+            txtCPF.BackColor = Color.LightYellow;
             txtCPF.BorderStyle = BorderStyle.FixedSingle;
             txtCPF.Location = new Point(8, 48);
             txtCPF.MaxLength = 11;
@@ -206,7 +208,7 @@
             // 
             // cboFormaReceb
             // 
-            cboFormaReceb.BackColor = SystemColors.Info;
+            cboFormaReceb.BackColor = Color.LightYellow;
             cboFormaReceb.FlatStyle = FlatStyle.System;
             cboFormaReceb.FormattingEnabled = true;
             cboFormaReceb.Items.AddRange(new object[] { "Dinheiro", "PIX", "Cartão " });

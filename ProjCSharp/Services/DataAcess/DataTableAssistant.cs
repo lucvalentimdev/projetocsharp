@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System.Data;
+﻿using System.Data;
 
 namespace SalSystem.Services.DataAcess;
 
@@ -15,10 +14,7 @@ internal class DataTableAssistant
 		{
 			throw;
 		}
-		finally
-		{
-			_table.Clear();
-		}
+	
     }
 
 

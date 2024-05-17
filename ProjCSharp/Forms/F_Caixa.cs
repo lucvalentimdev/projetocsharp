@@ -42,4 +42,13 @@ public partial class F_Caixa : Form
     {
         Utilities.NumbersOnly(e);
     }
+
+    private void BtnLimpar_Click(object sender, EventArgs e)
+    {
+        txtCPF.Text = string.Empty;
+        cboFormaReceb.Text = string.Empty;
+        gridCaixa.DataSource = null;
+        dateInicio.Value = DateTime.Now;
+        dateFinal.Value = DateTime.Now;
+    }
 }
