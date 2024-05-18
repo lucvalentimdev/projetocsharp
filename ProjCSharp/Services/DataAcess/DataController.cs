@@ -112,7 +112,7 @@ internal class DataController()
     //******* Query 04 --> Encontra para apresentar o prox. Cód Produto *******//
     public string QueryGetIDProd()
     {
-        string _sqlScript = "SELECT MAX((id)+1) FROM _produtos";
+        string _sqlScript = "SELECT MAX((id)+1) FROM produtos";
         try
         {
             Connect();
@@ -254,15 +254,15 @@ internal class DataController()
     public DataTable GetInfoCaixa(string _formaPagto, int _idCliente, DateTime _dataInicio, DateTime _dataFinal)
     {
         string sqlString = "SELECT c.nome AS 'Nome Cliente', v.forma_pagto AS 'Forma Recebimento', v.valor_itens AS 'Vl.Total Itens', v.valor_descontos AS 'Vl.Descontos', v.valor_total AS 'Valor Recebido', v.data_venda AS 'Data Venda' " +
-            "FROM vendas AS v " +
-            "INNER JOIN  cliente AS c ON v.id_cliente = c.id "+
-            "WHERE (v.forma_pagto = @formapgto OR @formapgto = '' OR @formapgto IS NULL) " + 
-            "AND (CASE WHEN @idcliente = 0 THEN v.id_cliente > 0 ELSE v.id_cliente = @idcliente END) AND (v.data_venda BETWEEN @dataInicio AND @dataFinal) "+
-            "UNION " +
-            "SELECT NULL, 'TOTAIS', SUM(v.valor_itens), SUM(v.valor_descontos), SUM(v.valor_total), NULL " + 
-            "FROM vendas AS v " +
-            "WHERE (v.forma_pagto = @formapgto OR @formapgto = '' OR @formapgto IS NULL) " +
-            "AND (CASE WHEN @idcliente = 0 THEN v.id_cliente > 0 ELSE v.id_cliente = @idcliente END) AND (v.data_venda BETWEEN @dataInicio AND @dataFinal); ";
+          "FROM vendas AS v " +
+          "INNER JOIN  cliente AS c ON v.id_cliente = c.id "+
+          "WHERE (v.forma_pagto = @formapgto OR @formapgto = '' OR @formapgto IS NULL) " +
+          "AND (CASE WHEN @idcliente = 0 THEN v.id_cliente > 0 ELSE v.id_cliente = @idcliente END) AND (v.data_venda >= @dataInicio AND v.data_venda < @dataFinal) " +
+          "UNION " +
+          "SELECT NULL, 'TOTAIS', SUM(v.valor_itens), SUM(v.valor_descontos), SUM(v.valor_total), NULL " + 
+          "FROM vendas AS v " +
+          "WHERE (v.forma_pagto = @formapgto OR @formapgto = '' OR @formapgto IS NULL) " +
+          "AND (CASE WHEN @idcliente = 0 THEN v.id_cliente > 0 ELSE v.id_cliente = @idcliente END) AND (v.data_venda >= @dataInicio AND v.data_venda < @dataFinal); ";
 
         try
         {

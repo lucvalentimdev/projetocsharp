@@ -25,7 +25,10 @@ public partial class F_Caixa : Form
                 _idCliente = _cliente.IdCliente;
         }
 
-        gridCaixa.DataSource = DataTableAssistant.ProcessData(dataController.GetInfoCaixa(cboFormaReceb.Text, _idCliente, dateInicio.Value, dateFinal.Value));
+        DateTime _dateInicial = dateInicio.Value;           //<-- Atribui os valores do DateTimePicker em váriaveis para conversão e eliminação das horas e min // 
+        DateTime _dateFinal = dateFinal.Value.AddDays(1);   //<-- Acrescenta 1 dia + na data final para encontrar vendas do dia //
+
+        gridCaixa.DataSource = DataTableAssistant.ProcessData(dataController.GetInfoCaixa(cboFormaReceb.Text, _idCliente, _dateInicial.Date,_dateFinal.Date));
     }
 
     private void BtnFechar_Click(object sender, EventArgs e)

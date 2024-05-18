@@ -82,7 +82,7 @@
             btnConsultar.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             btnConsultar.FlatStyle = FlatStyle.Flat;
             btnConsultar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            btnConsultar.ForeColor = Color.IndianRed;
+            btnConsultar.ForeColor = Color.DarkBlue;
             btnConsultar.ImageAlign = ContentAlignment.MiddleRight;
             btnConsultar.ImageIndex = 0;
             btnConsultar.ImageList = imageList1;
@@ -133,7 +133,7 @@
             btnFechar.FlatAppearance.MouseOverBackColor = Color.FromArgb(195, 195, 195);
             btnFechar.FlatStyle = FlatStyle.Flat;
             btnFechar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            btnFechar.ForeColor = Color.IndianRed;
+            btnFechar.ForeColor = Color.Red;
             btnFechar.ImageAlign = ContentAlignment.MiddleRight;
             btnFechar.ImageIndex = 1;
             btnFechar.ImageList = imageList1;

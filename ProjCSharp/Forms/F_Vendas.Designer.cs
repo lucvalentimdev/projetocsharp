@@ -555,11 +555,11 @@
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label15.ForeColor = Color.DimGray;
-            label15.Location = new Point(114, 189);
+            label15.Location = new Point(77, 189);
             label15.Name = "label15";
-            label15.Size = new Size(164, 15);
+            label15.Size = new Size(242, 15);
             label15.TabIndex = 18;
-            label15.Text = "F9 - Cancelar | F12 - Concluir";
+            label15.Text = "F9 - Cancelar | F12 - Concluir | ESC - Fechar";
             // 
             // txtValorReceber
             // 
